@@ -34,12 +34,7 @@ public class InitResourceServlet extends HttpServlet {
 		IPhoneService comboboxs=ApplicationContextUtil.getBean(IPhoneService.class);
 		comboboxs.initCommodityNavInfo();
 		log.info("初始化数据成功！！");
-//		//查询分类
-//		comboboxs.queryCommodityNav();
-//		//查询明细
-//		comboboxs.queryCommodityInfo();
-//		//查询幻灯片
-//		comboboxs.queryChangePic();
+		
 	}
 
 }

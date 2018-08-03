@@ -30,7 +30,6 @@ public class CommodityNav implements Serializable{
 	private String dpnum; //店铺
 
 	private List<CommodityInfo> commodityInfo;
-//	private List<CommodityInfo> changePic;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)

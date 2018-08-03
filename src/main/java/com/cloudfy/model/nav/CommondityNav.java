@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
  * 说明：商品导航
  * @author Administrator
  * */
+@Entity(name = "a_commodity_nav")
 public class CommondityNav implements Serializable{
 	
 	/**

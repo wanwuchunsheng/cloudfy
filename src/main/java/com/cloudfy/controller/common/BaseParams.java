@@ -18,26 +18,6 @@ public class BaseParams {
 	private static Map<String,List<CommodityNav>> changePicMap=new HashMap<String, List<CommodityNav>>();//幻灯片数据
 	
 	
-	private static Map<String,List<CommondityNav>> navMap=new HashMap<String, List<CommondityNav>>();
-	private static Map<String,List<CommondityInfo>> infoMap=new HashMap<String, List<CommondityInfo>>();
-	
-	
-	public static Map<String, List<CommondityNav>> getNavMap() {
-		return navMap;
-	}
-
-	public static void setNavMap(Map<String, List<CommondityNav>> navMap) {
-		BaseParams.navMap = navMap;
-	}
-
-	public static Map<String, List<CommondityInfo>> getInfoMap() {
-		return infoMap;
-	}
-
-	public static void setInfoMap(Map<String, List<CommondityInfo>> infoMap) {
-		BaseParams.infoMap = infoMap;
-	}
-
 	public static Map<String, List<CommodityNav>> getNavInfoFLMap() {
 		return navInfoFLMap;
 	}
