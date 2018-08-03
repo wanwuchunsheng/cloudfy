@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="ph">
+    
+   <!-- 首页-商品明细  -->
+   <sql id="commondifyInfoAll">
+       <![CDATA[
+         select t.* from (
+			select 
+				 a.id,a.dpnum,a.update_time,a.title,a.hot,a.price,a.vip_price,b.MAX_URL,b.MINI_URL,a.gwc_num,
+				 (select count(*) from a_order_record where AC_INFO_ID=a.id) as yCount 
+			from a_commodity_info a,a_picture_address b,a_commodity_nav c
+			where a.del=0 and c.del=0 and c.type=:type and a.id=b.AC_INFO_ID and c.code=a.ac_code
+		 ) t  where  t.DPNUM=:dpnum
+         <#if acCode?exists && acCode!=""> and t.AC_CODE=:acCode </#if>
+         <#if orderBy?exists && orderBy!="" && orderBy==1 > order by t.update_time desc </#if>
+         <#if orderBy?exists && orderBy!="" && orderBy==2 > order by t.yCount desc </#if>
+         <#if orderBy?exists && orderBy!="" && orderBy==3 > order by t.price asc </#if>
+       ]]>
+   </sql>
+    
+    
+   <!-- 首页- 商品导航（排除幻灯片、最多8条数据）  -->
+   <sql id="commondifyNavAll">
+       <![CDATA[
+       select * from (
+          select id,nav_title,icon_url,code from a_commodity_nav 
+          where  del=0
+          and DPNUM=:dpnum 
+          and type=:type  order by num asc
+       )t  limit 8
+       ]]>
+   </sql>
+   
+     <!-- 首页- 幻灯片  -->
+   <sql id="changePic">
+       <![CDATA[
+          select DISTINCT c.AC_INFO_ID,c.MAX_URL,c.MINI_URL, a.id from a_commodity_nav a,a_commodity_info b,a_picture_address c 
+			where a.code=b.ac_code and b.id=c.AC_INFO_ID 
+			and a.del=0 and b.del=0 
+			and a.type=:type
+			and a.dpnum=:dpnum
+			order by b.create_time desc  
+       ]]>
+   </sql>
+  
+    
+   <!-- 分类- 商品导航  -->
+   <sql id="categroyNavAll">
+       <![CDATA[
+          select 
+	          id,
+	          nav_title,
+	          icon_url,
+	          code 
+          from a_commodity_nav 
+          where del=0
+          and DPNUM=:dpnum 
+          and type=:type  order by num asc
+       ]]>
+   </sql>
+   
+   <!-- 分类-明细    初始化默认查询第一个 -->
+   <sql id="categroyInfoAll">
+       <![CDATA[
+			select 
+				 a.id,
+				 a.dpnum,
+				 a.update_time,
+				 a.title,
+				 a.hot,
+				 a.price,
+				 a.vip_price,
+				 b.MAX_URL,
+				 b.MINI_URL,a.gwc_num,
+				 (select count(*) from a_order_record where AC_INFO_ID=a.id) as yCount,
+				 a.AC_CODE
+			from a_commodity_info a,a_picture_address b,a_commodity_nav c
+			where a.del=0 and c.del=0 
+			and a.id=b.AC_INFO_ID 
+			and c.code=a.ac_code
+			and c.type=:type 
+			and a.DPNUM=:dpnum
+			and a.AC_CODE =(
+			  select code from a_commodity_nav where type=0 ORDER BY num asc limit 1,1
+			)
+       ]]>
+   </sql>
+   
+   <!-- 分类-单机分类查询明细    -->
+   <sql id="categroyInfoByCode">
+       <![CDATA[
+			select 
+				 a.id,
+				 a.dpnum,
+				 a.update_time,
+				 a.title,
+				 a.hot,
+				 a.price,
+				 a.vip_price,
+				 b.MAX_URL,
+				 b.MINI_URL,a.gwc_num,
+				 (select count(*) from a_order_record where AC_INFO_ID=a.id) as yCount,
+				 a.AC_CODE
+			from a_commodity_info a,a_picture_address b,a_commodity_nav c
+			where a.del=0 and c.del=0 
+			and a.id=b.AC_INFO_ID 
+			and c.code=a.ac_code
+			and c.type=:type 
+			and a.DPNUM=:dpnum
+			and a.AC_CODE =:acCode
+       ]]>
+   </sql>
+   
+   <!-- 购物车-明细   -->
+   <sql id="shoppingCartAll">
+       <![CDATA[
+			select 
+				 a.id,
+				 a.dpnum,
+				 a.update_time,
+				 a.title,
+				 a.hot,
+				 a.price,
+				 a.vip_price,
+				 b.MAX_URL,
+				 b.MINI_URL,a.gwc_num,
+				 (select count(*) from a_order_record where AC_INFO_ID=a.id) as yCount,
+				 a.AC_CODE
+			from a_commodity_info a,a_picture_address b,a_commodity_nav c
+			where a.del=0 and c.del=0 
+			and a.id=b.AC_INFO_ID 
+			and c.code=a.ac_code
+			
+			and a.id  in(${acInfoIds})
+			   
+       ]]>
+   </sql>
+   
+   
+   
+   <!-- 优化 导航分类 -->
+   <sql id="comdityNav">
+       <![CDATA[
+         select 
+			 id,
+			 update_time,
+			 nav_title,
+			 nav_short,
+			 icon_url,
+			 num,
+			 type,
+			 dpnum,
+			 code
+		 from a_commodity_nav
+		 where del=0
+		 and type=:type
+         and DPNUM=:dpnum 
+         order by num asc
+       ]]>
+   </sql>
+   
+   <!-- 优化 明细 -->
+   <sql id="comdityInfo">
+       <![CDATA[
+		   SELECT
+				a.id ,
+				a.title,
+				a.ac_code,
+				a.content,
+				a.hot,
+				a.price,
+				a.num ,
+				a.vip_price,
+				a.dpnum,
+				(select count(*) from a_order_record where AC_INFO_ID=id) as yCount,
+				a.gwc_num,
+				b.MAX_URL,
+				b.MINI_URL
+			FROM
+				a_commodity_info a left join  a_picture_address  b
+			on  b.AC_INFO_ID=a.id
+	        where  a.del = 0 
+	        and b.del=0
+			and a.dpnum=:dpnum
+		    and a.ac_code=:code
+       ]]>
+   </sql>
+   
+   <!-- 优化 商品明细 -->
+   <sql id="CommodityNavInfo">
+       <![CDATA[
+        select * from (
+			select 
+			 id,
+			 update_time,
+			 nav_title,
+			 nav_short,
+			 icon_url,
+			 num,
+			 type,
+			 dpnum,
+			 code
+			from a_commodity_nav
+			where del=0
+			and type=0
+			and DPNUM=:dpnum 
+				
+		) a left join (
+		   SELECT
+				id as acInfoId,
+				title,
+				ac_code,
+				content,
+				hot,
+				price,
+				vip_price,
+				dpnum
+			FROM
+				a_commodity_info
+			WHERE
+				del = 0
+			 and dpnum=:dpnum
+		) b on a.code=b.ac_code order by num asc
+       ]]>
+   </sql>
+   
+   
+   <!-- 优化 明细 -->
+   <sql id="queryInfo">
+       <![CDATA[
+		   SELECT
+				a.id ,
+				a.title,
+				a.ac_code,
+				a.content,
+				a.hot,
+				a.price,
+				a.num ,
+				a.vip_price,
+				a.dpnum,
+				(select count(*) from a_order_record where AC_INFO_ID=id) as yCount,
+				a.gwc_num,
+				b.MAX_URL,
+				b.MINI_URL
+			FROM
+				a_commodity_info a left join  a_picture_address  b
+			on  b.AC_INFO_ID=a.id
+	        where  a.del = 0 
+	        and b.del=0
+			and a.dpnum=:dpnum
+       ]]>
+   </sql>
+</sqlMap>
+
+
+

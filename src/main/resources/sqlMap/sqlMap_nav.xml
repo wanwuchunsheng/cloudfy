@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="nav">
+    
+   <!-- 商品导航  -->
+   <sql id="queryCommondityNav">
+        <![CDATA[
+           select * from a_commodity_nav where del=0 and DPNUM=:dpnum
+        ]]>
+    </sql>
+    
+   
+     <!-- 商品明细  -->
+   <sql id="queryCommondityInfo">
+        <![CDATA[
+            SELECT
+				a.*, b.uname AS createUserName,
+				c.nav_title AS navName
+			FROM
+				a_commodity_info a,
+				sys_user b,
+				a_commodity_nav c
+			WHERE
+				a.del = 0
+			AND b.del = 0
+			AND a.CREATE_USER_ID = b.id
+			AND a.ac_code = c.code
+		    and a.DPNUM=:dpnum 
+        ]]>
+    </sql>
+    
+    
+    
+   
+    
+</sqlMap>
+
+
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="user">
+    
+   <!--  HD 用户登录验证  -->
+   <sql id="verifyUser">
+        <![CDATA[
+           select * from sys_user where uname=:uname and upwd=:upwd and del=0
+        ]]>
+    </sql>
+    
+    <!-- 查询左侧菜单 -->
+    <sql id="querySysResource">
+        <![CDATA[
+            select * from sys_resource where del=0 order by seq asc
+        ]]>
+    </sql>
+    
+    <!-- 用户管理-用户查询 -->
+    <sql id="querySysResourceAll">
+        <![CDATA[
+            select * from sys_user where del=0 
+            <#if dpnum?exists && dpnum!=""> AND dpnum= :dpnum </#if>
+            <#if uname?exists && uname!=""> AND uname= :uname </#if>
+            <#if phone?exists && phone!=""> AND phone= :phone </#if>
+        ]]>
+    </sql>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    <!-- 查询所有用户 -->
+    <sql id="queryUserByAll">
+        <![CDATA[
+           select * from t_users where 1=1
+           <#if uTelephone?exists && uTelephone!="">AND u_telephone like concat('%',:uTelephone,'%')</#if>
+           <#if uName?exists && uName!=""> AND u_name= :uName </#if>
+        ]]>
+    </sql>
+    
+    <!-- HD 根据ID查询用户 -->
+    <sql id="queryUserById">
+        <![CDATA[
+           select * from t_users where 1=1
+           and id=:id
+        ]]>
+    </sql>
+    
+    <!--  HD 用户登录验证  -->
+    <sql id="queryUserByObj">
+        <![CDATA[
+           select * from t_users where 1=1
+            and u_status in ('1') 
+            and u_name= :uName
+            and u_password= :uPassword 
+           
+        ]]>
+    </sql>
+    
+    <!-- 修改用户  -->
+    <sql id="updateUserById">
+        <![CDATA[
+          update t_users set
+              u_update_time=now(),
+	          <#if uName?exists && uName!=""> u_name= :uName, </#if>
+	          <#if uPassword?exists && uPassword!=""> u_password= :uPassword, </#if>
+	          <#if uEmail?exists && uEmail!=""> u_email= :uEmail, </#if>
+	          <#if uTelephone?exists && uTelephone!=""> u_telephone= :uTelephone, </#if>
+	          <#if uNowAddress?exists && uNowAddress!=""> u_now_address= :uNowAddress </#if>
+	          
+          where id=:id
+        ]]>
+    </sql>
+    
+    <!--  删除用户  -->
+    <sql id="deleteUserById">
+        <![CDATA[
+           delete from t_users where id=:id
+        ]]>
+    </sql>
+    
+    
+</sqlMap>
+
+
+

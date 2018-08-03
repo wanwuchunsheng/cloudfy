@@ -1,0 +1,37 @@
+<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<div class="page-sidebar navbar-collapse collapse">
+			<div class="scroller">
+			<!-- BEGIN SIDEBAR MENU -->
+			<ul id="sidebarMenu" class="page-sidebar-menu">
+				<li class="sidebar-toggler-wrapper"><div class="sidebar-toggler hidden-phone"></div></li>
+				<#list menus?sort_by("orderIndex") as menu >
+				<li class="<#if menu.active??>start active</#if>">
+					<a href="<#if menu.link?? && menu.isParent ==false >${request.contextPath}${(menu.link)!}<#else>javascript:;</#if>" target="${menu.target!''}">
+					<i class="${(menu.icon)!}"></i><span class="title">${menu.name}</span><#if menu.isParent?? && menu.isParent><span class="arrow <#if menu.active?? && menu.active>open</#if>"></span></#if><#if menu.active?? && menu.active><span class="selected"></span></#if>
+					</a>
+					<#if menu.children?? &&  menu.children?size gt 0 >
+					<ul class="sub-menu">
+					<#list (menu.children)?sort_by("orderIndex") as menu2>
+					<li class="<#if menu2.active?? >open active</#if>">
+					<a  class="<#if menu2.active?? && menu2.active>active</#if>" href="<#if menu2.link??>${request.contextPath}${(menu2.link)!}<#else>javascript:;</#if>" target="${menu2.target!''}"><i class="${(menu2.icon)!""}"></i>${menu2.name}<#if menu2.isParent?? && menu2.isParent><span class="arrow <#if menu2.active?? && menu2.active>open</#if>"></span></#if><#if menu2.active?? && menu2.active><span class="selected"></span></#if></a>
+					<#if menu2.children?? && menu2.children?size gt 0 >
+							<ul class="sub-menu">
+								<#list (menu2.children)?sort_by("orderIndex") as menu3>
+											<li class="<#if menu3.active?? && menu3.active>open</#if>"><a href="${request.contextPath}${(menu3.link)!""}" target="${menu3.target!''}"><i class="${(menu3.icon)!""}"></i> ${menu3.name}<#if menu3.active?? && menu3.active><span class="selected"></span></#if></a></li>
+								</#list>
+							</ul>
+					</#if>
+					</li>
+					</#list>
+					</ul>
+					</#if>  
+				</li>
+				
+				</#list>
+			</ul> 
+			<!-- END SIDEBAR MENU -->
+			</div>
+		</div>
+	</div>
+	<!-- END SIDEBAR -->

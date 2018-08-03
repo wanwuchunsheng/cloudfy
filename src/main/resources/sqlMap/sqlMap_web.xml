@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="web">
+    
+    <!-- web菜单栏查询  -->
+    <sql id="queryWebMenuByAll">
+        <![CDATA[
+          select * from t_web_menu where 1=1 and is_delete=0
+        ]]>
+    </sql>
+    
+    <!-- 查询web页底部  -->
+    <sql id="queryWebBottomTypeListByAll">
+        <![CDATA[
+          select * from t_web_bottom_type
+        ]]>
+    </sql>
+    
+    <!-- 中间大分类 -->
+    <sql id="queryWebcategoryByAll">
+        <![CDATA[
+          select * from t_web_category order by update_time desc limit 3
+        ]]>
+    </sql>
+    
+    
+    <!-- 产品查询   cp_status(1-可用) -->
+    <sql id="queryCpDescriptionByAll">
+        <![CDATA[
+          select * from  t_cp_description where cp_status=1 
+          <#if cpStatus?exists && cpStatus!=""> AND cp_status= :cpStatus </#if>
+          <#if cpTag?exists && cpTag!=""> AND cp_tag= :cpTag </#if>
+          order by update_time desc
+        ]]>
+    </sql>
+    
+    
+    <!-- 新闻查询  -->
+    <sql id="queryWebNewsInfoListByAll">
+        <![CDATA[
+          select * from t_news_info where is_pass = :isPass order by update_time desc 
+          limit :index,:size
+        ]]>
+    </sql>
+    
+     <!--  新闻总个数  -->
+     <sql id="queryWebNewsInfoByCount">
+        <![CDATA[
+          select count(*) as id from t_news_info where 1=1 
+          <#if isPass?exists && isPass!=""> AND is_pass= :isPass </#if>
+        ]]>
+    </sql>
+    
+    <!-- 简介 -->
+    <sql id="queryWebNewsInfoListByType">
+        <![CDATA[
+          select * from t_news_info where is_pass = :isPass order by update_time desc limit 1
+        ]]>
+    </sql>
+    
+    <!-- 商城  -->
+     <sql id="queryWebDescribeByTypeToFrist">
+        <![CDATA[
+          select * from t_cp_description where 1=1 
+          <#if cpStatus?exists && cpStatus!=""> AND cp_status= :cpStatus </#if>
+          <#if cpTag?exists && cpTag!=""> AND cp_tag= :cpTag </#if>
+          order by update_time desc   limit :index,:size
+        ]]>
+    </sql>
+    
+    <!-- 商城总个数 -->
+    <sql id="queryWebDescriptionByCount">
+        <![CDATA[
+          select count(*) from t_cp_description where 1=1 
+          <#if cpStatus?exists && cpStatus!=""> AND cp_status= :cpStatus </#if>
+          <#if cpTag?exists && cpTag!=""> AND cp_tag= :cpTag </#if>
+        ]]>
+    </sql>
+    
+    
+    
+    <!-- 服务咨询  -->
+    <sql id="queryUserByUIsmember">
+        <![CDATA[
+           select * from t_users where 1=1
+            and u_status in ('1') 
+            and u_ismember = :uIsmember
+        ]]>
+    </sql>
+    
+    
+    
+</sqlMap>
+
+
+

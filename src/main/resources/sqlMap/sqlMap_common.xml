@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="common">
+
+     <!-- 查询列表 -->
+    <sql id="querySysFixCode">
+        <![CDATA[
+          select * from sys_fix_code 
+        ]]>
+    </sql>
+  
+   
+    
+
+    
+    
+</sqlMap>
+
+
+

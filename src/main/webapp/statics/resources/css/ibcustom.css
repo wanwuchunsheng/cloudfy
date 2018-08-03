@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*
+ * @description:呼叫中心
+ * @author: Edward
+ * @datetime:2014-5-21 15:30
+ */
+
+/*ccc 外呼*/
+.panel-collapse .colorblue{color:#4B8DF8;font-size:12px;}
+.margin-top{margin-top:10px;}
+textarea{resize:none;margin-bottom:10px;}
+.radio{position:relative;top:-1px;}
+.phone-color{color:#549804;font-size:20px;font-weight:bold;}
+.colorred{color:#FF00FF;font-size:18px;}
+.badge-work-order{background-color:#FFF;color:#428bca;}
+table th{text-align:center;}
+input.bg{background:#B3ECFF;}
+.color-white{color:#fff;}
+.color-white:hover{color:#fff;}
+
+.no-padding-left{padding-left:0;}
+.no-padding-right{padding-right:0;}
+.nopadding{padding-left:0;padding-right:0;}
+.padding-left{clear:both;margin-top:10px;padding-left:20px;}
+.contact span.control-label{padding-top:2px;}
+.inline{display:inline-block;vertical-align:middle;}
+.inline label{padding-top:4px;}
+.form-horizontal .text-Left{text-align:left;}
+.margin-space{margin:0 10px;}
+.more-wide{width:880px;}
+.vertical label{padding-top:4px;}
+.no-border{border:0;border-bottom:1px solid #ccc;}
+.label-padright{padding-right:20px;}
+.inline label.control-label{padding-top:5px;}
+#textParaTelInput{padding:6px;}
+#textParaInput{padding:6px;}

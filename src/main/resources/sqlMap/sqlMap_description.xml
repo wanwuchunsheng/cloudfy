@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="description">
+    
+    
+    
+     <!-- 查询列表 -->
+    <sql id="queryDescriptionListPage">
+        <![CDATA[
+          select * from t_cp_description where 1=1
+          <#if typeName?exists && typeName!=""> AND type_name= :typeName </#if>
+          <#if title?exists && title!=""> AND title like concat('%',:title,'%') </#if>
+          <#if cpTag?exists && cpTag!=""> AND cp_tag= :cpTag </#if>
+          <#if cpStatus?exists && cpStatus!=""> AND cp_status= :cpStatus </#if>
+        ]]>
+    </sql>
+  
+    <!-- 修改查询 -->
+    <sql id="queryDescriptionById">
+        <![CDATA[
+          select * from t_cp_description where  id= :id 
+        ]]>
+    </sql>
+    
+    <!-- 修改 保存-->
+    <sql id="updateDescriptionById">
+        <![CDATA[
+          update t_cp_description set 
+          <#if typeName?exists && typeName!="">  type_name= :typeName, </#if>
+          <#if cpTag?exists && cpTag!="">  cp_tag= :cpTag ,</#if>
+          <#if cpPrice?exists && cpPrice!="">  cp_price= :cpPrice, </#if>
+          <#if buttonSm?exists && buttonSm!="">  button_sm= :buttonSm, </#if>
+          <#if buttonUrl?exists && buttonUrl!="">  button_url= :buttonUrl, </#if>
+          <#if cpStatus?exists && cpStatus!="">  cp_status= :cpStatus, </#if>
+          <#if title?exists && title!="">  title= :title, </#if>
+          <#if imgDescription?exists && imgDescription!="">  img_description= :imgDescription, </#if>
+          <#if updateUser?exists && updateUser!="">  update_user= :updateUser, </#if>
+          <#if updateUserId?exists && updateUserId!="">  update_user_id= :updateUserId, </#if>
+          update_time= now()
+          
+          where  id= :id 
+        ]]>
+    </sql>
+    
+    <!-- 删除 -->
+    <sql id="deleteDescriptionById">
+        <![CDATA[
+          delete from t_cp_description where  id= :id 
+        ]]>
+    </sql>
+    
+
+    
+    
+</sqlMap>
+
+
+

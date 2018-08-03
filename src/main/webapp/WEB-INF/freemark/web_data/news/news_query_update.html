@@ -1,0 +1,123 @@
+<div class="modal-dialog" style="width:830px;top:5%;">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">
+				&times;
+			</button>
+			<h4 class="modal-title">新闻修改</h4>
+		</div>
+		<form  id="updateNewsInfoFrom" action="" method="post">
+		<div class="modal-body">
+			<div class="row">
+				<div class= "col-md-12" >
+					<!-- 新闻分类  -->
+					<label for="cBrand" class="col-md-4">新闻分类:<font style="color:red;">*</font></label>
+					<div class="col-md-11">
+						<select  id="typeNamet"  name="typeName" class="form-control" tabindex="-1">
+                                  <option value="">--请选择--</option>
+					        <#list fixdCode1002 as list > 
+					        <option value="${list.codeName}" <#if newsInfo.typeName==list.codeName>selected=selected</#if> >${list.codeName}</option>
+					        </#list>
+					    </select>
+					</div>  
+				</div>
+				<div class= "col-md-12" >
+					<label for="cBrand" class="col-md-4 control-label">发布状态：</label>
+					<div class="col-md-11">
+					     <!--  1-已发布  2-带审核  3-审核不通过  4-简介  5-咨询服务 -->
+						<input  name="isPass"   type="radio" <#if newsInfo.isPass==1 > checked="checked" </#if> value="1"/>通过 &nbsp;&nbsp;
+						<input  name="isPass"  type="radio"  <#if newsInfo.isPass==2 > checked="checked" </#if> value="2"/>待审核 &nbsp;&nbsp;
+						<input  name="isPass"  type="radio"  <#if newsInfo.isPass==3 > checked="checked" </#if> value="3"/>不通过&nbsp;&nbsp;
+						<input  name="isPass"  type="radio"  <#if newsInfo.isPass==4 > checked="checked" </#if> value="4"/>简介&nbsp;&nbsp;
+						<input  name="isPass"  type="radio"  <#if newsInfo.isPass==5 > checked="checked" </#if> value="5"/>咨询服务&nbsp;&nbsp;
+					</div>
+				</div>
+				<div class= "col-md-12" >
+					<label for="cBrand" class="col-md-4 control-label">链接：</label>
+					<div class="col-md-11">
+						<input id="titleUrl"  name="titleUrl" type="text" class="form-control" value="${newsInfo.titleUrl}"/>
+					</div>
+				</div>
+				<div class= "col-md-12" >
+					<label for="cBrand" class="col-md-4 control-label">标题：</label>
+					<div class="col-md-11">
+						<input id="titlet"  name="title" type="text" class="form-control" value="${newsInfo.title}"/>
+					</div>
+				</div>
+				<div class= "col-md-12" >
+					<label for="cBrand" class="col-md-4 control-label">新闻内容：</label>
+					<div class="col-md-11">
+						<textarea id="div1" name="content" class="form-control" style='display:none; height:500px; width:100%;'>${newsInfo.content}</textarea>
+					
+					</div>
+				</div>
+				<!-- 修改隐藏公用ID -->
+				<input name="id" type="hidden" value="${newsInfo.id}" />
+			</div>
+		</div>
+		</form>
+		
+		<div class="modal-footer">
+			<a  id="updateNewsInfoButtont"  type="button" class="btn btn-primary" >确定</a> 
+			
+			<button type="submit"  class="btn btn-default" data-dismiss="modal">
+				取消
+			</button>
+			
+		</div>
+		
+	</div>
+</div>
+
+
+<script>
+jQuery(document).ready(function() {
+	 //App.init();
+	 $("select").select2();
+	 //获得文本编辑器的内容
+	 /**文本编辑器容器初始化 start*/
+     var editor = new wangEditor('div1');
+     // 上传图片
+     editor.config.uploadImgUrl ="${futRoot}"+"/upload";
+     editor.create();
+     /**文本编辑器容器初始化 End */
+
+   /** 保存 修改 */
+   $("#updateNewsInfoButtont").click(function(){
+		//获得产品标识，赋值
+	    var typeName=$("#typeNamet").val();
+	    if(typeName==''){
+	    	alert("产品标识不能为空");
+	    	return false;
+	    }
+	     //提交后台处理
+	     $.ajax({
+			url : "${futRoot}/newsInfo/updateNewsInfoById.htm",
+			type : "post",
+			dataType : "json",
+		    async: false,
+			data : $("#updateNewsInfoFrom").serialize(),
+			success : function(data) {
+				// 1-成功  2-失败
+				if(data=="1"){
+					$.Alert("修改成功！");
+					//刷新列表
+					admin.dataTable.fnDraw();
+				    //关闭窗口
+			   		$("#updateNewsInfoRegionModal").modal("hide");
+			   		return false;
+					
+				}else{
+					$.Alert("修改失败！");
+				}
+			}
+		 }); 
+});
+});
+
+
+
+ 
+</script>
+
+

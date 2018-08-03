@@ -1,0 +1,108 @@
+@charset "utf-8";
+.leftDiv{
+	width:760px;
+	float:left;
+	height:600px;
+	border-bottom: 1px solid #E1E1E1;
+    border-right: 1px solid #E1E1E1;
+}
+
+.rightDiv{
+	width:480px;
+	float:left;
+	height:600px;
+	border-bottom: 1px solid #E1E1E1;
+    border-right: 1px solid #E1E1E1;
+}
+
+.centerDiv{
+	width:1300px;
+}
+
+div.zTreeDemoBackground {
+    height: 550px;
+	width: 230px;
+    text-align: left;
+}
+ul#treeDemo {
+	height:550px;
+	width:230px;
+	overflow-y:scroll;
+	overflow-x:auto;
+}
+
+.roleResourceDivLeft {
+	height:380px;
+	overflow-y: scroll;	
+}
+
+.roleResourceDivLeftForRole {
+	height:345px;
+	overflow-y: scroll;	
+}
+.roleResourceDivRight {
+	height:600px;
+	overflow-y: scroll;	
+}
+
+.buttonBar {
+    color: #333333;
+    line-height: 25px;
+    padding: 5px 10px 5px 0;
+    text-align: left;
+	float:left;
+}
+
+.operateBar .addButton {
+    background: url("images/list_bg.gif") repeat-x scroll 0 -30px transparent;
+    border: medium none;
+    cursor: pointer;
+    font-size: 12px;
+    height: 29px;
+    line-height: 29px;
+    margin-left: 6px;
+    text-align: center;
+    width: 75px;
+}
+
+.input .inputBar h2 {
+	height: 29px;
+	line-height: 29px;
+	font-size: 12px;
+	background-color: #F8F8F8;
+    color: #333333;
+	padding-left:20px;
+}
+.operateBar{
+	clear: both;
+    padding: 3px 0;
+	background-color: #F8F8F8;
+    border-right: 1px solid #E1E1E1;
+    height: 29px;
+    line-height: 29px;
+}
+
+.aButton{
+	margin-left: 6px;
+	background: url("images/form_bg.gif") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    outline: medium none;
+    text-align: center;
+    width: 70px;
+	font-weight:bold;
+}
+
+.aButton:hover {
+	margin-left: 6px;
+	color: #ff6600;
+	background: url(images/form_bg.gif) 0px -30px no-repeat;
+}
+
+.bottomBtn {
+	margin-top: 5px;
+	margin-right: 10px;
+}
