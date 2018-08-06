@@ -11,7 +11,7 @@ import com.ibm.framework.dal.pagination.PaginationResult;
 import com.cloudfy.model.nav.CommondityInfo;
 import com.cloudfy.model.nav.CommondityNav;
 import com.cloudfy.model.nav.PictureAddressInfo;
-import com.cloudfy.model.usr.SysUserInfo;
+import com.cloudfy.model.sys.SysUserInfo;
 import com.cloudfy.service.nav.ICommondityNavService;
 
 /**
@@ -25,8 +25,6 @@ public class CommondityNavImpl implements ICommondityNavService{
 	@Autowired
     IPaginationDalClient dalClient;
 
-	
-	
 	/**
 	 * 说明：商品导航查询
 	 * @author Administrator

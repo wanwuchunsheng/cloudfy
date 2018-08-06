@@ -56,7 +56,7 @@
 
 	   	     //提交后台处理
 	   	     $.ajax({
-	   			url : "${futRoot}/web/verifyUser",
+	   			url : "${futRoot}/login/verifyUser",
 	   			type : "post",
 	   			dataType : "json",
 	   		    async: false,
@@ -64,7 +64,7 @@
 	   			success : function(data) {
 		   			console.log(data);
 	   				if(data){
-		   				window.location.href="${futRoot}/web/main";
+		   				window.location.href="${futRoot}/web/user/main";
 		   			}
 	   			}
 	   		 });  

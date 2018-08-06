@@ -28,7 +28,7 @@ import com.cloudfy.model.nav.CommondityInfo;
 import com.cloudfy.model.nav.PictureAddressInfo;
 import com.cloudfy.model.page.DataTableRequest;
 import com.cloudfy.model.page.DataTableResponse;
-import com.cloudfy.model.usr.SysUserInfo;
+import com.cloudfy.model.sys.SysUserInfo;
 import com.cloudfy.service.common.Constants;
 import com.cloudfy.service.nav.ICommondityNavService;
 
@@ -37,7 +37,7 @@ import com.cloudfy.service.nav.ICommondityNavService;
  * @author Administrator
  * */
 @Controller
-@RequestMapping("/nav")
+@RequestMapping("/web/nav")
 public class CommodityNavController extends BaseController{
 	
 	Logger log=Logger.getLogger(this.getClass());

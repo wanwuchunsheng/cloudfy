@@ -91,6 +91,21 @@ public class PhoneServiceImpl implements IPhoneService{
 			BaseParams.setNavInfoTJMap(map);
 		}
 		
+		
+		
+	}
+
+
+
+    /**
+     * 功能说明： 模糊查询
+     * @author Administrator
+     * @createTime 2018年8月3日19:35:48
+     * */
+	@Override
+	public List<CommondityInfo> querySearchAll(CommondityInfo info) {
+		
+		return dalClient.queryForList("ph.querySearchAll", info, CommondityInfo.class);
 	}
 
 	

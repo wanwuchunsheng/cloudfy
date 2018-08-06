@@ -7,7 +7,7 @@ import com.ibm.framework.dal.pagination.PaginationResult;
 import com.cloudfy.model.nav.CommondityInfo;
 import com.cloudfy.model.nav.CommondityNav;
 import com.cloudfy.model.nav.PictureAddressInfo;
-import com.cloudfy.model.usr.SysUserInfo;
+import com.cloudfy.model.sys.SysUserInfo;
 
 public interface ICommondityNavService {
 

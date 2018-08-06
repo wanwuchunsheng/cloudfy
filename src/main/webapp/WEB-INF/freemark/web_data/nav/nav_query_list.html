@@ -55,10 +55,21 @@
 		<!-- BEGIN CONTENT -->
 		<div class="page-content-wrapper">
 			<div class="page-content" >
-			    <!-- 面包线start  -->
+			     <!-- 面包线start  -->
                 <div class="row">
 					  <div class="col-md-12">
-					    <h3 class="page-title"> 商品管理</h3>
+					    <h3 class="page-title">商品管理</h3>
+					    <ul class="page-breadcrumb breadcrumb">
+					            <li>
+					                <i class="fa fa-home"></i>
+					                <a href="#">首页</a>
+					                <i class="fa fa-angle-right"></i>
+					            </li>
+					            <li>
+					              <i class="fa fa-stack-exchange"></i>
+					                <a href="#">商品管理</a>
+					            </li>
+					        </ul>
 					  </div>
 				</div>
 				<!-- 面包线start  -->
@@ -273,7 +284,7 @@
 			   
 			     /**  增加  1*/
 				 $("#addNavigationButton").click(function(){
-					 window.location.href="${futRoot}/nav/gotoAddNavInfo";
+					 window.location.href="${futRoot}/web/nav/gotoAddNavInfo";
 			    	    //弹框修改
 					    /* var url ="${futRoot}/nav/gotoAddNavInfo";
 					    var addNavigationRegionModal = $("#addNavigationRegionModal");
@@ -311,7 +322,7 @@
 				"bFilter" : false,
 				"bSort" : false, // 排序功能
 				"processing" : true, // 设置异步请求时，是否有等待框。
-				"sAjaxSource" : '${futRoot}/nav/queryNavInfoPage.json',
+				"sAjaxSource" : '${futRoot}/web/nav/queryNavInfoPage.json',
 				 "fnServerParams" : function(aoData) {
 						aoData.push({
 							"name" : "title", 
@@ -382,8 +393,8 @@
 					}
 				}],
 				
-				"aLengthMenu" : [[10, 15, 20], [10, 15, 20]],
-				"iDisplayLength" : 10,
+				"aLengthMenu" : [[5,10, 15, 20], [5,10, 15, 20]],
+				"iDisplayLength" : 5,
 				"sPaginationType" : "bootstrap",
 				"aaSorting" : [[2, "asc"]], //列数
 				"aoColumnDefs" : [{

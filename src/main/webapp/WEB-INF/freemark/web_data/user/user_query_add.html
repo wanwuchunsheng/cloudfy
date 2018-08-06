@@ -11,15 +11,15 @@
 			<div class="row">
 				<div class= "col-md-12" >
 			           <div class="form-group col-md-6">
-							<label for="cBrand" class="col-md-4 control-label">姓名：</label>
+							<label for="cBrand" class="col-md-4 control-label">账号：</label>
 							<div class="col-md-8">
-								<input id="uNamet"  name="uName" type="text" class="form-control" value=""/>
+								<input id="uNamet"  name="uname" type="text" class="form-control" value=""/>
 							</div>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="cBrand" class="col-md-4 control-label">密码：</label>
 							<div class="col-md-8">
-								<input id="uPassword" name="uPassword" type="text" class="form-control" value=""/>
+								<input id="uPassword" name="upwd" type="text" class="form-control" value=""/>
 							</div>
 						</div>
 				</div>
@@ -28,14 +28,43 @@
 			           <div class="form-group col-md-6">
 							<label for="cBrand" class="col-md-4 control-label">昵称：</label>
 							<div class="col-md-8">
-								<input id="uNickname" name="uNickname" type="text" class="form-control" value=""/>
+								<input id="uNickname" name="niceName" type="text" class="form-control" value=""/>
 							</div>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="cBrand" class="col-md-4 control-label">性别：</label>
 							<div class="col-md-8">
-								男:&nbsp;<input  type="radio" class="input_bottom" value="1"  name="uSex" />&nbsp;&nbsp;
-								女:&nbsp;<input  type="radio" class="input_bottom" value="2" name="uSex" />
+								男:&nbsp;<input  type="radio" class="input_bottom" value="1"  name="gender" />&nbsp;&nbsp;
+								女:&nbsp;<input  type="radio" class="input_bottom" value="2" name="gender" />
+							</div>
+						</div>
+				</div>
+				<div class= "col-md-12" >
+			           <div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">微信号：</label>
+							<div class="col-md-8">
+								<input id="uEmail" name="webchat" type="text" class="form-control" value=""/>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">QQ号：</label>
+							<div class="col-md-8">
+								<input id="uTelephone" name="qq" type="text" class="form-control" value=""/>
+							</div>
+						</div>
+				</div>
+				<div class= "col-md-12" >
+				       <div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">是否VIP：</label>
+							<div class="col-md-8">
+								普通:&nbsp;<input  type="radio" class="input_bottom" value="0"  name="securityLevel" />&nbsp;&nbsp;
+								VIP:&nbsp;<input  type="radio" class="input_bottom" value="1" name="securityLevel" />
+							</div>
+					   </div>
+			           <div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">职位：</label>
+							<div class="col-md-8">
+								<input id="uNickname" name="job" type="text" class="form-control" value=""/>
 							</div>
 						</div>
 				</div>
@@ -44,13 +73,13 @@
 			           <div class="form-group col-md-6">
 							<label for="cBrand" class="col-md-4 control-label">邮件：</label>
 							<div class="col-md-8">
-								<input id="uEmail" name="uEmail" type="text" class="form-control" value=""/>
+								<input id="uEmail" name="email" type="text" class="form-control" value=""/>
 							</div>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="cBrand" class="col-md-4 control-label">手机号码：</label>
 							<div class="col-md-8">
-								<input id="uTelephone" name="uTelephone" type="text" class="form-control" value=""/>
+								<input id="uTelephone" name="phone" type="text" class="form-control" value=""/>
 							</div>
 						</div>
 				</div>
@@ -58,7 +87,7 @@
 			           <div class="form-group col-md-12">
 							<label for="cBrand" class="col-md-4 control-label">出生地：</label>
 							<div class="col-md-12">
-								<input id="uOldAddress" name="uOldAddress" type="text" class="form-control" value=""/>
+								<input id="uOldAddress" name="address" type="text" class="form-control" value=""/>
 							</div>
 						</div>
 				</div>
@@ -66,7 +95,7 @@
 			           <div class="form-group col-md-12">
 							<label for="cBrand" class="col-md-4 control-label">现居地址：</label>
 							<div class="col-md-12">
-								<input id="uNowAddress" name="uNowAddress" type="text" class="form-control" value=""/>
+								<input id="uNowAddress" name="nowAddress" type="text" class="form-control" value=""/>
 							</div>
 						</div>
 				</div>
@@ -98,7 +127,7 @@ $("#addUserButton").click(function(){
 	 }
      //提交后台处理
      $.ajax({
-		url : "${futRoot}/userContorllor/addUserById.htm",
+		url : "${futRoot}/web/user/addUserById.htm",
 		type : "post",
 		dataType : "json",
 	    async: false,

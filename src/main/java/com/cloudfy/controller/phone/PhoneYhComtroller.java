@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cloudfy.controller.common.BaseParams;
+import com.cloudfy.model.nav.CommondityInfo;
 import com.cloudfy.model.phone.CommodityNav;
 import com.cloudfy.service.phone.IPhoneService;
 
@@ -87,8 +88,25 @@ public class PhoneYhComtroller {
 	}
 	
 	
-	
-	
+	/**
+	 * 功能说明：模糊查询
+	 * @author wanchanghuang
+	 * @createTime 2018年8月3日19:32:13
+	 * 
+	 * */
+	@RequestMapping(value = "/querySearchAll", method = RequestMethod.POST)
+	public List<CommondityInfo> querySearchAll(@RequestBody CommondityInfo info){
+		try {
+			System.out.println("模糊开始："+new Date());
+			List<CommondityInfo> list=phoneService.querySearchAll(info);
+			System.out.println("模糊结束："+new Date());
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			log.error("ERROR：HOME首页查询幻灯片异常！！！");
+		}
+		return null;
+	}
 	
 
 }

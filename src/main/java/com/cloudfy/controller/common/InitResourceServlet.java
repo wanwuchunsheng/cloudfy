@@ -33,6 +33,8 @@ public class InitResourceServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		IPhoneService comboboxs=ApplicationContextUtil.getBean(IPhoneService.class);
 		comboboxs.initCommodityNavInfo();
+		
+		//查询关键字
 		log.info("初始化数据成功！！");
 		
 	}

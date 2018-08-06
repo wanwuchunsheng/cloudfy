@@ -48,7 +48,14 @@ default-autowire="byName">
   <mvc:annotation-driven/>  
   <mvc:resources mapping="/statics/**/**" location="/statics/" />
   <mvc:resources mapping="/images/**/**" location="/images/" />
-
+  
+  <!-- springMVC 拦截器 -->
+ <mvc:interceptors>
+    <mvc:interceptor>
+	  <mvc:mapping path="/web/**" />
+	  <bean class="com.cloudfy.controller.common.inter.UserInterceptor" />
+	</mvc:interceptor>
+  </mvc:interceptors>
 
   <!-- freemarker的配置 -->
   <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
@@ -66,21 +73,21 @@ default-autowire="byName">
 	  <!--全局变量部分 -->
 	  <property name="freemarkerVariables">
 		<map>
-			<!-- 生产路径
+			<!-- 生产路径 UserInterceptor.java 重定向路径需要调整  -->
 			<entry key="resRoot" value="/statics/resources" />
 			<entry key="futRoot" value="" />
 			<entry key="sc" value="sc.html?cpTag=" />
 			<entry key="realImgPath" value="E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/" />
 			<entry key="resultImgPath" value="http://www.cloudfy.cn/images/" />
-		     -->
+		   
 			
-			<!-- 本地路径   与wangEditor.js文件路径同步 -->
+			<!-- 本地路径   与wangEditor.js文件路径同步
 			<entry key="resRoot" value="/cloudfy/statics/resources" />
 			<entry key="futRoot" value="/cloudfy" />
 			<entry key="sc" value="sc.html?cpTag=" />
 			<entry key="realImgPath" value="E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/" />
 			<entry key="resultImgPath" value="http://www.cloudfy.cn/images/" />
-			
+			 -->
 		</map>
 	  </property>
   </bean>

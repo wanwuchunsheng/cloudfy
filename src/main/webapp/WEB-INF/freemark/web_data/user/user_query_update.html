@@ -4,54 +4,108 @@
 			<button type="button" class="close" data-dismiss="modal">
 				&times;
 			</button>
-			<h4 class="modal-title">客户信息配置管理</h4>
+			<h4 class="modal-title">用户修改</h4>
 		</div>
-		<form  id="updateUserFrom" action="" method="post">
+		<form  id="addUserFrom" action="" method="post">
 		<div class="modal-body">
 			<div class="row">
 				<div class= "col-md-12" >
 			           <div class="form-group col-md-6">
-							<label for="cBrand" class="col-md-4 control-label">姓名：</label>
+							<label for="cBrand" class="col-md-4 control-label">真实姓名：</label>
 							<div class="col-md-8">
-								<input id="uNamet"  name="uName" type="text" class="form-control" value="${upUser.uName}"/>
+								<input id="uNamet"  name="uName" type="text" class="form-control" value="${sysUser.uname?if_exists}"/>
+								<input id="id"  name="id" type="hidden" class="form-control" value="${sysUser.id?if_exists}"/>
 							</div>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="cBrand" class="col-md-4 control-label">密码：</label>
 							<div class="col-md-8">
-								<input id="uPassword" name="uPassword" type="text" class="form-control" value="${upUser.uPassword}"/>
+								<input id="uPassword" name="upwd" type="text" class="form-control" value="${sysUser.upwd?if_exists}"/>
+							</div>
+						</div>
+				</div>
+				
+				<div class= "col-md-12" >
+			           <div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">昵称：</label>
+							<div class="col-md-8">
+								<input id="uNickname" name="niceName" type="text" class="form-control" value="${sysUser.niceName?if_exists}"/>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">性别：</label>
+							<div class="col-md-8">
+								男:&nbsp;<input <#if sysUser.gender==1> checked="checked"</#if>  type="radio" class="input_bottom" value="1"  name="gender" />&nbsp;&nbsp;
+								女:&nbsp;<input <#if sysUser.gender==0> checked="checked"</#if> type="radio" class="input_bottom" value="0" name="gender" />
 							</div>
 						</div>
 				</div>
 				<div class= "col-md-12" >
 			           <div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">微信号：</label>
+							<div class="col-md-8">
+								<input id="uEmail" name="webchat" type="text" class="form-control" value="${sysUser.webchat?if_exists}"/>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">QQ号：</label>
+							<div class="col-md-8">
+								<input id="uTelephone" name="qq" type="text" class="form-control" value="${sysUser.qq?if_exists}"/>
+							</div>
+						</div>
+				</div>
+				<div class= "col-md-12" >
+				       <div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">是否VIP：</label>
+							<div class="col-md-8">
+								普通:&nbsp;<input <#if sysUser.gender==0> checked="checked"</#if>  type="radio" class="input_bottom" value="0"  name="securityLevel" />&nbsp;&nbsp;
+								VIP:&nbsp;<input <#if sysUser.gender==1> checked="checked"</#if> type="radio" class="input_bottom" value="1" name="securityLevel" />
+							</div>
+					   </div>
+			           <div class="form-group col-md-6">
+							<label for="cBrand" class="col-md-4 control-label">职位：</label>
+							<div class="col-md-8">
+								<input id="uNickname" name="job" type="text" class="form-control" value="${sysUser.job?if_exists}"/>
+							</div>
+						</div>
+				</div>
+				
+				<div class= "col-md-12" >
+			           <div class="form-group col-md-6">
 							<label for="cBrand" class="col-md-4 control-label">邮件：</label>
 							<div class="col-md-8">
-								<input id="uEmail" name="uEmail" type="text" class="form-control" value="${upUser.uEmail}"/>
+								<input id="uEmail" name="email" type="text" class="form-control" value="${sysUser.email?if_exists}"/>
 							</div>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="cBrand" class="col-md-4 control-label">手机号码：</label>
 							<div class="col-md-8">
-								<input id="uTelephone" name="uTelephone" type="text" class="form-control" value="${upUser.uTelephone}"/>
+								<input id="uTelephone" name="phone" type="text" class="form-control" value="${sysUser.phone?if_exists}"/>
 							</div>
 						</div>
 				</div>
 				<div class= "col-md-12" >
 			           <div class="form-group col-md-12">
-							<label for="cBrand" class="col-md-4 control-label">地址：</label>
+							<label for="cBrand" class="col-md-4 control-label">出生地：</label>
 							<div class="col-md-12">
-								<input id="uNowAddress" name="uNowAddress" type="text" class="form-control" value="${upUser.uNowAddress}"/>
+								<input id="uOldAddress" name="address" type="text" class="form-control" value="${sysUser.address?if_exists}"/>
 							</div>
 						</div>
 				</div>
-				<input type="hidden" id="id" name="id" value="${upUser.id}"/>
+				<div class= "col-md-12" >
+			           <div class="form-group col-md-12">
+							<label for="cBrand" class="col-md-4 control-label">现居地址：</label>
+							<div class="col-md-12">
+								<input id="uNowAddress" name="nowAddress" type="text" class="form-control" value="${sysUser.nowAddress?if_exists}"/>
+							</div>
+						</div>
+				</div>
 			</div>
 		</div>
 		</form>
 		
 		<div class="modal-footer">
-			<a  id="updateUserButton"  type="button" class="btn btn-primary" >
+			<a  id="addUserButton"  type="button" class="btn btn-primary" >
 				确定
 			</a> 
 			<button type="submit"  class="btn btn-default" data-dismiss="modal">
@@ -64,7 +118,7 @@
 
 <script>
 /** 保存 修改 */
-$("#updateUserButton").click(function(){
+$("#addUserButton").click(function(){
 	 //验证用户名密码是否为空
 	 var uName=$("#uNamet").val();
 	 var uPassword=$("#uPassword").val();
@@ -72,14 +126,13 @@ $("#updateUserButton").click(function(){
 		$.Alert("用户名密码不能为空");
 		return false;
 	 }
-	 
      //提交后台处理
      $.ajax({
-		url : "${futRoot}/userContorllor/updateUserById.htm",
+		url : "${futRoot}/web/user/updateUserById.htm",
 		type : "post",
 		dataType : "json",
 	    async: false,
-		data : $("#updateUserFrom").serialize(),
+		data : $("#addUserFrom").serialize(),
 		success : function(data) {
 			// 1-成功  2-失败
 			if(data=="1"){

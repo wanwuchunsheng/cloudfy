@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 /**
- * 说明：商品明细类
+ * 说明：手机移动-商品明细类
  * @author Administrator
  * @createTime 2018年6月17日16:04:29
  * */
