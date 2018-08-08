@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <sqlMap namespace="nav">
     
-   <!-- 商品导航  -->
-   <sql id="queryCommondityNav">
-        <![CDATA[
-           select * from a_commodity_nav where del=0 and DPNUM=:dpnum
-        ]]>
-    </sql>
+    
+   <!-- 商品类型表 -->
+   <sql id="querycnavAll">
+       <![CDATA[
+			select * from a_commodity_nav where del=0 and dpnum=:dpnum
+       ]]>
+   </sql>
+   <!-- 商品明细-ID查询  -->
+   <sql id="queryCommondityInfoByObj">
+       <![CDATA[
+			select a.*,b.MAX_URL,b.MINI_URL from a_commodity_info a left join a_picture_address b 
+			on a.id=b.AC_INFO_ID where a.del=0  and a.id=:id
+       ]]>
+   </sql>
     
    
-     <!-- 商品明细  -->
+   <!-- 商品明细  -->
    <sql id="queryCommondityInfo">
         <![CDATA[
             SELECT
@@ -25,12 +33,24 @@
 			AND a.CREATE_USER_ID = b.id
 			AND a.ac_code = c.code
 		    and a.DPNUM=:dpnum 
+		    <#if title?exists && title!="">AND a.title like concat('%',:title,'%') </#if>
+		    <#if acCode?exists && acCode!=""> AND a.ac_code= :acCode </#if>
         ]]>
     </sql>
     
     
-    
-   
+   <!-- 商品明细-删除  -->
+   <sql id="deleteCommondityInfoById">
+       <![CDATA[
+		   delete from a_commodity_info where id=:id
+       ]]>
+   </sql>
+   <!-- 商品明细-删除图片  -->
+   <sql id="deletePictureAddressById">
+       <![CDATA[
+		   delete from a_picture_address where ac_info_id=:id
+       ]]>
+   </sql>
     
 </sqlMap>
 

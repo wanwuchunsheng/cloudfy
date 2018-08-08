@@ -22,5 +22,7 @@ public interface ISysUserService {
 	void addUserById(SysUserInfo vo);
 	//修改
 	void updateUserById(SysUserInfo vo);
+	//删除用户
+	void deleteUSerById(String[] str);
 
 }

@@ -54,11 +54,11 @@
 		<!-- BEGIN CONTAINER -->
 		<!-- BEGIN CONTENT -->
 		<div class="page-content-wrapper">
-			<div class="page-content" >
+			<div class="page-content-bak" >
 			     <!-- 面包线start  -->
                 <div class="row">
 					  <div class="col-md-12">
-					    <h3 class="page-title">商品管理</h3>
+					    <h3 class="page-title">商品明细</h3>
 					    <ul class="page-breadcrumb breadcrumb">
 					            <li>
 					                <i class="fa fa-home"></i>
@@ -67,7 +67,7 @@
 					            </li>
 					            <li>
 					              <i class="fa fa-stack-exchange"></i>
-					                <a href="#">商品管理</a>
+					                <a href="#">商品明细</a>
 					            </li>
 					        </ul>
 					  </div>
@@ -75,7 +75,7 @@
 				<!-- 面包线start  -->
 				
 				
-				<div class="portlet box blue" ">
+				<div class="portlet box blue" >
 					<div class="portlet-title">
 						<div class="caption">
 							信息列表
@@ -104,7 +104,7 @@
 								<div class="btn-group">
 									<label class="control-label col-md-4">标题名称:</label>
 									<div class="col-md-8">
-										<input id="navTitle" name="navTitle" type="text" class="form-control">
+										<input id="title" name="title" type="text" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -155,7 +155,7 @@
 						<table class="table table-striped table-bordered table-advance table-hover"  id="table1" >
 							<thead style="width:1500px;">
 								<tr>
-								    <th width="10%">
+								    <th>
 										<input onclick="selectAll()" type="checkbox" id="selChan" class="group-checkable"/>
 										全选
 							        </th>
@@ -203,9 +203,9 @@
 			
 		    //重置
 			$("#resetButton").click(function(){
-				$("#navTitle").val("");
-				//$("#acCode").val("");
-				//$("#acCode").find("option:contains('')").attr("selected",true);
+				$("#title").val("");
+				$("#acCode").find("option[value='']").attr("selected",true);
+				$("select").select2();
 			});
 				
 			 /** 导航菜单 跳转 修改 */
@@ -229,89 +229,57 @@
 			        	$.Alert("请选择后再操作！");
 			            return false;
 			        }
-			        
-			        //弹框修改
-				    var url ="${futRoot}/data/queryNavigationById.htm?id="+str+"&taskName="+Math.random();
-				    var updateUserRegionModal = $("#updateNavigationRegionModal");
-			        updateUserRegionModal.load(url, function() {
-			           updateUserRegionModal.modal({
-			               backdrop : 'static',
-			               keyboard : false
-			           });
-			           updateUserRegionModal.modal("show");
-			        });
+			        //获得ID
+			        window.location.href="${futRoot}/web/nav/gotoNavUpdatePage.htm?id="+str;
 			   });
 				
 			   /**  删除   */
 			   $("#deleteNavigationButton").click(function(){
-				    	//获取ID
-				        var item = document.getElementsByName("checkBoxt");
-				        var str = "";
-				        for (var i = 0; i < item.length; i++) {
-				            if (item[i].checked == true) {
-				                var k = item[i].value;
-				                str+=k+","; 
-				            }
-				        }
-				        //验证是否选中
-				        if(str==""){
-				        	$.Alert("删除失败，请选择后删除!");
-				        	return false;
-				        }
-				        if (window.confirm('确定删除吗？')) {
-				        	//提交后台处理
-					        $.ajax({
-						   		url : "${futRoot}/data/deleteNavigationById.htm",
-						   		type : "post",
-						   		dataType : "json",
-						   	    async: false,
-						   		data : {"ids":str},
-						   		success : function(data) {
-						   		    // 1-成功  2-失败
-									if(data=="1"){
-										$.Alert("删除成功！");
-									    //刷新列表
-										admin.dataTable.fnDraw();
-								   		return false;
-								   		
-									}else{
-										$.Alert("删除失败！");
-									}
-						   		}
-						   	 });
-	                    }
-				   });
+			    	//获取ID
+			        var item = document.getElementsByName("checkBoxt");
+			        var str = "";
+			        for (var i = 0; i < item.length; i++) {
+			            if (item[i].checked == true) {
+			                var k = item[i].value;
+			                str+=k+","; 
+			            }
+			        }
+			        //验证是否选中
+			        if(str==""){
+			        	$.Alert("删除失败，请选择后删除!");
+			        	return false;
+			        }
+			        if (window.confirm('确定删除吗？')) {
+			        	//提交后台处理
+				        $.ajax({
+					   		url : "${futRoot}/web/nav/deleteCommondityInfo.json",
+					   		type : "post",
+					   		dataType : "json",
+					   	    async: false,
+					   		data : {"ids":str},
+					   		success : function(data) {
+					   		    // 1-成功  2-失败
+								if(data=="1"){
+									$.Alert("删除成功！");
+								    //刷新列表
+									admin.dataTable.fnDraw();
+							   		return false;
+							   		
+								}else{
+									$.Alert("删除失败！");
+								}
+					   		}
+					  });
+	              }
+			   });
 			   
-			     /**  增加  1*/
-				 $("#addNavigationButton").click(function(){
-					 window.location.href="${futRoot}/web/nav/gotoAddNavInfo";
-			    	    //弹框修改
-					    /* var url ="${futRoot}/nav/gotoAddNavInfo";
-					    var addNavigationRegionModal = $("#addNavigationRegionModal");
-					    addNavigationRegionModal.load(url, function() {
-					    	addNavigationRegionModal.modal({
-				               backdrop : 'static',
-				               keyboard : false
-				           });
-				           addNavigationRegionModal.modal("show");
-				        });  */
-			      }); 
+		     /**  增加 */
+			 $("#addNavigationButton").click(function(){
+				 window.location.href="${futRoot}/web/nav/gotoAddNavInfo";
+		     });
 		 });
-		/**  添加  2 */
-		/* function manageButtont(id){
-			//弹框修改
-			var url ="${futRoot}/data/addNavigationZjdByObj.htm?id="+id+"&code=2&taskName="+Math.random();
-		    var updateUserRegionModal = $("#addNavigationRegionModal");
-	        updateUserRegionModal.load(url, function() {
-	           updateUserRegionModal.modal({
-	               backdrop : 'static',
-	               keyboard : false
-	           });
-	           updateUserRegionModal.modal("show");
-	        }); 
-		}; */
 		
-/** 分页列表  */
+        /** 分页列表  */
 		function queryPage() {
 			//$('#table1').dataTable().fnDestroy();
 			if( admin.dataTable ){
@@ -325,6 +293,9 @@
 				"sAjaxSource" : '${futRoot}/web/nav/queryNavInfoPage.json',
 				 "fnServerParams" : function(aoData) {
 						aoData.push({
+							"name" : "acCode", 
+							"value":$('#acCode').find("option:selected").val()
+						},{
 							"name" : "title", 
 							"value" : $('#title').val()
 						}); 
@@ -341,7 +312,7 @@
 					}
 				}, {
 					"mData" : "navName",
-					"sWidth": "20%",
+					"sWidth": "10%",
 					"mRender" : function(data, type, row) {
 						if (data) {
 							return data;
@@ -379,7 +350,7 @@
 					}
 				}, {
 					"mData" : "createTime",
-					"sWidth": "40%",
+					"sWidth": "30%",
 					"mRender" : function(data, type, row) {
 						if (data) {
 							return new Date(data).format('yyyy-MM-dd hh:mm:ss');
@@ -387,7 +358,7 @@
 					}
 				}, {
 					"mData" : "createUserName",
-					"sWidth": "20%",
+					"sWidth": "30%",
 					"mRender" : function(data, type, row) {
 						return data;
 					}

@@ -90,9 +90,6 @@ public class PhoneServiceImpl implements IPhoneService{
 			map.put(s, allList);
 			BaseParams.setNavInfoTJMap(map);
 		}
-		
-		
-		
 	}
 
 
@@ -108,6 +105,24 @@ public class PhoneServiceImpl implements IPhoneService{
 		return dalClient.queryForList("ph.querySearchAll", info, CommondityInfo.class);
 	}
 
+
+    /**
+     * 说明：PC -商品类型
+     *    所有数据
+     * */
+	@Override
+	public void initcnavAll() {
+		String[] str=Constants.dpnums;//1获得店铺
+		Map<String,List<CommondityNav>> map=new HashMap<String,List<CommondityNav>>();
+		CommondityNav nav=null;
+		for(String s:str){//2循环查询店铺
+			nav=new CommondityNav();
+			nav.setDpnum(s);
+			List<CommondityNav> list=dalClient.queryForList("nav.querycnavAll", nav, CommondityNav.class);
+			map.put(s, list);
+		}
+		BaseParams.setCnavAll(map);
+	}
 	
 
 }

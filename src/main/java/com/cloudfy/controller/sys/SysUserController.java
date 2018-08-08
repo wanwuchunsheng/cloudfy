@@ -131,7 +131,7 @@ public class SysUserController {
     }
 	
 	/**
-	 * [功能说明]:【功能说明】：用户管理 - 添加/修改
+	 * [功能说明]:【功能说明】：用户管理 - 添加
 	 * 
 	 * @time 2015-4-14 13:22:07
 	 * @param  
@@ -157,7 +157,7 @@ public class SysUserController {
     }
 	
 	/**
-	 * [功能说明]:【功能说明】：用户管理 - 添加/修改
+	 * [功能说明]:【功能说明】：用户管理 - 修改
 	 * 
 	 * @time 2015-4-14 13:22:07
 	 * @param  
@@ -183,6 +183,26 @@ public class SysUserController {
     }
 	
 	
+	/**
+	 * [功能说明]:【功能说明】：用户管理 - 删除
+	 * 
+	 * @time 2015-4-14 13:22:07
+	 * @param  
+	 * @author  v_wanchanghuang
+	 * 
+	 * */
+	@RequestMapping("/deleteUserById")
+	@ResponseBody
+	public String deleteUserById(String ids){
+	    try {
+		   String[] str=ids.split(",");
+		   sysUserService.deleteUSerById(str);
+	       return Constants.RESULT_SUCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	    return Constants.RESULT_ERROR;
+	}
 	
 	
 }

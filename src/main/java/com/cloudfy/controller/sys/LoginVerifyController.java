@@ -34,6 +34,14 @@ public class LoginVerifyController {
 		
 		return "/web_data/main/"+url;
 	}
+	/**
+	 * 说明：错误页面跳转
+	 * @author Administrator
+	 * */
+	@RequestMapping("error")
+	public String gotoErrorPage(String url){
+		return url;
+	}
 	
 	/**
 	 * 说明：登录验证

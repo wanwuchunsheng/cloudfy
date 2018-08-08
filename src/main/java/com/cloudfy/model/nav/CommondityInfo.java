@@ -51,6 +51,11 @@ public class CommondityInfo implements Serializable{
 	private String acInfoIds;//查询条件
 	private int gwcNum;//购物车重复商品数量   默认1
 	
+	//图片修改
+	private String maxUrl2;
+	private String miniUrl2;
+	private String content2;
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -250,7 +255,23 @@ public class CommondityInfo implements Serializable{
 	public void setGwcNum(int gwcNum) {
 		this.gwcNum = gwcNum;
 	}
-	
-	
+	public String getMaxUrl2() {
+		return maxUrl2;
+	}
+	public void setMaxUrl2(String maxUrl2) {
+		this.maxUrl2 = maxUrl2;
+	}
+	public String getMiniUrl2() {
+		return miniUrl2;
+	}
+	public void setMiniUrl2(String miniUrl2) {
+		this.miniUrl2 = miniUrl2;
+	}
+	public String getContent2() {
+		return content2;
+	}
+	public void setContent2(String content2) {
+		this.content2 = content2;
+	}
 	
 }

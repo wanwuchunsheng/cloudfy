@@ -1,84 +1,282 @@
-<div class="modal-dialog" style="width:830px;top:5%;">
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">
-				&times;
-			</button>
-			<h4 class="modal-title">菜单修改</h4>
-		</div>
-		<form  id="updateNavigationFrom" action="" method="post">
-		<div class="modal-body">
-			<div class="row">
-				<div class= "col-md-12" >
-			           <div class="form-group col-md-6">
-							<label for="cBrand" class="col-md-4 control-label">菜单名称：</label>
-							<div class="col-md-8">
-								<input id="titlet"  name="title" type="text" class="form-control" value="${upNavition.title}"/>
-							</div>
-						</div>
-						<div class="form-group col-md-6">
-							<label for="cBrand" class="col-md-4 control-label">菜单连接：</label>
-							<div class="col-md-8">
-								<input id="urlt" name="url" type="text" class="form-control" value="${upNavition.url}"/>
-							</div>
-						</div>
-				</div>
-				
-				<input type="hidden" id="id" name="id" value="${upNavition.id}"/>
-			</div>
-		</div>
-		</form>
-		
-		<div class="modal-footer">
-			<a  id="updateUserButton"  type="button" class="btn btn-primary" >
-				确定
-			</a> 
-			<button type="submit"  class="btn btn-default" data-dismiss="modal">
-				取消
-			</button>
-		</div>
-	</div>
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+<meta charset="utf-8" />
+<title>cloudfy.cn</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<meta name="MobileOptimized" content="320">
+<link href="${resRoot}/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="${resRoot}/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="${resRoot}/plugins/select2/select2_metro.css" />
+<link rel="stylesheet" href="${resRoot}/plugins/data-tables/DT_bootstrap.css" />
+<link href="${resRoot}/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
+<link href="${resRoot}/plugins/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet">
+<link href="${resRoot}/css/style-metronic.css" rel="stylesheet" />
+<link href="${resRoot}/css/style.css" rel="stylesheet" />
+<link href="${resRoot}/css/style-responsive.css" rel="stylesheet" />
+<link href="${resRoot}/css/plugins.css" rel="stylesheet" />
+<link href="${resRoot}/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
+<link href="${resRoot}//plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+<link href="${resRoot}/plugins/uniform/css/uniform.default.css" rel="stylesheet" />
+<link href="${resRoot}/css/pages/tasks.css" rel="stylesheet" />
+<link href="${resRoot}/css/themes/grey.css" rel="stylesheet" id="style_color" />
+<link href="${resRoot}/css/custom.css" rel="stylesheet" />
+<!-- 文本编辑器css引用 -->
+<link href="${resRoot}/plugins/editor/dist/css/wangEditor.min.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+  <div class="col-md-12">
+    <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+    <h3 class="page-title">商品明细 </h3>
+    <!-- END PAGE TITLE & BREADCRUMB-->
+  </div>
 </div>
+<!-- END PAGE HEADER-->
+<!-- 客户信息 开始 -->
 
+<div class="row">
+<div class="col-md-12">
+<div class="portlet box blue">    
+    <div class="portlet-title">
+        <div class="caption">修改</div>
+    </div>
+    
+    <div class="portlet-body form">
+    	<form id="workSheetForm" class="form-horizontal" enctype="multipart/form-data" method="POST" action="" >
+                <div class="col-md-12" style="margin-top:30px;">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">商品类型：</label>
+                            <div class="col-md-9">
+                               <select  id="acCode"  name="acCode" class="form-control" tabindex="-1">
+		                            <option  value="">全部</option>
+							        <#list commondityNav as list > 
+							           <option <#if cnav.acCode==list.code > selected="selected" </#if>  value="${list.code}">${list.navTitle?if_exists}</option>
+							        </#list>
+							    </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                       <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">标题：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="title" value="${cnav.title?if_exists}">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                    <div class="col-md-12">
+                     
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">关键词：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="antistop" value="${cnav.antistop?if_exists}">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">热度：</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="hot">
+                                    <option value="">请选择</option>
+                                    <option <#if cnav.hot=='★★★★★' > selected="selected" </#if>  value="★★★★★">★★★★★</option>
+                                    <option <#if cnav.hot=='★★★★' > selected="selected" </#if> value="★★★★">★★★★</option>
+                                    <option <#if cnav.hot=='★★★' > selected="selected" </#if> value="★★★">★★★</option>
+                                    <option <#if cnav.hot=='★★' > selected="selected" </#if> value="★★">★★</option>
+                                    <option <#if cnav.hot=='★' > selected="selected" </#if> value="★">★</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                      <div class="col-md-12">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">价格：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="price" value="${cnav.price?if_exists}">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">VIP价格：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="vipPrice" value="${cnav.vipPrice?if_exists}">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                  
+                 <div class="col-md-12">
+   				 <div class="col-md-6"> 
+                     <div class="form-group">
+                         <label class="col-md-3 control-label">图片：</label>
+                   <div class="col-md-9">
+                             <div class="input-group" id="input-group2">
+ 		                        <img alt="" style="width: 300px;height: 160px;" src="${resultImgPath}${cnav.miniUrl?if_exists}"/>
+                             </div>
+                                 <div id="deleteNavigationButton" class="btn red">
+							编辑
+							<i class="fa fa-times"></i>
+						</div>
+                   </div>
+                     </div>
+                 </div>
+               
+                    
+              	</div>
+                 <div class="col-md-12" style="margin-left:29px;margin-top:20px;">
+                     <label for="cBrand" class="col-md-4">新闻内容：<font style="color:red;">(图片支持自由拖动大小* )</font></label>
+					<div class="col-md-11 container">
+						<textarea id="content" name="content" class="form-control"   style='min-height:300px; width:100%;'>${cnav.content?if_exists}</textarea>					    
+					</div>
+                </div>
+                <div class="clearfix"></div>
+               
+            <div class="form-actions fluid text-center">
+                <button type="button" class="btn blue" id="savebtn"><i class="fa fa-check"></i> 提 交</button>
+                <button type="button" class="btn default" onclick="window.location.href='${futRoot}/web/nav/gotoQueryNavPage' "><i class="fa fa-undo"></i> 返 回</button>
+            </div>
+            <!-- 隐藏域 -->
+            <input name='maxUrl2' type='hidden' value='${cnav.maxUrl?if_exists}' />
+            <input name='miniUrl2' type='hidden' value='${cnav.miniUrl?if_exists}'/>
+            <input name='content2' type='hidden' value='${cnav.content?if_exists}' />
+            <input name="id" type="hidden" value="${cnav.id?if_exists}">
+            <input name="createUserId" type="hidden" value="${cnav.createUserId?if_exists}"/>
+            <input name="scNum" type="hidden" value="${cnav.scNum?if_exists}"/>
+            <input name="dzNum" type="hidden" value="${cnav.dzNum?if_exists}"/>
+            <input name="ylNum" type="hidden" value="${cnav.ylNum?if_exists}"/>
+            <input name="writeBackNum" type="hidden" value="${cnav.writeBackNum?if_exists}"/>
+            <input name="gwcNum" type="hidden" value="${cnav.gwcNum?if_exists}"/>
+            <input name="num" type="hidden" value="${cnav.num?if_exists}"/>
+           
+        </form>
+    </div>
+</div>        <!-- END MODIFYCONT MODAL --> 
+  </div>
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<script src="${resRoot}/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="${resRoot}/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="${resRoot}/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="${resRoot}/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${resRoot}/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="${resRoot}/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="${resRoot}/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="${resRoot}/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="${resRoot}/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
 
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="${resRoot}/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/data-tables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/data-tables/DT_bootstrap.js"></script> 
+<script type="text/javascript" src="${resRoot}/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/bootstrap-datepicker/js/bootstrap-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload-process.js"></script>
+<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
+<script src="${resRoot}/js/infomation.js" type="text/javascript"></script>
+<script src="${resRoot}/js/app.js" type="text/javascript"></script>
+<script src="${resRoot}/js/alert_message.js" type="text/javascript"></script>
+<script type="text/javascript" src="${resRoot}/plugins/jquery-validation/lib/jquery.form.js"></script>
+
+<!-- 文本编辑器引用 （必须把此js放到编辑器下面）start -->
+<script src="${resRoot}/plugins/editor/dist/js/wangEditor.js" type="text/javascript"></script>
+<!-- 文本编辑器引用 end   -->	
+
+<!-- END PAGE LEVEL SCRIPTS -->
 <script>
-/** 保存 修改 */
-$("#updateUserButton").click(function(){
-	 //验证用户名密码是否为空
-	 var title=$("#titlet").val();
-	 var url=$("#urlt").val();
-	 if(title=="" || url==""){
-		$.Alert("菜单名称和连接不能为空！");
-		return false;
-	 }
-	 
-     //提交后台处理
-     $.ajax({
-		url : "${futRoot}/web/data/updateNavigationById.htm",
-		type : "post",
-		dataType : "json",
-	    async: false,
-		data : $("#updateNavigationFrom").serialize(),
-		success : function(data) {
-			// 1-成功  2-失败
-			if(data=="1"){
-				$.Alert("修改成功！");
-				//刷新列表
-				admin.dataTable.fnDraw();
-			    //关闭窗口
-		   		$("#updateNavigationRegionModal").modal("hide");
-		   		return false;
-				
-			}else{
-				$.Alert("修改失败！");
-			}
-		}
-	 }); 
+jQuery(document).ready(function () {
+	App.init();
+	// initlayout and core plugins
+	$("select").select2();
+	TableManaged({id:"sample_1"}).init();
+	$('.date-picker').datepicker({
+	    language:'zh-CN',
+	    rtl: App.isRTL(),
+	    autoclose: true,
+	    format: "yyyy-mm-dd"
+	});
+	
+	/**文本编辑器容器初始化 start*/
+	var editor = new wangEditor('content');
+	// 上传图片
+	editor.config.uploadImgUrl ="${futRoot}"+"/upload";
+	editor.create();
+	/**文本编辑器容器初始化 End */
+
+	 $("#savebtn").click(function(){
+         //验证文本框
+		 var options = {
+	               url:"${futRoot}/web/nav/updateCommondityInfo.htm",
+	               type:"post",
+	               dataType:"json",
+	               contentType:'application/json;charset=UTF-8',
+	               success:function(msg){
+	            	   if(msg=='1'){
+		            	   console.info("提交成功！！！");
+		            	   /* $.Alert("提交成功！"); */
+		            	   window.location.href='${futRoot}/web/nav/gotoQueryNavPage'
+	            	   }else{
+	            		   $.Alert("提交失败！");
+	            	   }
+	               },
+				   error:function(msg){
+					   $.Alert("保存失败！");
+				   }
+	     };
+         $("#workSheetForm").ajaxSubmit(options); 
+		
+	})
+
+	/**
+	      删除图片
+	  
+	*/
+	$("#deleteNavigationButton").click(function(){
+		$("#input-group2").html("<input type='file' class='form-control' name='files' id='file' style='background-color:#FDF5E6;'/>");
+		$("#deleteNavigationButton").hide(); 
+	});
 });
 
 
-
- 
 </script>
-
-
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

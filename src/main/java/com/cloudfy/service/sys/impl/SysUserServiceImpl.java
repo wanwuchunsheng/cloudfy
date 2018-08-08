@@ -1,12 +1,15 @@
 package com.cloudfy.service.sys.impl;
 
+import java.io.File;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cloudfy.model.nav.CommondityInfo;
 import com.cloudfy.model.sys.SysResourceInfo;
 import com.cloudfy.model.sys.SysUserInfo;
+import com.cloudfy.service.common.Constants;
 import com.cloudfy.service.sys.ISysUserService;
 import com.ibm.framework.dal.client.IPaginationDalClient;
 import com.ibm.framework.dal.pagination.Pagination;
@@ -73,5 +76,23 @@ public class SysUserServiceImpl implements ISysUserService{
 	@Override
 	public void updateUserById(SysUserInfo vo) {
 		dalClient.dynamicMerge(vo);
+	}
+
+	/**
+	 * 功能说明：删除用户
+	 * 
+	 * */
+	@Override
+	public void deleteUSerById(String[] str) {
+		SysUserInfo bean=null;
+		
+		for(String s:str){
+			if(!"".equals(s.trim())){
+				bean=new SysUserInfo();
+				bean.setId(Integer.parseInt(s));
+				dalClient.execute("user.deleteUSerById", bean);
+			}
+		}
+		
 	}
 }

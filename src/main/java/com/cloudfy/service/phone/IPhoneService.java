@@ -14,6 +14,8 @@ public interface IPhoneService {
 	/**模糊查询*/
 	List<CommondityInfo> querySearchAll(CommondityInfo info);
 
+	void initcnavAll();
+
 	
 
 }

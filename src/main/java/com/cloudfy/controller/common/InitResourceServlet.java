@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 
 import org.apache.log4j.Logger;
 
-import com.cloudfy.service.common.Constants;
 import com.cloudfy.service.phone.IPhoneService;
 
 /**
@@ -33,10 +32,8 @@ public class InitResourceServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		IPhoneService comboboxs=ApplicationContextUtil.getBean(IPhoneService.class);
 		comboboxs.initCommodityNavInfo();
-		
-		//查询关键字
+		comboboxs.initcnavAll();//商品类型
 		log.info("初始化数据成功！！");
-		
 	}
 
 }

@@ -37,7 +37,7 @@ public class UploadImgServiet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //String path = request.getRealPath("/image");
-    	String path =Constants.RESULT_SAVE_IMG+"/editor/";
+    	String path =Constants.RESULT_SAVE_IMG+"editor/";
         File file = new File(path);
         if (!file.exists())
             file.mkdirs();

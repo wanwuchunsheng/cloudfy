@@ -106,17 +106,20 @@ public class ImageUtil {
      *            :压缩后的图片高 
      * @param per 
      *            :百分比 
+     *            b1 = null;
+System.gc();
      */  
     public static void Tosmallerpic(String srcImgPath, String outImgPath,  
             int new_w, int new_h, float per) {  
         // 得到图片  
-        BufferedImage src = InputImage(srcImgPath);  
+        BufferedImage src = InputImage(srcImgPath); 
         int old_w = src.getWidth();  
         // 得到源图宽  
         int old_h = src.getHeight();  
+       
         // 得到源图长  
         // 根据原图的大小生成空白画布  
-        BufferedImage tempImg = new BufferedImage(old_w, old_h,  
+       BufferedImage tempImg = new BufferedImage(old_w, old_h,  
                 BufferedImage.TYPE_INT_RGB);  
         // 在新的画布上生成原图的缩略图  
         Graphics2D g = tempImg.createGraphics();  
@@ -130,7 +133,10 @@ public class ImageUtil {
                 tempImg.getScaledInstance(new_w, new_h, Image.SCALE_SMOOTH), 0,  
                 0, null);  
         // 调用方法输出图片文件  
-        OutImage(outImgPath, newImg, per);  
+        OutImage(outImgPath, newImg, per); 
+        //关闭src
+        src = null;
+        System.gc();
     }  
   
     /** 
@@ -232,31 +238,37 @@ public class ImageUtil {
      * @param per 
      */  
     private static void OutImage(String outImgPath, BufferedImage newImg, float per) { 
+    	FileOutputStream newimage = null; 
+        JPEGImageEncoder encoder = null;
+        JPEGEncodeParam jep = null;
         try { 
         	// 判断输出的文件夹路径是否存在，不存在则创建  
-           /* File file = new File(outImgPath);  
-            if (!file.exists() && !file.isDirectory()) {  
-                file.mkdirs();  
-            }*/
         	File file = new File(outImgPath);  
             if (!file.getParentFile().exists()) {  
                 file.getParentFile().mkdirs();  
             }
             // 输出到文件流  
-            FileOutputStream newimage = new FileOutputStream(outImgPath);  
-            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(newimage);  
-            JPEGEncodeParam jep = JPEGCodec.getDefaultJPEGEncodeParam(newImg);  
+            newimage = new FileOutputStream(outImgPath);  
+            encoder = JPEGCodec.createJPEGEncoder(newimage);  
+            jep = JPEGCodec.getDefaultJPEGEncodeParam(newImg);  
             // 压缩质量  
             jep.setQuality(per, true);  
-            encoder.encode(newImg, jep);  
-            newimage.close();  
+            encoder.encode(newImg, jep);
+            //newimage.close();  
         } catch (FileNotFoundException e) {  
             e.printStackTrace();
         } catch (ImageFormatException e) {  
             e.printStackTrace();
         } catch (IOException e) {  
             e.printStackTrace();
-        }  
+        }finally{
+        	try {
+				newimage.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
     }  
   
     public static void main(String args[]) {  

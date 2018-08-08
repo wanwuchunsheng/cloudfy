@@ -88,15 +88,15 @@
 	<!-- 错误跳转页面 -->
 	<error-page>
 		<error-code>404</error-code>
-		<location>/cloudfy/error/gotoError.htm?eurl=error/ERROR404</location>
+		<location>/cloudfy/login/error.htm?eurl=/web_data/error/ERROR404</location>
 	</error-page>
 	<error-page>
 		<error-code>405</error-code>
-		<location>/cloudfy/error/gotoError.htm?eurl=error/ERROR405</location>
+		<location>/cloudfy/login/error.htm?eurl=/web_data/error/ERROR405</location>
 	</error-page>
 	<error-page>
 		<error-code>500</error-code>
-		<location>/cloudfy/error/gotoError.htm?eurl=error/ERROR500</location>
+		<location>/cloudfy/login/error.htm?eurl=/web_data/error/ERROR500</location>
 	</error-page>
 	
 </web-app>
