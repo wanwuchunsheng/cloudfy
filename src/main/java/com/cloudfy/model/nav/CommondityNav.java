@@ -35,6 +35,9 @@ public class CommondityNav implements Serializable{
 	private String dpnum; //店铺
 	private String remark; //备注
 	
+	private String createUserName;
+	private String updateUsername;
+	
 	//图片实体
 	private String acInfoId;
 	private String maxUrl;
@@ -171,6 +174,18 @@ public class CommondityNav implements Serializable{
 	}
 	public void setMiniUrl(String miniUrl) {
 		this.miniUrl = miniUrl;
+	}
+	public String getCreateUserName() {
+		return createUserName;
+	}
+	public void setCreateUserName(String createUserName) {
+		this.createUserName = createUserName;
+	}
+	public String getUpdateUsername() {
+		return updateUsername;
+	}
+	public void setUpdateUsername(String updateUsername) {
+		this.updateUsername = updateUsername;
 	}
 
 	

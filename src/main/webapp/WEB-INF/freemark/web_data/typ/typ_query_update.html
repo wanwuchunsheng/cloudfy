@@ -164,7 +164,7 @@
                
             <div class="form-actions fluid text-center">
                 <button type="button" class="btn blue" id="savebtn"><i class="fa fa-check"></i> 提 交</button>
-                <button type="button" class="btn default" onclick="window.location.href='${futRoot}/web/nav/gotoQueryInfoPage' "><i class="fa fa-undo"></i> 返 回</button>
+                <button type="button" class="btn default" onclick="window.location.href='${futRoot}/web/nav/gotoQueryNavPage' "><i class="fa fa-undo"></i> 返 回</button>
             </div>
             <!-- 隐藏域 -->
             <input name='maxUrl2' type='hidden' value='${cnav.maxUrl?if_exists}' />
@@ -251,7 +251,7 @@ jQuery(document).ready(function () {
 	            	   if(msg=='1'){
 		            	   console.info("提交成功！！！");
 		            	   /* $.Alert("提交成功！"); */
-		            	   window.location.href='${futRoot}/web/nav/gotoQueryInfoPage'
+		            	   window.location.href='${futRoot}/web/nav/gotoQueryNavPage'
 	            	   }else{
 	            		   $.Alert("提交失败！");
 	            	   }

@@ -12,18 +12,18 @@ import com.cloudfy.controller.common.tools.StringUtil;
 import com.cloudfy.model.nav.CommondityInfo;
 import com.cloudfy.model.nav.PictureAddressInfo;
 import com.cloudfy.service.common.Constants;
-import com.cloudfy.service.nav.ICommondityNavService;
+import com.cloudfy.service.nav.ICommodityInfoService;
 import com.ibm.framework.dal.client.IPaginationDalClient;
 import com.ibm.framework.dal.pagination.Pagination;
 import com.ibm.framework.dal.pagination.PaginationResult;
 
 /**
- *  说明：  商品明细
+ *  说明： 商品明细
  *  @author Administrator
  * 
  * */
-@Service("commondityNavService")
-public class CommondityNavImpl implements ICommondityNavService{
+@Service("cmInfoService")
+public class CommodityInfoImpl implements ICommodityInfoService{
 	
 	Logger log=Logger.getLogger(this.getClass());
 	
@@ -145,13 +145,14 @@ public class CommondityNavImpl implements ICommondityNavService{
 		}
 	}
 
-
+	/**
+	 * 说明：删除图片
+	 * */
 	@Override
 	public void deletePricDddressById(CommondityInfo bean) {
 		 //删除图片对象
 	    dalClient.execute("nav.deletePictureAddressById", bean);
 	}
-	
 	
 	
 }

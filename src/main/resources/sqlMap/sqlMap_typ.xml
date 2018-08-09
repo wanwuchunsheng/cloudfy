@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="typ">
+    
+    
+    <!-- 商品类型 -->
+   <sql id="queryCommondityNavAll">
+       <![CDATA[
+			select a.*,b.uname as createUserName from a_commodity_nav a left join sys_user b on a.CREATE_USER_ID=b.id 
+			where a.del=0 
+			<#if navTitle?exists && navTitle!=""> AND a.nav_title= :navTitle </#if>
+			<#if type?exists && type!=""> AND a.type= :type </#if>
+			order by a.num,type asc
+       ]]>
+   </sql>
+    
+</sqlMap>
+
+
+

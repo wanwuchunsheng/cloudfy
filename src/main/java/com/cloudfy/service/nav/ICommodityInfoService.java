@@ -7,7 +7,9 @@ import com.cloudfy.model.nav.PictureAddressInfo;
 import com.ibm.framework.dal.pagination.Pagination;
 import com.ibm.framework.dal.pagination.PaginationResult;
 
-public interface ICommondityNavService {
+public interface ICommodityInfoService {
+	
+	/*** 商品明细   */
 
 	PaginationResult<List<CommondityInfo>> queryCommondityInfo(
 			CommondityInfo bean, Pagination pagination);
@@ -26,5 +28,6 @@ public interface ICommondityNavService {
 
 	//删除图片表
 	void deletePricDddressById(CommondityInfo bean);
+
 
 }
