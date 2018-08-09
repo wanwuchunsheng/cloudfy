@@ -6,10 +6,34 @@
    <sql id="queryCommondityNavAll">
        <![CDATA[
 			select a.*,b.uname as createUserName from a_commodity_nav a left join sys_user b on a.CREATE_USER_ID=b.id 
-			where a.del=0 
-			<#if navTitle?exists && navTitle!=""> AND a.nav_title= :navTitle </#if>
+			where 1=1
+			and a.dpnum=:dpnum
+			<#if navTitle?exists && navTitle!="">AND a.nav_title like concat('%',:navTitle,'%') </#if>
 			<#if type?exists && type!=""> AND a.type= :type </#if>
-			order by a.num,type asc
+			order by type,a.num asc
+       ]]>
+   </sql>
+    
+   <!-- 商品类型 -ID查询 -->
+   <sql id="queryCommondityNavById">
+       <![CDATA[
+			select a.*,b.uname as createUserName from a_commodity_nav a left join sys_user b on a.CREATE_USER_ID=b.id 
+			where 1=1 
+			<#if id?exists && id!=""> AND a.id= :id </#if>
+       ]]>
+   </sql>
+    
+   <!-- 商品类型 -ID查询 -->
+   <sql id="queryCommondityIconAll">
+       <![CDATA[
+			 select a.*,b.uname as createUserName from a_commodity_icon a left join sys_user b on a.CREATE_USER_ID=b.id
+       ]]>
+   </sql>
+    
+     <!-- 商品类型 -ID查询 -->
+   <sql id="deleteCommondityIconByid">
+       <![CDATA[
+			 delete from a_commodity_nav where id=:id
        ]]>
    </sql>
     

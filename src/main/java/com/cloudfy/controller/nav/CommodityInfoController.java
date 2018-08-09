@@ -163,7 +163,7 @@ public class CommodityInfoController extends BaseController{
 						String nurl=url+"editor/"+s2;
 						System.out.println("修改删除富文本："+nurl);
 						//删除富文本：E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/editor/http://zhangt.java.cdnjsp.org/images/editor/a7248cd8-c8ff-466b-838a-00d5ff31c28f.jpeg
-						String nf=nurl.replace(Constants.RESULT_REQ_IMG3+"editor/", "");
+						String nf=nurl.replace(Constants.RESULT_REQ_IMG+"editor/", "");
 						System.out.println("处理后："+nf);
 						File nfile = new File(nf);//删除富文本图片
 						if (nfile.exists()) {

@@ -29,7 +29,7 @@ public class CommondityNav implements Serializable{
 	private String navShort; //简称
 	private String iconUrl; //图片地址
 	private int num; //序号
-	private int type; //类型 是否特殊处理 0-默认  1-幻灯片
+	private String type; //类型 是否特殊处理 0-默认  1-幻灯片
 	private String code; //编码
 	private int del; //是否删除  0-默认  1:-删除
 	private String dpnum; //店铺
@@ -116,10 +116,10 @@ public class CommondityNav implements Serializable{
 	}
 	
 	@Column(name = "type")
-	public int getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(int type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	

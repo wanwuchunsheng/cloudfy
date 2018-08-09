@@ -38,8 +38,7 @@ public interface Constants {
     
     public static final String RESULT_SAVE_IMG = "E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/";
     public static final String RESULT_REQ_IMG2="http://www.cloudfy.cn/images/";
-    public static final String RESULT_REQ_IMG3="http://zhangt.java.cdnjsp.org/images/";
-    public static final String RESULT_REQ_IMG="E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/";
+    public static final String RESULT_REQ_IMG="http://zhangt.java.cdnjsp.org/images/";
     
     public static final Integer RESULT_SAVE_IMG_WIDTH =500;
     public static final Integer RESULT_SAVE_IMG_HEIGHT =360;

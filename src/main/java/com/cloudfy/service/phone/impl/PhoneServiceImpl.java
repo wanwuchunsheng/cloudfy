@@ -49,7 +49,7 @@ public class PhoneServiceImpl implements IPhoneService{
 			//封装普通类型查询条件
 			cdn=new CommodityNav();
 			cdn.setDpnum(s); 
-			cdn.setType(0);//0-普通类型数据  1-幻灯片数据 2-首页类型
+			cdn.setType(3);//3-普通类型数据  1-幻灯片数据 2-首页类型
 			//6查询不同店铺的分类，及类型
 			List<CommodityNav> navlist=dalClient.queryForList("ph.comdityNav",cdn, CommodityNav.class);
 			for(CommodityNav cn:navlist){

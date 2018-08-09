@@ -82,22 +82,21 @@
 						</div>
 					</div>
 					<div class="portlet-body">
-					   
-					     <div class="col-md-4">
+					    <div class="row">
+					       <div class="col-md-4">
 								<div class="form-group">
 									<label class="col-md-4 control-label">首页类型：</label>
 									<div class="col-md-8">
-										<select  id="type"  name="type" class="form-control" tabindex="-1">
-				                            <option value="">全部</option>
+										<select  id="type"  name="type" class="form-control" >
+										    <option value="">全部</option>
 									        <option value="1">幻灯片</option>
 									        <option value="2">首页推荐</option>
-									        <option value="0">商品分类</option>
+									        <option value="3">商品分类</option>
 									    </select>
 									</div>
 									 <div class="clearfix"></div>
 								</div>
 							</div>
-					    <div class="row">
 							<div class="col-md-4">
 								<div class="btn-group">
 									<label class="control-label col-md-4">标题名称:</label>
@@ -162,6 +161,7 @@
 									<th>标题</th>
 									<th>图标地址</th>
 									<th>排序</th>
+									<th>是否启用 </th>
 									<th>添加时间</th>
 									<th>添加人</th>
 								</tr>
@@ -228,7 +228,7 @@
 			            return false;
 			        }
 			        //获得ID
-			        window.location.href="${futRoot}/web/typ/gotoNavUpdatePage.htm?id="+str;
+			        window.location.href="${futRoot}/web/typ/gotoUpdateNavPage.htm?id="+str;
 			   });
 				
 			   /**  删除   */
@@ -244,13 +244,13 @@
 			        }
 			        //验证是否选中
 			        if(str==""){
-			        	$.Alert("删除失败，请选择后删除!");
+			        	$.Alert("请选择后删除!");
 			        	return false;
 			        }
 			        if (window.confirm('确定删除吗？')) {
 			        	//提交后台处理
 				        $.ajax({
-					   		url : "${futRoot}/web/tye/deleteCommondityNav.json",
+					   		url : "${futRoot}/web/typ/deleteCommondityNav.json",
 					   		type : "post",
 					   		dataType : "json",
 					   	    async: false,
@@ -273,7 +273,7 @@
 			   
 		     /**  增加 */
 			 $("#addNavigationButton").click(function(){
-				 window.location.href="${futRoot}/web/typ/gotoAddNav";
+				 window.location.href="${futRoot}/web/typ/gotoAddNavPage";
 		     });
 		 });
 		
@@ -301,7 +301,7 @@
 				"bServerSide" : true, // 异步请求
 				"aoColumns" : [ {
 					"mData" : "id",
-					"sWidth": "10%",
+					"sWidth": "8%",
 					"mRender" : function(data, type, row) {
 						if (data) {
 							return "<input id='checkBoxt' name='checkBoxt' type='checkbox' class='checkboxes' value="+data+" />";
@@ -314,7 +314,7 @@
 						if (data==1) {
 							return "<font style='color:red;'>幻灯片</font>";
 						}else if (data==2) {
-							return "<font style='color:green;'>首页分类</font>";
+							return "<font style='color:blue;'>首页分类</font>";
 						}else{
 							return "商品分类";
 						}
@@ -329,7 +329,7 @@
 					}
 				},{
 					"mData" : "navTitle",
-					"sWidth": "30%",
+					"sWidth": "20%",
 					"mRender" : function(data, type, row) {
 						if(data){
 							return data;
@@ -337,16 +337,32 @@
 					}
 				}, {
 					"mData" : "iconUrl",
-					"sWidth": "10%",
+					"sWidth": "20%",
 					"mRender" : function(data, type, row) {
-						return data;
+						if(data==null){
+							return "/"
+						}else{
+						  return data;
+					    }
 					}
 				}, {
 					"mData" : "num",
 					"sWidth": "8%",
 					"mRender" : function(data, type, row) {
-						if (data) {
+						if (data==0) {
+							return "0";
+						}else{
 							return data;
+						}
+					}
+				}, {
+					"mData" : "del",
+					"sWidth": "10%",
+					"mRender" : function(data, type, row) {
+						if (data==1) {
+							return "<font style='color:red;'>禁用</font>";
+						}else if(data==0){
+                            return "<font style='color:green;'>启用</font>";
 						}
 					}
 				},{
@@ -389,7 +405,7 @@
 								//$.dopErr("系统繁忙!!!,请稍后再试!!!", null);
 								$.Alert("系统繁忙!!!,请稍后再试!!!");
 							}
-							admin.dataTable.fnProcessingIndicator(false);
+							//admin.dataTable.fnProcessingIndicator(false);
 							// 这里是把"正在查询几个子去掉，(换成自己的id)
 						}
 					});

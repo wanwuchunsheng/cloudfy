@@ -29,9 +29,20 @@
 <link href="${resRoot}/css/pages/tasks.css" rel="stylesheet" />
 <link href="${resRoot}/css/themes/grey.css" rel="stylesheet" id="style_color" />
 <link href="${resRoot}/css/custom.css" rel="stylesheet" />
-<!-- 文本编辑器css引用 -->
-<link href="${resRoot}/plugins/editor/dist/css/wangEditor.min.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="favicon.ico" />
+<style type="text/css">
+.iconimg{
+   width:30px;
+   height: 30px;
+   margin-left:10px;
+   cursor:pointer;
+}
+
+.iconimg2{
+   width:50px;
+   height:50px;
+}
+</style>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -42,7 +53,7 @@
 <div class="row">
   <div class="col-md-12">
     <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-    <h3 class="page-title">商品明细 </h3>
+    <h3 class="page-title">商品类型 </h3>
     <!-- END PAGE TITLE & BREADCRUMB-->
   </div>
 </div>
@@ -61,13 +72,13 @@
                 <div class="col-md-12" style="margin-top:30px;">
                      <div class="col-md-6">
                         <div class="form-group">
-                            <label class="col-md-3 control-label">商品类型：</label>
+                            <label class="col-md-3 control-label">类型：</label>
                             <div class="col-md-9">
-                               <select  id="acCode"  name="acCode" class="form-control" tabindex="-1">
-		                            <option value="">全部</option>
-							        <#list commondityNav as list > 
-							        <option value="${list.code}">${list.navTitle?if_exists}</option>
-							        </#list>
+                               <select  id="type"  name="type" class="form-control" >
+								    <option value="">全部</option>
+							        <option value="1">幻灯片</option>
+							        <option value="2">首页推荐</option>
+							        <option value="3">商品分类</option>
 							    </select>
                             </div>
                             <div class="clearfix"></div>
@@ -77,7 +88,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">标题：</label>
                             <div class="col-md-9">
-                                <input class="form-control" type="text" name="title">
+                                <input class="form-control" type="text" name="NavTitle">
                                 <span class="help-block"></span>
                             </div>
                             <div class="clearfix"></div>
@@ -88,9 +99,9 @@
                      
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="col-md-3 control-label">关键词：</label>
+                            <label class="col-md-3 control-label">编码：</label>
                             <div class="col-md-9">
-                                <input class="form-control" type="text" name="antistop">
+                                <input class="form-control" type="text" name="code">
                                 <span class="help-block"></span>
                             </div>
                             <div class="clearfix"></div>
@@ -98,81 +109,40 @@
                     </div>
                      <div class="col-md-6">
                         <div class="form-group">
-                            <label class="col-md-3 control-label">热度：</label>
                             <div class="col-md-9">
-                                <select class="form-control" name="hot">
-                                    <option value="">请选择</option>
-                                    <option value="★★★★★">★★★★★</option>
-                                    <option value="★★★★">★★★★</option>
-                                    <option value="★★★">★★★</option>
-                                    <option value="★★">★★</option>
-                                    <option value="★">★</option>
-                                </select>
+                               <label for="cBrand" class="col-md-4 control-label">是否启用：</label>
+							   <div class="col-md-8">
+									<span style="line-height:36px;cursor:pointer;vertical-align: middle;">禁用:</span>&nbsp;<input  type="radio" class="input_bottom" value="1"  name="del" />&nbsp;&nbsp;
+									<span style="line-height:36px;cursor:pointer;vertical-align: middle;">启用:</span>&nbsp;<input checked="checked"  type="radio" class="input_bottom" value="0" name="del" />
+							    </div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                      </div>
-                      <div class="col-md-12">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">价格：</label>
-                            <div class="col-md-9">
-                                <input class="form-control" type="text" name="price">
-                                <span class="help-block"></span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">VIP价格：</label>
-                            <div class="col-md-9">
-                                <input class="form-control" type="text" name="vipPrice">
-                                <span class="help-block"></span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
+                      
                   
                     <div class="col-md-12">
       				 <div class="col-md-6"> 
                         <div class="form-group">
-                            <label class="col-md-3 control-label">图片：</label>
-		                    <div class="col-md-9">
-                                <div class="input-group">
-    		                        <input type="file"  class="form-control"  name="files" id="file" style="background-color:#FDF5E6;"/>
-                                </div>
-                               <!--  <span class="help-block">为安全起见，请采用压缩rar形式</span> -->
-		                    </div>
+                            <label class="col-md-3 control-label">图标：</label>
+		                    <span id="iconDiv"></span>
+  		                    <input type="hidden" name="iconUrl" id="iconUrl" value=""/>    
                         </div>
                     </div>
-                <!--     
-                    <div class="col-md-6"> 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">图片2：</label>
-		                   <div class="col-md-9">
-                                <div class="input-group">
-    		                        <input type="file"  class="form-control "  name="files" id="file" style="background-color:#FDF5E6;"/>
-                                </div>
-                                <span class="help-block">为安全起见，请采用压缩rar形式</span>
-		                    </div>
-                        </div>
-                    </div> -->
                     
+                    <div class="col-md-12" style="margin-left:100px;">
+                        <#list comIcon as icn>
+                           <img onclick="iconimg('${icn.path?if_exists}')" class="iconimg" src="${resultImgPath}/icon/${icn.path?if_exists}"/>
+                        </#list>
+                    </div>
               	</div>
-                 <div class="col-md-12" style="margin-left:29px;margin-top:20px;">
-                     <label for="cBrand" class="col-md-4">新闻内容：</label>
-					<div class="col-md-11 container">
-						<textarea id="content" name="content" class="form-control"   style='height:400px; width:100%;'></textarea>
-					</div>
-                </div>
+                
                 <div class="clearfix"></div>
                
             <div class="form-actions fluid text-center">
                 <button type="button" class="btn blue" id="savebtn"><i class="fa fa-check"></i> 提 交</button>
-                <button type="button" class="btn default" onclick="window.location.href='${futRoot}/web/nav/gotoQueryNavPage' "><i class="fa fa-undo"></i> 返 回</button>
+                <button type="button" class="btn default" onclick="window.location.href='${futRoot}/web/typ/gotoQueryNavPage' "><i class="fa fa-undo"></i> 返 回</button>
             </div>
         </form>
     </div>
@@ -210,9 +180,6 @@
 <script src="${resRoot}/js/alert_message.js" type="text/javascript"></script>
 <script type="text/javascript" src="${resRoot}/plugins/jquery-validation/lib/jquery.form.js"></script>
 
-<!-- 文本编辑器引用 （必须把此js放到编辑器下面）start -->
-<script src="${resRoot}/plugins/editor/dist/js/wangEditor.js" type="text/javascript"></script>
-<!-- 文本编辑器引用 end   -->	
 
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
@@ -220,46 +187,45 @@ jQuery(document).ready(function () {
 	App.init();
 	// initlayout and core plugins
 	$("select").select2();
-	TableManaged({id:"sample_1"}).init();
+	//TableManaged({id:"sample_1"}).init();
 	$('.date-picker').datepicker({
 	    language:'zh-CN',
 	    rtl: App.isRTL(),
 	    autoclose: true,
 	    format: "yyyy-mm-dd"
 	});
-	
-	/**文本编辑器容器初始化 start*/
-	var editor = new wangEditor('content');
-	// 上传图片
-	editor.config.uploadImgUrl ="${futRoot}"+"/upload";
-	editor.create();
-	/**文本编辑器容器初始化 End */
-
 	 $("#savebtn").click(function(){
-         //验证文本框
-		 var options = {
-	               url:"${futRoot}/web/nav/addNavInfo.json",
-	               type:"post",
-	               dataType:"json",
-	               contentType:'application/json;charset=UTF-8',
-	               success:function(msg){
-	            	   if(msg=='1'){
-		            	   console.info("提交成功！！！");
-		            	   /* $.Alert("提交成功！"); */
-		            	   window.location.href='${futRoot}/web/nav/gotoQueryNavPage'
-	            	   }else{
-	            		   $.Alert("提交失败！");
-	            	   }
-	               },
-				   error:function(msg){
-					   $.Alert("保存失败！");
-				   }
-	            };
-           $("#workSheetForm").ajaxSubmit(options); 
+		 //提交后台处理
+	     $.ajax({
+	    	 url:"${futRoot}/web/typ/addCommondityNav.json",
+			type : "post",
+			dataType : "json",
+		    async: false,
+			data : $("#workSheetForm").serialize(),
+			success : function(data) {
+				// 1-成功  2-失败
+				if(data=="1"){
+					$.Alert("添加成功！");
+				    //关闭窗口
+			   		 window.location.href='${futRoot}/web/typ/gotoQueryNavPage'
+			   		return false;
+				}else{
+					$.Alert("添加失败！");
+				}
+			}
+		 }); 
+	});
 
-		
-	})
+	
 });
+function iconimg(path){
+	//赋值input
+    $("#iconUrl").val(path);
+    //增加img
+    var src="${resultImgPath}"+"/icon/"+path;
+    console.log(src);
+	$("#iconDiv").html("<img class='iconimg2' src='"+src+"' />")
+}
 </script>
 <!-- END JAVASCRIPTS -->
 </body>
