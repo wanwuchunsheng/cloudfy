@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cloudfy.controller.common.BaseParams;
 import com.cloudfy.model.nav.CommondityInfo;
 import com.cloudfy.model.phone.CommodityNav;
+import com.cloudfy.service.common.Constants;
 import com.cloudfy.service.phone.IPhoneService;
 
 /**
@@ -109,4 +111,20 @@ public class PhoneYhComtroller {
 	}
 	
 
+	/**
+	 * 说明：刷新系统缓存
+	 * 
+	 * */
+	@RequestMapping(value = "/resSysData", method = RequestMethod.POST)
+	@ResponseBody
+	public String resSysData(){
+		try {
+			phoneService.initCommodityNavInfo();
+			phoneService.initcnavAll();
+			return Constants.RESULT_SUCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return Constants.RESULT_ERROR;
+	}
 }

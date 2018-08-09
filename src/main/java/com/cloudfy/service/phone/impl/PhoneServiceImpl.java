@@ -57,6 +57,7 @@ public class PhoneServiceImpl implements IPhoneService{
 			     allList.add(cn);
 			}
 			map.put(s, allList);
+			BaseParams.getNavInfoFLMap().clear();
 			BaseParams.setNavInfoFLMap(map);
 			/**
 			 * 幻灯片
@@ -72,6 +73,7 @@ public class PhoneServiceImpl implements IPhoneService{
 				 allList.add(cn1);
 			}
 			map.put(s, allList);
+			BaseParams.getChangePicMap().clear();
 			BaseParams.setChangePicMap(map);
 			
 			/**
@@ -88,6 +90,7 @@ public class PhoneServiceImpl implements IPhoneService{
 				 allList.add(cn2);
 			}
 			map.put(s, allList);
+			BaseParams.getNavInfoTJMap().clear();
 			BaseParams.setNavInfoTJMap(map);
 		}
 	}
