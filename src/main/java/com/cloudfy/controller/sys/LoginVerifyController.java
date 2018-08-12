@@ -29,11 +29,22 @@ public class LoginVerifyController {
 	 * 说明：进入登录页面
 	 * @author Administrator
 	 * */
-	@RequestMapping("index")
+	@RequestMapping("main")
 	public String gotoLoginPage(String url){
 		
 		return "/web_data/main/"+url;
 	}
+	
+	/**
+	 * 说明：进入登录页面
+	 * @author Administrator
+	 * */
+	@RequestMapping("index")
+	public String gotoLoginPage(){
+		
+		return "/web_data/main/login";
+	}
+	
 	/**
 	 * 说明：错误页面跳转
 	 * @author Administrator
