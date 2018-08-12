@@ -73,23 +73,23 @@ default-autowire="byName">
 	  <!--全局变量部分 -->
 	  <property name="freemarkerVariables">
 		<map>
-			<!-- 生产路径  -->
+			<!-- 生产路径  
 			<entry key="resRoot" value="/statics/resources" />
 			<entry key="futRoot" value="" />
 			<entry key="sc" value="sc.html?cpTag=" />
 			<entry key="realImgPath" value="E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/" />
 			<entry key="resultImgPath2" value="http://www.cloudfy.cn/images/" />
 			<entry key="resultImgPath" value="http://zhangt.java.cdnjsp.org/images/" />	
-		    
+		    -->
 			
-			<!-- 本地路径   与wangEditor.js文件路径同步 
+			<!-- 本地路径   与wangEditor.js文件路径同步 -->
 			<entry key="resRoot" value="/cloudfy/statics/resources" />
 			<entry key="futRoot" value="/cloudfy" />
 			<entry key="sc" value="sc.html?cpTag=" />
 			<entry key="realImgPath" value="E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/" />
 			<entry key="resultImgPath2" value="http://www.cloudfy.cn/images/" />
 			<entry key="resultImgPath" value="http://zhangt.java.cdnjsp.org/images/" />
-			-->
+			
 		</map>
 	  </property>
   </bean>
