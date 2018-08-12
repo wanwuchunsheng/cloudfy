@@ -85,7 +85,14 @@
                 </div>
 			</div>
 		</div>
-	</div>		
+	</div>	
+	
+	<!-- Video -->
+    <video controls autoplay loop muted>
+          <source src="${futRoot}/statics/resources/view/videos/video.mp4" type="video/mp4"> 
+          <!-- <source class="videot" src="${futRoot}/statics/resources/view/videos/vd.webm" type="video/webm"> -->
+          <!-- Your browser does not support the video tag. -->
+    </video>
 </section>
 <!-- work section -->
 <section id="work">
@@ -475,7 +482,17 @@
             </div>
 </footer>
 
-
+<!-- 右侧客服  -->
+<!-- 代码 开始 -->
+<div class="side">
+	<ul>
+		<li><a href="#"><div class="sidebox"><i class="fa fa-weixin fa-2x icon-div"></i>微信</div></a></li>
+		<li><a href="#"><div class="sidebox"><i class="fa fa-phone fa-2x icon-div"></i>TEL：17321288950</div></a></li>
+		<li><a href="#"><div class="sidebox"><i class="fa fa-qq fa-2x icon-div"></i>QQ群：215945664</div></a></li>
+		<li><a href="#home" class="sidetop smoothScroll"><img src="${futRoot}/statics/resources/view/images/side_icon05.png"/></a></li>
+	</ul>
+</div>
+<!-- 代码 结束 -->
 
 <script src="${futRoot}/statics/resources/view/js/jquery.js"></script>
 <script src="${futRoot}/statics/resources/view/js/bootstrap.min.js"></script>
@@ -490,6 +507,13 @@
 <script src="${futRoot}/statics/resources/view/js/jquery.nicescroll.min.js"></script>
 <script src="${futRoot}/statics/resources/view/js/core.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"200px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#00c6d7"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"50px"},200).css({"opacity":"0.7","filter":"Alpha(opacity=70)","background":"#000"})			
+	});
+});
 //ISOTOPE FILTER
 jQuery(document).ready(function($){
   /**幻灯片*/
@@ -538,35 +562,6 @@ $(window).scroll(function() {
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
-});
-/* HTML document is loaded. DOM is ready. 
--------------------------------------------*/
-$(function(){
-  // ------- WOW ANIMATED ------ //
-  wow = new WOW(
-  {
-    mobile: false
-  });
-  wow.init();
-  // HIDE MOBILE MENU AFTER CLIKING ON A LINK
-  $('.navbar-collapse a').click(function(){
-        $(".navbar-collapse").collapse('hide');
-    });
-  // NIVO LIGHTBOX
-  $('.iso-box-section a').nivoLightbox({
-        effect: 'fadeScale',
-    });
-  // HOME BACKGROUND SLIDESHOW
-  $(function(){
-    jQuery(document).ready(function() {
-    $('#home').backstretch([
-       "${futRoot}/statics/resources/view/images/home-bg-slideshow1.jpg", 
-       "${futRoot}/statics/resources/view/images/home-bg-slideshow2.jpg",
-       "${futRoot}/statics/resources/view/images/home-bg-slideshow5.jpg",
-        ],  {duration: 6000, fade: 2050});
-    });
-  })
-
 });
 
 
