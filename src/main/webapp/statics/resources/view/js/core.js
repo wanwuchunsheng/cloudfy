@@ -13,6 +13,8 @@ $(document).ready(function () {
             cursoropacitymax: 0.8,
             cursorwidth: "10px",
             cursorborder: "0px solid",
+            spacebarenabled: true,
+            autohidemode: true,
             autohidemode: false
         });
     }

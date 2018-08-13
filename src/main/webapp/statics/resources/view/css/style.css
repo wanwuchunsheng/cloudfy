@@ -683,7 +683,7 @@ perspactive:800px;
 	width:50px;
 	height:275px;
 	right:40px;
-	top:214px;
+	top:250px;
 	z-index:100;
 	margin:0px;
 	padding:0px;
@@ -766,18 +766,17 @@ home section
   	color: #ffffff;
 }
 #home {
-  display: -webkit-box;
+ display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-   align-items: center;
+   align-items: center; 
   height: 100vh;
   position: relative;
-  padding-top: 10em;
-   
+/*   padding-top: 10em; */
 }
 
 #home video {
@@ -788,11 +787,13 @@ home section
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -9999999;
+  z-index: -9999;
   transform: translateX(-50%) translateY(-50%);
   background-size: cover;
   transition: 1s opacity;
   background-color:#fff;
 }
+
+
 
 
