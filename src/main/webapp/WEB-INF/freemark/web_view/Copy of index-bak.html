@@ -16,7 +16,27 @@
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/nivo_themes/default/default.css">
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
-
+   
+   <style type="text/css">
+    /* 官网 成功案例，显示中文样式 */
+	.iso-box-img-title{
+	    width: 100%;
+	    display: block;
+	    background-color: #000;
+	    margin-top:-100px;
+	    height: 90px;
+	    display: none;
+	    
+	 }
+	 .iso-box-img-title h4{
+	     color:#00c6d7;
+	     line-height: 90px;
+	     border-bottom: 2px solid #fff;
+	 }
+	 .imgstl{
+	    border: 1px solid #00c6d7;
+	 }
+   </style>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -54,7 +74,9 @@
 				<li><a href="#home" class="smoothScroll">首页</a></li>
 				<li><a href="#work" class="smoothScroll">服务内容</a></li>
 				<li><a href="#about" class="smoothScroll">关于我们</a></li>
-				<li><a href="#team" class="smoothScroll">购买流程</a></li>
+				<!-- <li><a href="#team" class="smoothScroll">团队</a></li> -->
+				<li><a href="#pricing" class="smoothScroll">购买</a></li>
+				<li><a href="#portfolio" class="smoothScroll">成功案例</a></li>
 				<li><a href="#contact" class="smoothScroll">联系我们</a></li>
 			</ul>
 		</div>
@@ -79,6 +101,10 @@
 			</div>
 		</div>
 		
+		<!-- Video-->
+	    <video  autoplay="autoplay" muted="muted" volume="0" style="background-color: #515151" loop="loop" >
+	         <source src="${resultImgPath}videos/video.mp4" type="video/mp4">
+	    </video>
 	</div>	
 	
 </section>
@@ -167,9 +193,14 @@
 				<h3 class="bold">云朵家团队</h3>
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
+					<!--
+					<li class="active"><a href="#design" aria-controls="design" role="tab" data-toggle="tab">设计/开发</a></li>
+					<li><a href="#mobile" aria-controls="mobile" role="tab" data-toggle="tab">网站</a></li>
+					<li><a href="#social" aria-controls="social" role="tab" data-toggle="tab">小程序</a></li>
+				    -->
 				</ul>
 				<!-- tab panes -->
-				<div class="tab-content plan plan-three wow fadeInUp" data-wow-delay="0.3s">
+				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="design">
 						<p>
 						            我们的设计师在<a hreft="#">UI设计</a>、<a href="#">网站设计</a> 领域从事多年，拥有丰富的设计经验及独到的审美意识。
@@ -180,6 +211,16 @@
 						          我们软件工程师拥有丰富开发经验，能解决各种复杂业务软件，能保证软件搞质量，高性能，高并发问题。
                         </p>
 					</div>
+					<!-- <div role="tabpanel" class="tab-pane" id="mobile">
+						<p>Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+						<p><a href="#">Duis aute irure dolor</a> in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="social">
+						<p>
+						    目前已有产品
+						</p>
+					</div> -->
+
 				</div>
 			</div>
 		</div>
@@ -188,7 +229,7 @@
 
 
 <!-- pricing section -->
-<section id="team" >
+<section id="pricing">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 text-center">
@@ -198,15 +239,91 @@
 					<hr>
 				</div>
 			</div>
-			
-			<div class="col-md-12 col-sm-12 text-center plan plan-three wow bounceIn" style="margin-bottom: 60px;" data-wow-delay="0.3s">
-			   <img src="${futRoot}/statics/resources/view/images/gmlc.png" style="border:1px solid gray;text-shadow:0px 0px 8px rgba(0,180,255,1);"/>
+			<div class="col-md-12 col-sm-12 text-center">
+			   <img src="${futRoot}/statics/resources/view/images/gmlc.png" />
 			</div>
-			<p/>
-			
-			<button class="btn btn-warning" style="width: 140px;height: 50px;font-size:14px;">了解详细</button>
+		</div>
 	</div>		
 </section>
+
+
+<!-- portfolio section -->
+<div id="portfolio" >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="section-title">
+					<strong>04</strong>
+					<h1 class="heading bold">成功案例</h1>
+					<hr>
+				</div>
+				<!-- ISO section -->
+				<div class="iso-section">
+					<ul class="filter-wrapper clearfix">
+                   		 <li><a href="#" data-filter="*" class="selected opc-main-bg">全部</a></li>
+                   		 <li><a href="#" class="opc-main-bg" data-filter=".html">小程序</a></li>
+                   		 <li><a href="#" class="opc-main-bg" data-filter=".photoshop">合作商</a></li> 
+                   		 <!-- 
+                    	 <li><a href="#" class="opc-main-bg" data-filter=".wordpress">小程序</a></li>
+                    	 <li><a href="#" class="opc-main-bg" data-filter=".mobile">网站</a></li>
+                    	 -->
+               		</ul> 
+               		<div class="iso-box-section wow fadeIn" data-wow-delay="0.9s">
+               			<div class="iso-box-wrapper col4-iso-box">
+               				
+               				 
+               				 <div class="iso-box  col-lg-4 col-md-4 col-sm-6">
+               				 	<img class="imgstl" onmouseover="onShImg('1')" onmouseout="outShImg('1')"  src="${futRoot}/statics/resources/view/images/portfolio-img1.png"  alt="portfolio img" />
+               				 	<div class="iso-box-img-title" id="sh_1">
+									<h4>云朵家官方网站</h4>
+									
+								 </div>
+               				 </div>
+
+               				 <div class="iso-box  col-lg-4 col-md-4 col-sm-6">
+               				 	<img class="imgstl" onmouseover="onShImg('3')" onmouseout="outShImg('3')"  src="${futRoot}/statics/resources/view/images/portfolio-img2.png" alt="portfolio img" />
+               				 	<div class="iso-box-img-title" id="sh_3">
+									<h4>云朵家后台管理系统V2.0</h4>
+								 </div>
+               				 </div>
+                             <div class="iso-box html   col-lg-4 col-md-4 col-sm-6">
+               				 	<img class="imgstl" onmouseover="onShImg('2')" onmouseout="outShImg('2')"  src="${futRoot}/statics/resources/view/images/portfolio-img3.png" alt="portfolio img" />
+               				 	<div class="iso-box-img-title" id="sh_2">
+									<h4>云朵家微信小程序</h4>
+								</div>
+               				 </div>
+               				
+               				 <div class="iso-box wordpress col-lg-4 col-md-4 col-sm-6">
+               				 	<img class="imgstl" onmouseover="onShImg('4')" onmouseout="outShImg('4')"  src="${futRoot}/statics/resources/view/images/portfolio-img4.png" alt="portfolio img" />
+               				 	<div class="iso-box-img-title" id="sh_4">
+									<h4>福佳空间/域名</h4>
+								 </div>
+               				 </div>
+
+               				 <div class="iso-box html photoshop col-lg-4 col-md-4 col-sm-6">
+               				 	<img class="imgstl" onmouseover="onShImg('5')" onmouseout="outShImg('5')"  src="${futRoot}/statics/resources/view/images/portfolio-img5.png" alt="portfolio img" />
+               				 	<div class="iso-box-img-title" id="sh_5">
+									<h4>微信支付接口</h4>
+								 </div>
+               				 </div>
+               				 
+                             <!-- 
+               				 <div class="iso-box photoshop col-lg-4 col-md-4 col-sm-6">
+               				 	<img onmouseover="onShImg('6')" onmouseout="outShImg('6')"  src="${futRoot}/statics/resources/view/images/portfolio-img6.jpg" alt="portfolio img" />
+               				 	<div class="iso-box-img-title" id="sh_6">
+									<h4>云朵家后台管理系统V2.0</h4>
+								 </div>
+               				 </div>
+               				  -->
+
+               			</div>
+               		</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>		
 
 
 
@@ -273,8 +390,9 @@
                                 <div class="bold">公司信息</div>
                                 <br/>
                                 <span>公司介绍</span>/
-                                <span>新闻信息</span>/
-                                <span>合作商</span>/
+                                <span>售后服务QQ群</span>/
+                                <span>售后手机联系</span>/
+                                <span>服务范围 </span>/
                                 <span>法律声明 </span>
                                
                            
@@ -284,8 +402,8 @@
                        <div class="col-md-4 col-lg-3 col-sm-4  col-xs-12 xs-m-b-20">
                                 <div class="bold">技术支持</div>
                                 <br/>
-                                <span>购买咨询 </span>/
-                                <span>技术咨询</span>/
+                                <span>购买入口 </span>/
+                                <span>新闻信息</span>/
                                 <span>视频教程</span>/
                                 <span>博客</span>
                            
@@ -301,12 +419,6 @@
                             <a href="javascript:"> <i class="fa fa-pinterest fa-2x"></i>
                             </a>
                         </div>
-                    </div>
-                    
-                    <div class="row" style="margin-top:50px; border-top: 1px solid gray;line-height: 80px;">
-                        Copyright @ 2018 云朵家技术团队 版权所有
-                         <a href="http://www.beianbeian.com/gaoji?field=siteDomain&value=cloudfy.cn">鄂ICP备18018426号-1</a>
-                         <p></p>
                     </div>
                 </div>
             </div>
@@ -339,6 +451,78 @@
 <!--  所有浏览器支持videojs引用  -->
 <script src="${futRoot}/statics/resources/view/js/html5media.min.js"></script>
 
+<script type="text/javascript">
 
+//成功案例鼠标移动，移出事件
+function onShImg(id){
+	$("#sh_"+id).css("display","block");
+}
+function outShImg(id){
+	$("#sh_"+id).css("display","none");
+}
+/* 
+ 
+//ISOTOPE FILTER
+jQuery(document).ready(function($){
+      
+      //成功案例
+	  if ( $('.iso-box-wrapper').length > 0 ) { 
+	      var $container  = $('.iso-box-wrapper'), 
+	        $imgs     = $('.iso-box img');
+	      $container.imagesLoaded(function () {
+		      $container.isotope({
+		        layoutMode: 'fitRows',
+		        itemSelector: '.iso-box'
+		      });
+		      $imgs.load(function(){
+		          $container.isotope('reLayout');
+		      })
+	      });
+	      //成功案例点击上面小标题
+	      $('.filter-wrapper li a').click(function(){
+		      var $this = $(this), filterValue = $this.attr('data-filter');
+		      $container.isotope({ 
+		        filter: filterValue,
+		        animationOptions: { 
+		            duration: 2050, 
+		            easing: 'linear', 
+		            queue: false, 
+		        }                
+		      });             
+		      // don't proceed if already selected 
+		      if ( $this.hasClass('selected') ) { 
+		        return false; 
+		      }
+		      var filter_wrapper = $this.closest('.filter-wrapper');
+		      filter_wrapper.find('.selected').removeClass('selected');
+		      $this.addClass('selected');
+		        return false;
+		 }); 
+	 }
+});
+// 首页loading
+$(window).load(function(){
+    $('.preloader').fadeOut(2000); 
+});
+// 导航栏, 显示隐藏  
+$(window).scroll(function() {
+    if ($(".navbar").offset().top > 50) {
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    }
+}); 
+
+*/
+
+//右边悬浮客服联系
+$(document).ready(function(){
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"200px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#00c6d7"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"50px"},200).css({"opacity":"0.7","filter":"Alpha(opacity=70)","background":"#000"})			
+	});
+});
+</script>
 </body>
 </html>

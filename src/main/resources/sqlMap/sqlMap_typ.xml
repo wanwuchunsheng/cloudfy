@@ -30,10 +30,10 @@
        ]]>
    </sql>
     
-     <!-- 商品类型 -ID查询 -->
+     <!-- 商品类型 -ID删除   过滤幻灯片删除  -->
    <sql id="deleteCommondityIconByid">
        <![CDATA[
-			 delete from a_commodity_nav where id=:id
+			 delete from a_commodity_nav where id=:id and code not in ('XDP100010')
        ]]>
    </sql>
     

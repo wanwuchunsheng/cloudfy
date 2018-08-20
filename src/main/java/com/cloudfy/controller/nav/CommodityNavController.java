@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cloudfy.controller.common.tools.StringUtil;
 import com.cloudfy.model.nav.CommondityIcon;
 import com.cloudfy.model.nav.CommondityNav;
 import com.cloudfy.model.page.DataTableRequest;
@@ -21,6 +22,7 @@ import com.cloudfy.service.common.Constants;
 import com.cloudfy.service.nav.ICommodityNavSerivce;
 import com.ibm.framework.dal.pagination.Pagination;
 import com.ibm.framework.dal.pagination.PaginationResult;
+import com.ibm.framework.uts.util.StringUtils;
 import com.ibm.framework.web.controller.BaseController;
 
 /**
@@ -80,6 +82,8 @@ public class CommodityNavController extends BaseController{
 		//查询图标表
 		List<CommondityIcon> list=commodityNavService.queryCommondityIconAll();
 		request.setAttribute("comIcon", list);
+		//获取随机编号
+		request.setAttribute("sjs", StringUtil.getItemId(9));
 		return "/web_data/typ/typ_query_add"; 
 	}
 	

@@ -6,7 +6,7 @@
 	<!--<![endif]-->
 	<!-- BEGIN HEAD -->
 	<head>
-		<title>商品管理</title>
+		<title>商品明细</title>
 		<link href="${resRoot}/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 		<link href="${resRoot}/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="${resRoot}/plugins/uniform/css/uniform.default.css" rel="stylesheet" />
@@ -146,6 +146,12 @@
 										<i class="fa fa-edit"></i>
 									</button>
 								</div>
+								<div class="btn-group">
+									<button id="refreshBut" class="btn blue" data-target="#addQuestionnaire" data-toggle="modal">
+										刷新缓存
+										<i class="fa fa-refresh"></i>
+									</button>
+								</div>
 							</div>
 						</div>
 						<!-- 操作end  -->
@@ -200,6 +206,27 @@
 			App.init();
 			$("select").select2();
 			queryPage();
+
+			
+			//刷新系统缓存
+		    $("#refreshBut").click(function(){
+	    	    $.ajax({
+			   		url : "${futRoot}/p/resSysData",
+			   		type : "post",
+			   	    async: false,
+			   		data : null,
+			   		success : function(data) {
+				   		console.log(data);
+			   		    // 1-成功  2-失败
+						if(data=="1"){
+							$.Alert("刷新成功！");
+						}else{
+							$.Alert("刷新失败！");
+						}
+			   		}
+			     });
+	        })
+		
 			
 		    //重置
 			$("#resetButton").click(function(){

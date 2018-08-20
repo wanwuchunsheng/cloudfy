@@ -333,6 +333,7 @@ team section
 ========================================================================== */
 #team {
   text-align: center;
+  /* background-color: #f6f6f6; */
 }
 #team h3 {
   color: #00c6d7;
@@ -548,7 +549,8 @@ pricing section
 contact section
 ========================================================================== */
 #contact {
-  background: #3B3B3B url('../images/contact-bg.jpg') no-repeat center center;
+ background: #3B3B3B url('../images/contact-bg.jpg') no-repeat center center;
+  /* background-color:#3e4754; */
   background-size: cover;
   color: #ffffff;
 }
@@ -793,7 +795,4 @@ home section
   transition: 1s opacity;
   background-color:#fff;
 }
-
-
-
 

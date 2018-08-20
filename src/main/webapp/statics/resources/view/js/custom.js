@@ -97,12 +97,20 @@ $(function(){
   $(function(){
     jQuery(document).ready(function() {
     $('#home').backstretch([
-       "../statics/resources/view/images/home-bg-slideshow1.jpg", 
-       "../statics/resources/view/images/home-bg-slideshow2.jpg",
-       "../statics/resources/view/images/home-bg-slideshow5.jpg",
+       "../statics/resources/view/images/home-bg-slideshow2.jpg", 
+       "../statics/resources/view/images/home-bg-slideshow1.jpg",
         ],  {duration: 6000, fade: 2050});
     });
   })
 
+});
+
+//右边悬浮客服联系
+$(document).ready(function(){
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"200px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#00c6d7"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"50px"},200).css({"opacity":"0.7","filter":"Alpha(opacity=70)","background":"#000"})			
+	});
 });
 

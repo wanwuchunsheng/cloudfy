@@ -30,7 +30,7 @@ public class UserInterceptor implements HandlerInterceptor{
 	    PrintWriter out = response.getWriter();
 	    out.println("<html>");    
 	    out.println("<script>");    
-	    out.println("window.open ('"+request.getContextPath()+"/login/index?url=login','_top')");    
+	    out.println("window.open ('"+request.getContextPath()+"/login/index','_top')");    
 	    out.println("</script>");    
 	    out.println("</html>");  
 		return false;
