@@ -767,7 +767,7 @@ home section
 	background: transparent;
   	color: #ffffff;
 }
-#home {
+/* #home {
  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -778,21 +778,20 @@ home section
    align-items: center; 
   height: 100vh;
   position: relative;
-/*   padding-top: 10em; */
-}
+
+} 
 
 #home video {
   position:absolute;
-  top: 50%;
-  left: 50%;
+ 
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -9999;
+  z-index: -9999999;
   transform: translateX(-50%) translateY(-50%);
   background-size: cover;
   transition: 1s opacity;
-  background-color:#fff;
+  
 }
-
+*/

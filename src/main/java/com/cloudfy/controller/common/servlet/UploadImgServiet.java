@@ -61,7 +61,7 @@ public class UploadImgServiet extends HttpServlet {
         /**********************/
 
         //获取图片url地址
-        String imgUrl = Constants.RESULT_REQ_IMG+"/editor/"+ fileName;
+        String imgUrl = Constants.RESULT_REQ_IMG+"editor/"+ fileName;
         response.setContentType("text/text;charset=utf-8");
         PrintWriter out = response.getWriter();
         out.print(imgUrl);  //返回url地址

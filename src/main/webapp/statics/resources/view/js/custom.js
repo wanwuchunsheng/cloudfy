@@ -94,14 +94,14 @@ $(function(){
 
 
   // HOME BACKGROUND SLIDESHOW
-  $(function(){
+ /* $(function(){
     jQuery(document).ready(function() {
     $('#home').backstretch([
        "../statics/resources/view/images/home-bg-slideshow2.jpg", 
        "../statics/resources/view/images/home-bg-slideshow1.jpg",
         ],  {duration: 6000, fade: 2050});
     });
-  })
+  })*/
 
 });
 
