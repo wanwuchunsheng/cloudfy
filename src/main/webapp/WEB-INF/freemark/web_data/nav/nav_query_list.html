@@ -169,7 +169,8 @@
 									<th>标题</th>
 									<th>热度</th>
 									<th>价格</th>
-									<th>VIP价格</th>
+									<th>排序</th>
+									<th>是否启用 </th>
 									<th>添加时间</th>
 									<th>添加人</th>
 								</tr>
@@ -368,11 +369,23 @@
 						}
 					}
 				}, {
-					"mData" : "vipPrice",
+					"mData" : "num",
 					"sWidth": "8%",
 					"mRender" : function(data, type, row) {
-						if (data) {
-							return data;
+						if (data==0) {
+							return "<font>0</font>";
+						}else{
+                            return data;
+						}
+					}
+				}, {
+					"mData" : "del",
+					"sWidth": "10%",
+					"mRender" : function(data, type, row) {
+						if (data==1) {
+							return "<font style='color:red;'>禁用</font>";
+						}else if(data==0){
+                            return "<font style='color:green;'>启用</font>";
 						}
 					}
 				}, {

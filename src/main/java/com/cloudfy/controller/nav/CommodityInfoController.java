@@ -256,7 +256,6 @@ public class CommodityInfoController extends BaseController{
 			CommondityInfo bean,@RequestParam("files") MultipartFile[] files){
 		Gson josn = new Gson();
 		PictureAddressInfo vo=null;
-		String bdPath="";
 		SysUserInfo userInfo= (SysUserInfo) session.getAttribute("userInfo");
 		try {
 			//判断file数组不能为空并且长度大于0  
