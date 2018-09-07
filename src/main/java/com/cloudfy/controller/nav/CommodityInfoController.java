@@ -257,6 +257,7 @@ public class CommodityInfoController extends BaseController{
 		Gson josn = new Gson();
 		PictureAddressInfo vo=null;
 		SysUserInfo userInfo= (SysUserInfo) session.getAttribute("userInfo");
+		String bdPath="";
 		try {
 			//判断file数组不能为空并且长度大于0  
 	        if(files!=null && files.length>0){ 
