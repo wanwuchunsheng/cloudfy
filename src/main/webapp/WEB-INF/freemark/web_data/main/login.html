@@ -30,14 +30,14 @@
 <body class="login">
 	<!-- BEGIN LOGO -->
 	<div class="logo">
-		<!-- <img src="${resRoot}/media/image/logo-big.png" alt="" /> -->
+		
 	</div>
 	<!-- END LOGO -->
 	<!-- BEGIN LOGIN -->
 	<div class="content">
 		<!-- BEGIN LOGIN FORM -->
 		<form class="form-vertical login-form"  id="loginForm" action="" method="post">
-			<h3 class="form-title">CLOUDFY.CN</h3>
+			<h3 class="form-title">登录</h3>
 			<div class="alert alert-error hide">
 				<button class="close" data-dismiss="alert"></button>
 				<span>用户名或密码错误.</span>
@@ -74,21 +74,11 @@
 				</button>            
 			</div>
 
-			<div class="create-account">
-				<p>
-					还没有账号?<a href="#">请联系管理员. </a>
-				</p>
-			</div>
+			
 
 		</form>
 
 		<!-- END LOGIN FORM -->     
-	</div>
-
-	<!-- END LOGIN -->
-	<!-- BEGIN COPYRIGHT -->
-	<div class="copyright">
-		2018-2019 &copy;<a href="http://www.cloudfy.cn" style="color:#fff;">云朵家技术团队</a>
 	</div>
 
 	<!-- END COPYRIGHT -->
@@ -115,8 +105,7 @@
 
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
 	<script src="${resRoot}/media/js/app.js" type="text/javascript"></script>
-	<script src="${resRoot}/media/js/login-soft.js" type="text/javascript"></script>  
-	<script src="${resRoot}/media/js/alert_message.js"></script>    
+	<script src="${resRoot}/media/js/login-soft.js" type="text/javascript"></script>     
 
 	<!-- END PAGE LEVEL SCRIPTS --> 
 	<script>
@@ -126,11 +115,11 @@
 		    //默认选中第一行文本
 		    $('input:text:first').focus();
 	    	//监听键盘回车事件
-	        $('#login_btn').keydown(function(){
-	        	if(event.keyCode==13){ //13标识键盘回车键
-	        		checkUser();
-	        	}
-	        });
+	    	$(document).keyup(function(event){
+			  if(event.keyCode ==13){
+				  checkUser();
+			  }
+			});
 	    	//确定按钮
 	    	$("#login_btn").click(function(){
 	    		checkUser();
@@ -144,11 +133,11 @@
 	   	     var uname=$("#uName").val();
 	   	     var upassword=$("#uPassword").val();
 	   	     if(uname==""){
-	   	    	 $.Alert("用户名不能为空！！！");
+	   	    	 alert("用户名不能为空！！！");
 	   	    	 return false;
 	   	     }
 	   	     if(upassword==""){
-	   	    	 $.Alert("密码不能为空！！！");
+	   	    	 alert("密码不能为空！！！");
 	   	    	 return false;
 	   	     }
 	   	     //提交后台处理

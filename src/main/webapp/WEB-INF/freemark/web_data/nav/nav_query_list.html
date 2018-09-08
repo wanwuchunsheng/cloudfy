@@ -1,215 +1,241 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en" class="no-js">
-	<!--<![endif]-->
-	<!-- BEGIN HEAD -->
-	<head>
-		<title>商品明细</title>
-		<link href="${resRoot}/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-		<link href="${resRoot}/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="${resRoot}/plugins/uniform/css/uniform.default.css" rel="stylesheet" />
-		<link href="${resRoot}/plugins/select2/select2_metro.css" rel="stylesheet"  />
-		<link href="${resRoot}/plugins/data-tables/DT_bootstrap.css"  rel="stylesheet"  />
-		<link href="${resRoot}/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
-		<link href="${resRoot}/plugins/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet">
-		<link href="${resRoot}/css/style-metronic.css" rel="stylesheet" />
-		<link href="${resRoot}/css/style.css" rel="stylesheet" />
-		<link href="${resRoot}/css/style-responsive.css" rel="stylesheet" />
-		<link href="${resRoot}/css/plugins.css" rel="stylesheet" />
-		<link href="${resRoot}/css/pages/tasks.css" rel="stylesheet" />
-		<link href="${resRoot}/css/themes/grey.css" rel="stylesheet" id="style_color" />
-		<link href="${resRoot}/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
-		<link href="${resRoot}/plugins/jquery-nestable/jquery.nestable.css" rel="stylesheet" />
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>云朵家-商品明细</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="${resRoot}/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="${resRoot}/media/css/jquery.fancybox.css" rel="stylesheet" />
+	<link href="${resRoot}/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<!-- END GLOBAL MANDATORY STYLES -->
+	<!-- BEGIN PAGE LEVEL STYLES -->
+	<link rel="stylesheet" type="text/css" href="${resRoot}/media/css/select2_metro.css" />
+	<link rel="stylesheet" href="${resRoot}/media/css/DT_bootstrap.css" />
+	<!-- END PAGE LEVEL STYLES -->
+	<link rel="shortcut icon" href="${resRoot}/media/image/favicon.ico" />
 		
-		<link href="${resRoot}/css/custom.css" rel="stylesheet" />
+	 
+	    
+</head>
 
-		<script src="${resRoot}/plugins/jquery-1.10.2.min.js" type="text/javascript"></script> 
-		<script src="${resRoot}/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script> 
-		<script src="${resRoot}/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
-		<script src="${resRoot}/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script> 
-		<script src="${resRoot}/plugins/jquery.cokie.min.js" type="text/javascript"></script> 
-		<script src="${resRoot}/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script> 
-		<script type="text/javascript" src="${resRoot}/plugins/select2/select2.min.js"></script> 
-		<script type="text/javascript" src="${resRoot}/plugins/data-tables/jquery.dataTables.js"></script> 
-		<script type="text/javascript" src="${resRoot}/plugins/data-tables/DT_bootstrap.js"></script> 
-		<script type="text/javascript" src="${resRoot}/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script> 
-		<script type="text/javascript" src="${resRoot}/plugins/bootstrap-datepicker/js/bootstrap-datepicker.zh-CN.js"></script> 
-		<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
-		<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.iframe-transport.js"></script>
-		<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
-		<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload-process.js"></script>
-		<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
-		<script src="${resRoot}/js/alert_message.js" type="text/javascript"></script>
-		<script src="${resRoot}/js/app.js" type="text/javascript"></script>
-		<script src="${resRoot}/js/index.js" type="text/javascript"></script>
-		<script src="${resRoot}/js/global.js" type="text/javascript"></script>
-		<script src="${resRoot}/js/Date.js" type="text/javascript"></script>
+<!-- END HEAD -->
 
-	</head>
-	<!-- END HEAD -->
-	<!-- BEGIN BODY -->
-	<body class="page-header-fixed">
-		<!-- BEGIN CONTAINER -->
-		<!-- BEGIN CONTENT -->
-		<div class="page-content-wrapper">
-			<div class="page-content-bak" >
-			     <!-- 面包线start  -->
-                <div class="row">
-					  <div class="col-md-12">
-					    <h3 class="page-title">商品明细</h3>
-					    <ul class="page-breadcrumb breadcrumb">
-					            <li>
-					                <i class="fa fa-home"></i>
-					                <a href="#">首页</a>
-					                <i class="fa fa-angle-right"></i>
-					            </li>
-					            <li>
-					              <i class="fa fa-stack-exchange"></i>
-					                <a href="#">商品明细</a>
-					            </li>
-					        </ul>
-					  </div>
+<!-- BEGIN BODY -->
+
+<body style="background-color: #fff;">
+
+	<!-- BEGIN PAGE -->
+		<div class="page-content2">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div id="portlet-config" class="modal hide">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button"></button>
+					<h3>商品明细-查询</h3>
 				</div>
-				<!-- 面包线start  -->
 				
-				
-				<div class="portlet box blue" >
-					<div class="portlet-title">
-						<div class="caption">
-							信息列表
-						</div>
-					</div>
-					<div class="portlet-body">
-					    <br/>
-					    
-					    <div class="row">
-					        <div class="col-md-4">
-								<div class="form-group">
-									<label class="col-md-4 control-label">商品类型：</label>
-									<div class="col-md-8">
-										<select  id="acCode"  name="acCode" class="form-control" tabindex="-1">
-				                            <option value="">全部</option>
-									        <#list commondityNav as list > 
-									        <option value="${list.code}">${list.navTitle?if_exists}</option>
-									        </#list>
-									    </select>
-									</div>
-									 <div class="clearfix"></div>
-								</div>
-							</div>
-							
-							<div class="col-md-4">
-								<div class="btn-group">
-									<label class="control-label col-md-4">标题名称:</label>
-									<div class="col-md-8">
-										<input id="title" name="title" type="text" class="form-control">
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="btn-group">
-									<div class="col-md-1">
-										<button onclick="queryPage()" class="btn blue">查询</button>
-									</div>
-								</div>
-								<div class="btn-group">
-									<div class="col-md-0">
-										<button id="resetButton" class="btn green">重置</button>
-									</div>
-								</div>
-							</div>
-						  
-						</div>
-						<!-- 查询列表end  -->
-						<br/><br/>
-						
-						<!-- 操作start  -->
-						<div class="row">
-							<div class="col-md-12">
-								<div class="btn-group">
-									<button id="addNavigationButton" class="btn green" data-target="#addQuestionnaire" data-toggle="modal">
-										添加
-										<i class="fa fa-plus"></i>
-									</button>
-								</div>
-								<div class="btn-group">
-									<button id="deleteNavigationButton" class="btn red">
-										删除
-										<i class="fa fa-times"></i>
-									</button>
-								</div>
-								<div class="btn-group">
-									<button id="updateNavigationButton" class="btn green" data-target="#addQuestionnaire" data-toggle="modal">
-										修改
-										<i class="fa fa-edit"></i>
-									</button>
-								</div>
-								<div class="btn-group">
-									<button id="refreshBut" class="btn blue" data-target="#addQuestionnaire" data-toggle="modal">
-										刷新缓存
-										<i class="fa fa-refresh"></i>
-									</button>
-								</div>
-							</div>
-						</div>
-						<!-- 操作end  -->
-						<br/>
-						<div style="overflow:scroll;">
-						<!-- 列表Start  -->
-						<table class="table table-striped table-bordered table-advance table-hover"  id="table1" >
-							<thead style="width:1500px;">
-								<tr>
-								    <th>
-										<input onclick="selectAll()" type="checkbox" id="selChan" class="group-checkable"/>
-										全选
-							        </th>
-									<th>导航类型</th>
-									<th>标题</th>
-									<th>热度</th>
-									<th>价格</th>
-									<th>排序</th>
-									<th>是否启用 </th>
-									<th>添加时间</th>
-									<th>添加人</th>
-								</tr>
-							</thead>
-							<tbody role="alert" aria-live="polite" aria-relevant="all" >
-
-							</tbody>
-						</table>
-						<!-- 列表End  -->
-						</div>
-					</div>
-
-				</div>
-				<!-- END PAGE MAIN -->
 			</div>
+
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<!-- BEGIN PAGE CONTAINER-->        
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">
+							商品明细-查询
+						</h3>
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home"></i>
+								<a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i>
+							</li>
+							<li>
+								<a href="#">商品明细</a>
+								
+							</li>
+							
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+						<div class="portlet box blue">
+							<div class="portlet-title">
+								<div class="caption"><i class="icon-query"></i>查询详细</div>
+								<div class="tools">
+									<!-- <a href="javascript:;" class="collapse"></a>
+									<a href="#portlet-config" data-toggle="modal" class="config"></a>
+									<a href="javascript:;" class="reload"></a>
+									<a href="javascript:;" class="remove"></a> -->
+								</div>
+							</div>
+
+							<div class="portlet-body">
+                              <div class="titleStl">
+									<div class="form-group">
+										<label class="col-md-4 control-label">商品类型：</label>
+										<div class="col-md-8">
+											<select  id="acCode"  name="acCode" class="form-control" tabindex="-1">
+					                            <option value="">全部</option>
+										        <#list commondityNav as list > 
+										        <option value="${list.code}">${list.navTitle?if_exists}</option>
+										        </#list>
+										    </select>
+										</div>
+										 <div class="clearfix"></div>
+									</div>
+								
+									<div class="btn-group">
+										<label class="control-label col-md-4">标题名称：</label>
+										<div class="col-md-8">
+											<input id="title" name="title" type="text" class="form-control">
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								
+									<div class="btn-group">
+									    <div class="col-md-4">
+											<button onclick="queryPage()" class="btn blue">查询</button>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="btn-group">
+										<div class="col-md-4">
+											<button id="resetButton" class="btn green">重置</button>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							    <div class="clearfix"></div>
+							    <br/>
+								<div class="col-md-12">
+									<div class="btn-group">
+										<button id="addNavigationButton" class="btn green" data-target="#addQuestionnaire" data-toggle="modal">
+											添加
+											<i class="fa fa-plus"></i>
+										</button>
+									</div>
+									<div class="btn-group">
+										<button id="deleteNavigationButton" class="btn red">
+											删除
+											<i class="fa fa-times"></i>
+										</button>
+									</div>
+									<div class="btn-group">
+										<button id="updateNavigationButton" class="btn green" data-target="#addQuestionnaire" data-toggle="modal">
+											修改
+											<i class="fa fa-edit"></i>
+										</button>
+									</div>
+									<div class="btn-group">
+										<button id="refreshBut" class="btn blue" data-target="#addQuestionnaire" data-toggle="modal">
+											刷新缓存
+											<i class="fa fa-refresh"></i>
+										</button>
+									</div>
+								</div>
+                                <br/>
+								<table class="table table-striped table-hover table-bordered" id="table1">
+									<thead>
+										<tr>
+										    <th>
+												<input onclick="selectAll()" type="checkbox" id="selChan" class="group-checkable"/>
+												
+									        </th>
+											<th>商品类型</th>
+											<th>标题</th>
+											<th>推荐指数</th>
+											<th>价格</th>
+											<th>排序</th>
+											<th>是否启用 </th>
+											<th>添加时间</th>
+											<th>添加人</th>
+										</tr>
+									</thead>
+
+									<tbody>
+
+										
+
+									</tbody>
+
+								</table>
+
+							</div>
+
+						</div>
+
+						<!-- END EXAMPLE TABLE PORTLET-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE CONTENT -->
+
+			</div>
+
+			<!-- END PAGE CONTAINER-->
+
 		</div>
 
-		<!-- END CONTENT -->
-		
-	<!-- 弹出修改框 -->		
-	<div class="modal fade" id="updateNavigationRegionModal" tabindex="-1" role="basic" aria-hidden="true">
-	</div>
 	
-	<!-- 弹出增加框 -->		
-	<div class="modal fade" id="addNavigationRegionModal" tabindex="-1" role="basic" aria-hidden="true"></div>
-		
-	<script type="text/javascript">
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
+	<script src="${resRoot}/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="${resRoot}/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script src="${resRoot}/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+	<script src="${resRoot}/media/js/bootstrap.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]>
+	<script src="${resRoot}/media/js/excanvas.min.js"></script>
+	<script src="${resRoot}/media/js/respond.min.js"></script>  
+	<![endif]-->   
+	<script src="${resRoot}/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="${resRoot}/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+	<script src="${resRoot}/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+	<script src="${resRoot}/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+	<script src="${resRoot}/media/js/jquery.fancybox.pack.js"></script>
+	<!-- END CORE PLUGINS -->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script type="text/javascript" src="${resRoot}/media/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="${resRoot}/media/js/DT_bootstrap.js"></script>
+	<!-- END PAGE LEVEL PLUGINS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="${resRoot}/media/js/app.js"></script>
+	<!-- 美化滚动条 -->
+	<script src="${futRoot}/statics/resources/view/js/jquery.nicescroll.min.js"></script>
+	<script src="${futRoot}/statics/resources/view/js/core.js"></script>  
+	
+    <script src="${resRoot}/media/js/DateFormat.js" type="text/javascript"></script> 
+	<script>
 		admin = {
-	
+				
 		};
-		
-		//页面进来加载
-		jQuery(document).ready(function() {
-			App.init();
-			$("select").select2();
-			queryPage();
-
-			
-			//刷新系统缓存
+		jQuery(document).ready(function() { 
+		   App.init();
+		   //TableEditable.init();
+		   queryPage();
+		 //刷新系统缓存
 		    $("#refreshBut").click(function(){
 	    	    $.ajax({
 			   		url : "${futRoot}/p/resSysData",
@@ -220,9 +246,9 @@
 				   		console.log(data);
 			   		    // 1-成功  2-失败
 						if(data=="1"){
-							$.Alert("刷新成功！");
+							alert("刷新成功！");
 						}else{
-							$.Alert("刷新失败！");
+							alert("刷新失败！");
 						}
 			   		}
 			     });
@@ -250,11 +276,11 @@
 			            }
 			        }
 			        if(let>1){
-			        	$.Alert("修改失败，只能选择单个进行修改！");
+			        	alert("修改失败，只能选择单个进行修改！");
 			        	return false;
 			        }
 			        if(str=="" || str==undefined){
-			        	$.Alert("请选择后再操作！");
+			        	alert("请选择后再操作！");
 			            return false;
 			        }
 			        //获得ID
@@ -274,7 +300,7 @@
 			        }
 			        //验证是否选中
 			        if(str==""){
-			        	$.Alert("删除失败，请选择后删除!");
+			        	alert("删除失败，请选择后删除!");
 			        	return false;
 			        }
 			        if (window.confirm('确定删除吗？')) {
@@ -288,13 +314,13 @@
 					   		success : function(data) {
 					   		    // 1-成功  2-失败
 								if(data=="1"){
-									$.Alert("删除成功！");
+									alert("删除成功！");
 								    //刷新列表
 									admin.dataTable.fnDraw();
 							   		return false;
 							   		
 								}else{
-									$.Alert("删除失败！");
+									alert("删除失败！");
 								}
 					   		}
 					  });
@@ -307,7 +333,9 @@
 		     });
 		 });
 		
-        /** 分页列表  */
+
+
+		 /** 分页列表  */
 		function queryPage() {
 			//$('#table1').dataTable().fnDestroy();
 			if( admin.dataTable ){
@@ -332,10 +360,11 @@
 				"bServerSide" : true, // 异步请求
 				"aoColumns" : [ {
 					"mData" : "id",
-					"sWidth": "10%",
+					"sWidth": "5%",
 					"mRender" : function(data, type, row) {
 						if (data) {
-							return "<input id='checkBoxt' name='checkBoxt' type='checkbox' class='checkboxes' value="+data+" />";
+							//return "<input onclick='selectAll()' type='checkbox' id='selChan' class='group-checkable'/>";
+							return "<input id='selChan' name='checkBoxt' type='checkbox' style='width:15px;height:15px;' class='toggle fileupload-toggle-checkbox' value="+data+" />";
 						}
 					}
 				}, {
@@ -348,7 +377,7 @@
 					}
 				},{
 					"mData" : "title",
-					"sWidth": "30%",
+					"sWidth": "25%",
 					"mRender" : function(data, type, row) {
 						if(data){
 							return data;
@@ -362,7 +391,7 @@
 					}
 				}, {
 					"mData" : "price",
-					"sWidth": "8%",
+					"sWidth": "5%",
 					"mRender" : function(data, type, row) {
 						if (data) {
 							return data;
@@ -370,7 +399,7 @@
 					}
 				}, {
 					"mData" : "num",
-					"sWidth": "8%",
+					"sWidth": "5%",
 					"mRender" : function(data, type, row) {
 						if (data==0) {
 							return "<font>0</font>";
@@ -390,15 +419,16 @@
 					}
 				}, {
 					"mData" : "createTime",
-					"sWidth": "30%",
+					"sWidth": "15%",
 					"mRender" : function(data, type, row) {
 						if (data) {
 							return new Date(data).format('yyyy-MM-dd hh:mm:ss');
+							//return data;
 						}
 					}
 				}, {
 					"mData" : "createUserName",
-					"sWidth": "30%",
+					"sWidth": "20%",
 					"mRender" : function(data, type, row) {
 						return data;
 					}
@@ -423,10 +453,10 @@
 						"error" : function handleAjaxError(xhr, textStatus, error) {
 							if (textStatus === "timeout") {
 								//$.dopErr("连接超时!请稍后再试!!!");
-								$.Alert("连接超时!请稍后再试!!!");
+								alert("连接超时!请稍后再试!!!");
 							} else if (textStatus == "error") {
 								//$.dopErr("系统繁忙!!!,请稍后再试!!!", null);
-								$.Alert("系统繁忙!!!,请稍后再试!!!");
+								alert("系统繁忙!!!,请稍后再试!!!");
 							}
 							admin.dataTable.fnProcessingIndicator(false);
 							// 这里是把"正在查询几个子去掉，(换成自己的id)
@@ -449,9 +479,7 @@
 				}
 			});
 		}
-		
-	</script>	
-	
-	</body>
-	<!-- END BODY -->
+	</script>
+</body>
+<!-- END BODY -->
 </html>

@@ -865,7 +865,7 @@ Page content
 .ie8 .page-content { 
     margin-left: 225px; 
     margin-top: 0px;
-    min-height: 760px;
+    min-height: 600px;
 }
 
 .ie8 .page-sidebar-fixed .page-content {
@@ -2191,6 +2191,7 @@ textarea.placeholder {
 
 .control-label {
   margin-top: 2px;
+  float: left;line-height: 25px;
 }
 
 .control-label .required {
@@ -5284,3 +5285,18 @@ Datatables Plugin(in v1.3)
 .dataTable .details tr:nth-child(even) th {
   background-color: #eee !important;
 }
+.page-content2{
+	background-color: #fff;
+}
+.titleStl{
+	margin-top:20px;
+	margin-bottom:40px;
+}
+.titleStl div{
+	float: left;
+	margin-right:20px;
+}
+.title-hight{
+	height: 640px;
+}
+

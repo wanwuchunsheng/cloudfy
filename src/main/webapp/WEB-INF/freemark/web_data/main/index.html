@@ -1,33 +1,477 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
-<html>
-<!--<![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
-
 <head>
-    <meta charset="utf-8" />
-    <title>CLOUDFY.CN</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-    <link href="${resRoot}/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="${resRoot}/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="${resRoot}/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" type="text/javascript">
-    <link href="${resRoot}/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="${resRoot}/css/style-responsive.css" rel="stylesheet" type="text/css" />
-    <link href="${resRoot}/css/pages/tasks.css" rel="stylesheet" type="text/css" />
-    <link href="${resRoot}/css/themes/grey.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="${resRoot}/css/index.css" rel="stylesheet" type="text/css" />
-    <link href="${resRoot}/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
+	<meta charset="utf-8" />
+	<title>云朵家-首页</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="${resRoot}/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="${resRoot}/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<!-- END GLOBAL MANDATORY STYLES -->
+	<!-- BEGIN PAGE LEVEL STYLES --> 
+	<link href="${resRoot}/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+	<link href="${resRoot}/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
+	<link href="${resRoot}/media/css/jqvmap.css" rel="stylesheet" type="text/css" ${resRoot}/media="screen"/>
+	<link href="${resRoot}/media/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" ${resRoot}/media="screen"/>
+	<!-- END PAGE LEVEL STYLES -->
+	<link rel="shortcut icon" href="${resRoot}/media/image/favicon.ico" />
+	
+	<!-- END CONTAINER -->
+
+	<!-- BEGIN FOOTER -->
+
+	
+	<!-- END FOOTER -->
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
+	<script src="${resRoot}/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="${resRoot}/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script src="${resRoot}/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+	<script src="${resRoot}/media/js/bootstrap.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]>
+	<script src="${resRoot}/media/js/excanvas.min.js"></script>
+	<script src="${resRoot}/media/js/respond.min.js"></script>  
+	<![endif]-->   
+	<!-- <script src="${resRoot}/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="${resRoot}/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+	<script src="${resRoot}/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+	<script src="${resRoot}/media/js/jquery.uniform.min.js" type="text/javascript" ></script> -->
+	<!-- END CORE PLUGINS -->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	
+	<!-- END PAGE LEVEL PLUGINS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="${resRoot}/media/js/app.js" type="text/javascript"></script>
+	<script src="${resRoot}/media/js/index.js" type="text/javascript"></script>  
+ 
+	<!-- END PAGE LEVEL SCRIPTS -->  
+	<script>
+		jQuery(document).ready(function() { 
+		   //ifream窗体高度
+		   $("#mainFrame").css("height",$(window).height()-60);
+		   $(window).resize(function () { 
+			    $("#mainFrame").css("height",$(window).height()-60);
+		   });   
+		   /* App.init(); 
+		   Index.init(); */
+		});
+	</script>
+	<!-- END JAVASCRIPTS -->
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
+<body class="page-header-fixed">
+	<!-- BEGIN HEADER -->
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		<div class="navbar-inner">
+			<div class="container-fluid">
+			<!-- BEGIN LOGO -->
+				<a class="brand" href="index.html" >
+				   <img src="${resRoot}/media/image/logo.jpg" style="margin-top:-5px; opacity: .8" alt="logo"/>
+				</a>
 
-<body class="page-header-fixed index">
-    111111111
+				<!-- END LOGO -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+				<img src="${resRoot}/media/image/menu-toggler.png" alt="" />
+
+				</a>          
+
+				<!-- END RESPONSIVE MENU TOGGLER -->            
+
+				<!-- BEGIN TOP NAVIGATION MENU -->              
+
+				<ul class="nav pull-right">
+
+					<!-- BEGIN NOTIFICATION DROPDOWN -->   
+
+					<li class="dropdown" id="header_notification_bar">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+						<i class="icon-warning-sign"></i>
+
+						<span class="badge">6</span>
+
+						</a>
+
+						<ul class="dropdown-menu extended notification">
+
+							<li>
+
+								<p>You have 14 new notifications</p>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-success"><i class="icon-plus"></i></span>
+
+								New user registered. 
+
+								<span class="time">Just now</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-important"><i class="icon-bolt"></i></span>
+
+								Server #12 overloaded. 
+
+								<span class="time">15 mins</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-warning"><i class="icon-bell"></i></span>
+
+								Server #2 not respoding.
+
+								<span class="time">22 mins</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-info"><i class="icon-bullhorn"></i></span>
+
+								Application error.
+
+								<span class="time">40 mins</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-important"><i class="icon-bolt"></i></span>
+
+								Database overloaded 68%. 
+
+								<span class="time">2 hrs</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-important"><i class="icon-bolt"></i></span>
+
+								2 user IP blocked.
+
+								<span class="time">5 hrs</span>
+
+								</a>
+
+							</li>
+
+							<li class="external">
+
+								<a href="#">See all notifications <i class="m-icon-swapright"></i></a>
+
+							</li>
+
+						</ul>
+
+					</li>
+
+					<!-- END NOTIFICATION DROPDOWN -->
+
+					
+
+					<!-- END INBOX DROPDOWN -->
+
+					<!-- BEGIN TODO DROPDOWN -->
+
+					<li class="dropdown" id="header_task_bar">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+						<i class="icon-tasks"></i>
+
+						<span class="badge">5</span>
+
+						</a>
+
+						<ul class="dropdown-menu extended tasks">
+
+							<li>
+
+								<p>You have 12 pending tasks</p>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">New release v1.2</span>
+
+								<span class="percent">30%</span>
+
+								</span>
+
+								<span class="progress progress-success ">
+
+								<span style="width: 30%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">Application deployment</span>
+
+								<span class="percent">65%</span>
+
+								</span>
+
+								<span class="progress progress-danger progress-striped active">
+
+								<span style="width: 65%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">Mobile app release</span>
+
+								<span class="percent">98%</span>
+
+								</span>
+
+								<span class="progress progress-success">
+
+								<span style="width: 98%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">Database migration</span>
+
+								<span class="percent">10%</span>
+
+								</span>
+
+								<span class="progress progress-warning progress-striped">
+
+								<span style="width: 10%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">Web server upgrade</span>
+
+								<span class="percent">58%</span>
+
+								</span>
+
+								<span class="progress progress-info">
+
+								<span style="width: 58%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">Mobile development</span>
+
+								<span class="percent">85%</span>
+
+								</span>
+
+								<span class="progress progress-success">
+
+								<span style="width: 85%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li class="external">
+
+								<a href="#">See all tasks <i class="m-icon-swapright"></i></a>
+
+							</li>
+
+						</ul>
+
+					</li>
+
+					<!-- END TODO DROPDOWN -->
+
+
+				</ul>
+
+				<!-- END TOP NAVIGATION MENU --> 
+			</div>
+         <!-- END TOP NAVIGATION BAR -->
+		<!-- START 右边内容 -->
+		<div class="page-content">
+		    <iframe id="mainFrame" name="mainFrame"  src="${futRoot}/login/main?url=welcome" frameborder="0" style="padding: 0px; width: 100%; height: 600px;"></iframe>
+		</div>
+		<!-- END 右边内容 -->
+		</div>
+	</div>
+	<!-- END HEADER -->
+       
+
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+		<!-- BEGIN SIDEBAR -->
+		<div class="page-sidebar nav-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->        
+			<ul class="page-sidebar-menu">
+				<li>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler hidden-phone"></div>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<li>
+					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+					<form class="sidebar-search">
+						<div class="input-box">
+							<a href="javascript:;" class="remove"></a>
+							<input type="text" placeholder="Search..." />
+							<input type="button" class="submit" value=" " />
+						</div>
+					</form>
+					<!-- END RESPONSIVE QUICK SEARCH FORM -->
+				</li>
+
+				<li class="start active ">
+					<a href="index.html">
+					<i class="icon-home"></i> 
+					<span class="title">首页</span>
+					<span class="selected"></span>
+					</a>
+
+				</li>
+                <#if ( sysResourceList?size>0 ) >
+				       <#list sysResourceList as srl>
+				            <#if srl.pid?if_exists==0 && srl.typ?if_exists==0 > <!-- 判断功能,有些功能没有内部菜单-->
+			                    <li class="last ">
+									<a href="${futRoot}/${srl.url?if_exists}" target="mainFrame">
+									<i class="${srl.iconCls}"></i> 
+									<span class="title">${srl.text?if_exists}</span>			
+									</a>				
+								</li>
+			                <#else>
+				                <li class="">
+									
+				                    <#if srl.pid?if_exists==0 && srl.typ?if_exists==1 ><!-- 判断 菜单,此菜单内部存在功能 -->
+		                                <a href="javascript:;">
+											<i class="${srl.iconCls?if_exists}"></i> 
+											<span class="title">${srl.text?if_exists}</span>
+											<span class="arrow "></span>
+											</a>
+				                        <ul class="sub-menu">
+				                        <#list sysResourceList as srl2>
+				                            <#if srl2.pid?if_exists==srl.id?if_exists><!-- 判断 菜单下的功能 -->
+					                            <li >
+													<a target="mainFrame" href="${futRoot}/${srl.url?if_exists}">
+													<i class="${srl2.iconCls?if_exists}"></i>
+													${srl2.text?if_exists}</a>
+												</li>
+						                     </#if>
+					                     </#list>
+					                    </ul>
+			                        </#if>
+			                    </li>
+				            </#if>
+                       </#list>
+                   </#if>
+         </ul>
+		</div>
+
+		<!-- END SIDEBAR -->
+
+	</div>
+	
 </body>
 <!-- END BODY -->
-
 </html>
