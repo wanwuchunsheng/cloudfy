@@ -60,7 +60,7 @@ public class LoginVerifyController {
 	 * */
 	@RequestMapping("verifyUser")
 	@ResponseBody
-	public boolean verifyUser(HttpSession session,HttpServletRequest request, SysUserInfo bean){
+	public String verifyUser(HttpSession session,HttpServletRequest request, SysUserInfo bean){
 		try {
 			//登录验证
 			SysUserInfo userInfo= sysUserService.verifyUser(bean);
@@ -68,12 +68,12 @@ public class LoginVerifyController {
 			//session.setAttribute("fixCode", sysUserService.querySysFixCode());
 			//存储登录信息
 			session.setAttribute("userInfo", userInfo);
-			return true;
+			return "true";
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error("ERROR:登录验证失败！！！");
 		}
-		return false;
+		return "false";
 	}
 	
 }

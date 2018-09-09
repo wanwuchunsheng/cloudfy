@@ -1,364 +1,307 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
 <!-- BEGIN HEAD -->
+
 <head>
-	<meta charset="utf-8" />
-	<title>云朵家-商品明细</title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta content="" name="description" />
-	<meta content="" name="author" />
-	<!-- BEGIN GLOBAL MANDATORY STYLES -->
-	<link href="${resRoot}/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	<link href="${resRoot}/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
-	<link href="${resRoot}/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-	<link href="${resRoot}/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
-	<link href="${resRoot}/media/css/style.css" rel="stylesheet" type="text/css"/>
-	<link href="${resRoot}/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-	<link href="${resRoot}/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-	<link href="${resRoot}/media/css/jquery.fancybox.css" rel="stylesheet" />
-	<link href="${resRoot}/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-	<!-- END GLOBAL MANDATORY STYLES -->
-	<!-- BEGIN PAGE LEVEL STYLES -->
-	<link rel="stylesheet" type="text/css" href="${resRoot}/media/css/select2_metro.css" />
-	<link rel="stylesheet" href="${resRoot}/media/css/DT_bootstrap.css" />
-	<!-- 文本编辑器css引用 -->
-    <link href="${resRoot}/editor/css/wangEditor.min.css" rel="stylesheet" type="text/css">
-	<!-- END PAGE LEVEL STYLES -->
-	<link rel="shortcut icon" href="${resRoot}/media/image/favicon.ico" />
-		
-	 
-	    
+<meta charset="utf-8" />
+<title>车享网客服系统</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<meta name="MobileOptimized" content="320">
+<link href="${resRoot}/media/odstl/css/font-awesome.min.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/bootstrap.min.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/select2_metro.css" rel="stylesheet"/>
+<link href="${resRoot}/media/odstl/css/style-metronic.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/style.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/datepicker.css" rel="stylesheet">
+<link href="${resRoot}/media/odstl/css/jquery.fileupload-ui.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/custom.css" rel="stylesheet" />
+<!-- 文本编辑器css引用 -->
+<link href="${resRoot}/editor/dist/css/wangEditor.min.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.row-lft{margin-left:0.5%; overflow-x:hidden;}
+</style>
 </head>
-
 <!-- END HEAD -->
-
 <!-- BEGIN BODY -->
 
-<body style="background-color: #fff;">
+<body >
 
-	<!-- BEGIN PAGE -->
-		<div class="page-content2">
-			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-			<div id="portlet-config" class="modal hide">
-				<div class="modal-header">
-					<button data-dismiss="modal" class="close" type="button"></button>
-					<h3>商品明细-添加</h3>
-				</div>
-				
-			</div>
+<!-- BEGIN PAGE HEADER-->
+<div class="row row-lft">
+  <div class="col-md-12">
+    <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+    <h3 class="page-title">商品明细 -添加</h3>
+    <!-- END PAGE TITLE & BREADCRUMB-->
+  </div>
+</div>
+<!-- END PAGE HEADER-->
+<!-- 客户信息 开始 -->
 
-			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-			<!-- BEGIN PAGE CONTAINER-->        
-			<div class="container-fluid">
-				<!-- BEGIN PAGE HEADER-->
-				<div class="row-fluid">
-					<div class="span12">
-						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
-						<h3 class="page-title">
-							商品明细-添加
-						</h3>
-						<ul class="breadcrumb">
-							<li>
-								<i class="icon-home"></i>
-								<a href="index.html">首页</a> 
-								<i class="icon-angle-right"></i>
-							</li>
-							<li>
-								<a href="#">商品明细</a>
-								
-							</li>
-							
-						</ul>
-						<!-- END PAGE TITLE & BREADCRUMB-->
+<div class="row row-lft">
+<div class="col-md-12">
+<div class="portlet box blue">    
+    <div class="portlet-title">
+        <div class="caption">添加</div>
+    </div>
+    
+    <div class="portlet-body form">
+    	<form id="workSheetForm" class="form-horizontal" enctype="multipart/form-data" method="POST" action="" >
+                <div class="col-md-12" style="margin-top:30px;">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><font style="color:red">*</font>商品类型：</label>
+                            <div class="col-md-9">
+                               <select  id="acCode"  name="acCode" class="form-control" tabindex="-1">
+		                            <option value="">全部</option>
+							        <#list commondityNav as list > 
+							        <option value="${list.code}">${list.navTitle?if_exists}</option>
+							        </#list>
+							    </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                       <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><font style="color:red">*</font>标题：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="title" id="title">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                    <div class="col-md-12">
+                     
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">关键词：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="antistop">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><font style="color:red">*</font>热度：</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="hot" id="hot">
+                                    <option value="">请选择</option>
+                                    <option value="★★★★★">★★★★★</option>
+                                    <option value="★★★★">★★★★</option>
+                                    <option value="★★★">★★★</option>
+                                    <option value="★★">★★</option>
+                                    <option value="★">★</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                      <div class="col-md-12">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><font style="color:red">*</font>价格：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="price" id="price">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="display: none;">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><font style="color:red">*</font>VIP价格：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="vipPrice" id="vipPrice" value="0">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><font style="color:red">*</font>排序：</label>
+                            <div class="col-md-9">
+                                <input class="form-control"  type="text" id="num" name="num" value="0"/>
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                  
+                    <div class="col-md-12">
+      				 <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><font style="color:red">*</font>图片：</label>
+		                    <div class="col-md-9">
+                                <div class="input-group">
+    		                        <input type="file"  class="form-control"  name="files" id="file" style="background-color:#FDF5E6;"/>
+                                </div>
+                               <!--  <span class="help-block">为安全起见，请采用压缩rar形式</span> -->
+		                    </div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="col-md-9">
+                               <label for="cBrand" class="col-md-4 control-label"><font style="color:red">*</font>是否启用：</label>
+							   <div class="col-md-8">
+						             <label class="radio-inline">
+                                     <input type="radio" class="input_bottom" name="del" id="checkResult1" value="1">禁用</label>
+                                     <label class="radio-inline">
+                                     <input type="radio" class="input_bottom" name="del" id="checkResult2"  checked value="0">启用</label>
+							   </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                <!--     
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">图片2：</label>
+		                   <div class="col-md-9">
+                                <div class="input-group">
+    		                        <input type="file"  class="form-control "  name="files" id="file" style="background-color:#FDF5E6;"/>
+                                </div>
+                                <span class="help-block">为安全起见，请采用压缩rar形式</span>
+		                    </div>
+                        </div>
+                    </div> -->
+                    
+              	</div>
+                 <div class="col-md-12" style="margin-left:29px;margin-top:20px;">
+                     <label for="cBrand" class="col-md-4">新闻内容：</label>
+					<div class="col-md-11 container">
+						<textarea id="content" name="content" class="form-control"   style='height:600px; width:100%;'></textarea>
 					</div>
-				</div>
+                </div>
+                <div class="clearfix"></div>
+               
+            <div class="form-actions fluid text-center" id="hshow">
+                <button type="button" class="btn blue" id="savebtn"><i class="fa fa-check"></i> 提 交</button>
+                <button type="button" class="btn default" onclick="window.location.href='${futRoot}/web/nav/gotoQueryInfoPage' "><i class="fa fa-undo"></i> 返 回</button>
+            </div>
+        </form>
+    </div>
+</div>        <!-- END MODIFYCONT MODAL --> 
+  </div>
+</div>
+<!-- END CONTAINER -->
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery-1.10.2.min.js" ></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.blockui.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.cokie.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/select2.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/bootstrap-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/infomation.js" ></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/app.js" ></script>
 
-				<!-- END PAGE HEADER-->
-				<!-- BEGIN PAGE CONTENT-->
-				<div class="row-fluid">
-					<div class="span12">
-						<!-- BEGIN EXAMPLE TABLE PORTLET-->
-						<div class="portlet box blue">
-							<div class="portlet-title">
-								<div class="caption"><i class="icon-query"></i>添加商品</div>
-								<div class="tools">
-									<!-- <a href="javascript:;" class="collapse"></a>
-									<a href="#portlet-config" data-toggle="modal" class="config"></a>
-									<a href="javascript:;" class="reload"></a>
-									<a href="javascript:;" class="remove"></a> -->
-								</div>
-							</div>
+<!-- 文本编辑器引用 （必须把此js放到编辑器下面）start -->
+<script src="${resRoot}/editor/dist/js/wangEditor.js" type="text/javascript"></script>
+<!-- 文本编辑器引用 end   -->	
 
-							<div class="portlet-body">
-                            <div class="titleStl title-hight" >
-									<form id="workSheetForm" class="form-horizontal" enctype="multipart/form-data" method="POST" action="" >
-						                <div class="col-md-12" >
-						                     <div class="col-md-6">
-						                        <div class="form-group">
-						                            <label class="col-md-3 control-label"><font style="color:red">*</font>商品类型：</label>
-						                            <div class="col-md-9">
-						                               <select  id="acCode"  name="acCode" class="form-control" tabindex="-1">
-								                            <option value="">全部</option>
-													        <#list commondityNav as list > 
-													        <option value="${list.code}">${list.navTitle?if_exists}</option>
-													        </#list>
-													    </select>
-						                            </div>
-						                            <div class="clearfix"></div>
-						                        </div>
-						                    </div>
-						                       <div class="col-md-6">
-						                        <div class="form-group">
-						                            <label class="col-md-3 control-label"><font style="color:red">*</font>标题：</label>
-						                            <div class="col-md-9">
-						                                <input class="form-control" type="text" name="title" id="title">
-						                                <span class="help-block"></span>
-						                            </div>
-						                            <div class="clearfix"></div>
-						                        </div>
-						                    </div>
-						                      </div>
-						                    <div class="col-md-12">
-						                     
-						                    <div class="col-md-6">
-						                        <div class="form-group">
-						                            <label class="col-md-3 control-label">关键词：</label>
-						                            <div class="col-md-9">
-						                                <input class="form-control" type="text" name="antistop">
-						                                <span class="help-block"></span>
-						                            </div>
-						                            <div class="clearfix"></div>
-						                        </div>
-						                    </div>
-						                     <div class="col-md-6">
-						                        <div class="form-group">
-						                            <label class="col-md-3 control-label"><font style="color:red">*</font>热度：</label>
-						                            <div class="col-md-9">
-						                                <select class="form-control" name="hot" id="hot">
-						                                    <option value="">请选择</option>
-						                                    <option value="★★★★★">★★★★★</option>
-						                                    <option value="★★★★">★★★★</option>
-						                                    <option value="★★★">★★★</option>
-						                                    <option value="★★">★★</option>
-						                                    <option value="★">★</option>
-						                                </select>
-						                            </div>
-						                            <div class="clearfix"></div>
-						                        </div>
-						                    </div>
-						                      </div>
-						                      <div class="col-md-12">
-						                      <div class="col-md-6">
-						                        <div class="form-group">
-						                            <label class="col-md-3 control-label"><font style="color:red">*</font>价格：</label>
-						                            <div class="col-md-9">
-						                                <input class="form-control" type="text" name="price" id="price">
-						                                <span class="help-block"></span>
-						                            </div>
-						                            <div class="clearfix"></div>
-						                        </div>
-						                    </div>
-						                    <div class="col-md-6" style="display: none;">
-						                        <div class="form-group">
-						                            <label class="col-md-3 control-label"><font style="color:red">*</font>VIP价格：</label>
-						                            <div class="col-md-9">
-						                                <input class="form-control" type="text" name="vipPrice" id="vipPrice" value="0">
-						                                <span class="help-block"></span>
-						                            </div>
-						                            <div class="clearfix"></div>
-						                        </div>
-						                    </div>
-						                    <div class="col-md-6">
-						                        <div class="form-group">
-						                            <label class="col-md-3 control-label"><font style="color:red">*</font>排序：</label>
-						                            <div class="col-md-9">
-						                                <input class="form-control"  type="text" id="num" name="num" value="0"/>
-						                                <span class="help-block"></span>
-						                            </div>
-						                            <div class="clearfix"></div>
-						                        </div>
-						                    </div>
-						                    
-						                </div>
-						                  
-						                    <div class="col-md-12">
-						      				 <div class="col-md-6"> 
-						                        <div class="form-group">
-						                            <label class="col-md-3 control-label"><font style="color:red">*</font>图片：</label>
-								                    <div class="col-md-9">
-						                                <div class="input-group">
-						    		                        <input type="file"  class="form-control"  name="files" id="file" style="background-color:#FDF5E6;"/>
-						                                </div>
-						                               <!--  <span class="help-block">为安全起见，请采用压缩rar形式</span> -->
-								                    </div>
-						                        </div>
-						                    </div>
-						                     <div class="col-md-6">
-						                        <div class="form-group">
-						                            <div class="col-md-9">
-						                               <label for="cBrand" class="col-md-4 control-label"><font style="color:red">*</font>是否启用：</label>
-													   <div class="col-md-8">
-															<span style="line-height:36px;cursor:pointer;vertical-align: middle;">禁用:</span>&nbsp;<input  type="radio" class="input_bottom" value="1"  name="del" />&nbsp;&nbsp;
-															<span style="line-height:36px;cursor:pointer;vertical-align: middle;">启用:</span>&nbsp;<input checked="checked"  type="radio" class="input_bottom" value="0" name="del" />
-													    </div>
-						                            </div>
-						                            <div class="clearfix"></div>
-						                        </div>
-						                    </div>
-						                
-						                    
-						              	</div>
-						                 <div class="col-md-12" style="margin-left:29px;margin-top:20px;">
-						                     <label for="cBrand" class="col-md-4">内容详细：</label>
-											<div class="col-md-11 container">
-												<textarea id="content" name="content" class="form-control"   style='height:400px; width:100%;'></textarea>
-											</div>
-						                </div>
-						                <div class="clearfix"></div>
-						               
-							           <div class="form-actions fluid text-center" id="hshow">
-							                <button type="button" class="btn blue" id="savebtn"><i class="fa fa-check"></i> 提 交</button>
-							                <button type="button" class="btn default" onclick="window.location.href='${futRoot}/web/nav/gotoQueryInfoPage' "><i class="fa fa-undo"></i> 返 回</button>
-							            </div> 
-						        </form>
-							</div>
-
-						</div>
-
-						<!-- END EXAMPLE TABLE PORTLET-->
-
-					</div>
-
-				</div>
-
-				<!-- END PAGE CONTENT -->
-
-			</div>
-
-			<!-- END PAGE CONTAINER-->
-
-		</div>
-
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function () {
+	//App.init();
+	// initlayout and core plugins
+	$("select").select2();
+	TableManaged({id:"sample_1"}).init();
+	$('.date-picker').datepicker({
+	    language:'zh-CN',
+	    rtl: App.isRTL(),
+	    autoclose: true,
+	    format: "yyyy-mm-dd"
+	});
 	
-	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-	<!-- BEGIN CORE PLUGINS -->
-	<script src="${resRoot}/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
-	<script src="${resRoot}/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-	<script src="${resRoot}/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
-	<script src="${resRoot}/media/js/bootstrap.min.js" type="text/javascript"></script>
-	<!--[if lt IE 9]>
-	<script src="${resRoot}/media/js/excanvas.min.js"></script>
-	<script src="${resRoot}/media/js/respond.min.js"></script>  
-	<![endif]-->   
-	<script src="${resRoot}/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
-	<script src="${resRoot}/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
-	<script src="${resRoot}/media/js/jquery.cookie.min.js" type="text/javascript"></script>
-	<script src="${resRoot}/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
-	<script src="${resRoot}/media/js/jquery.fancybox.pack.js"></script>
-	<!-- END CORE PLUGINS -->
-	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<script type="text/javascript" src="${resRoot}/media/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" src="${resRoot}/media/js/DT_bootstrap.js"></script>
-	<!-- END PAGE LEVEL PLUGINS -->
-	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="${resRoot}/media/js/app.js"></script>
-	<!-- 美化滚动条 -->
-	<script src="${futRoot}/statics/resources/view/js/jquery.nicescroll.min.js"></script>
-	<script src="${futRoot}/statics/resources/view/js/core.js"></script> 
-	
-	<!-- 文本编辑器引用 （必须把此js放到编辑器下面）start -->
-	<script src="${resRoot}/editor/js/wangEditor.js" type="text/javascript"></script>
-	<!-- 文本编辑器引用 end   -->	
-	
-    <script src="${resRoot}/media/js/DateFormat.js" type="text/javascript"></script> 
-	<script>
-		jQuery(document).ready(function() { 
-			// initlayout and core plugins
-			
-			TableManaged({id:"sample_1"}).init();
-			$('.date-picker').datepicker({
-			    language:'zh-CN',
-			    rtl: App.isRTL(),
-			    autoclose: true,
-			    format: "yyyy-mm-dd"
-			});
-			
-			/**文本编辑器容器初始化 start*/
-			var editor = new wangEditor('content');
-			// 上传图片
-			editor.config.uploadImgUrl ="${futRoot}"+"/upload";
-			editor.create();
-			/**文本编辑器容器初始化 End */
+	/**文本编辑器容器初始化 start*/
+	var editor = new wangEditor('content');
+	// 上传图片
+	editor.config.uploadImgUrl ="${futRoot}"+"/upload";
+	editor.create();
+	/**文本编辑器容器初始化 End */
 
-			 $("#savebtn").click(function(){
-		          //商品类型
-		          var acCode=$("#acCode").val();
-		          if(acCode==""){ $.Alert("商品类型不能为空！");return false;}
-		          //标题
-		          var title=$.trim($("#title").val());
-		          if(title==""){ $.Alert("标题不能为空！");return false;}
-		          //热度
-		          var hot=$("#hot").val();
-		          if(hot==""){ $.Alert("热度不能为空！");return false;}
-		          //价格
-		          var price=$.trim( $("#price").val() );
-		          if(price==""){ $.Alert("价格不能为空！");return false;}
-		          //是否是数字
-		          if(isNaN(parseInt(price))){
-		              $.Alert("价格请填写数字类型!");return false;
-		          }
-		          /* 
-			          //VIP价格
-			          var vipPrice=$.trim( $("#vipPrice").val() );
-			          if(vipPrice==""){ $.Alert("VIP价格不能为空！");return false;}
-			          //是否是数字
-			          if(isNaN(parseInt(vipPrice))){
-			              $.Alert("VIP价格请填写数字类型!");return false;
-			          } 
-		          */
-		         //验证排序
-		 		 var num= $.trim($("#num").val());
-		 		 if(num==""){
-		 			 $.Alert("排序不能为空，可默认值0！");
-		             return false;
-		 		 }
-		 		 //是否是数字
-		          if(isNaN(parseInt(num))){
-		              $.Alert("排序必须数字类型!");return false;
-		          }
-		          //图片
-		          var file= $("#file").val();
-		          if(file==""){ $.Alert("图片不能为空！");return false;}
+	 $("#savebtn").click(function(){
+          //商品类型
+          var acCode=$("#acCode").val();
+          if(acCode==""){ $.Alert("商品类型不能为空！");return false;}
+          //标题
+          var title=$.trim($("#title").val());
+          if(title==""){ $.Alert("标题不能为空！");return false;}
+          //热度
+          var hot=$("#hot").val();
+          if(hot==""){ $.Alert("热度不能为空！");return false;}
+          //价格
+          var price=$.trim( $("#price").val() );
+          if(price==""){ $.Alert("价格不能为空！");return false;}
+          //是否是数字
+          if(isNaN(parseInt(price))){
+              $.Alert("价格请填写数字类型!");return false;
+          }
+          /* 
+	          //VIP价格
+	          var vipPrice=$.trim( $("#vipPrice").val() );
+	          if(vipPrice==""){ $.Alert("VIP价格不能为空！");return false;}
+	          //是否是数字
+	          if(isNaN(parseInt(vipPrice))){
+	              $.Alert("VIP价格请填写数字类型!");return false;
+	          } 
+          */
+         //验证排序
+ 		 var num= $.trim($("#num").val());
+ 		 if(num==""){
+ 			 $.Alert("排序不能为空，可默认值0！");
+             return false;
+ 		 }
+ 		 //是否是数字
+          if(isNaN(parseInt(num))){
+              $.Alert("排序必须数字类型!");return false;
+          }
+          //图片
+          var file= $("#file").val();
+          if(file==""){ $.Alert("图片不能为空！");return false;}
 
-		          //隐藏按钮
-		          $("#hshow").html("");
-		         //验证文本框
-				 var options = {
-			               url:"${futRoot}/web/nav/addNavInfo.json",
-			               type:"post",
-			               dataType:"json",
-			               contentType:'application/json;charset=UTF-8',
-			               success:function(msg){
-			            	   if(msg=='1'){
-				            	   console.info("提交成功！！！");
-				            	   /* $.Alert("提交成功！"); */
-				            	   window.location.href='${futRoot}/web/nav/gotoQueryInfoPage'
-			            	   }else{
-			            		   $.Alert("提交失败！");
-			            	   }
-			               },
-						   error:function(msg){
-							   $.Alert("保存失败！");
-						   }
-			            };
-		           $("#workSheetForm").ajaxSubmit(options); 
+          //隐藏按钮
+          $("#hshow").html("");
+         //验证文本框
+		 var options = {
+	               url:"${futRoot}/web/nav/addNavInfo.json",
+	               type:"post",
+	               dataType:"json",
+	               contentType:'application/json;charset=UTF-8',
+	               success:function(msg){
+	            	   if(msg=='1'){
+		            	   console.info("提交成功！！！");
+		            	   /* $.Alert("提交成功！"); */
+		            	   window.location.href='${futRoot}/web/nav/gotoQueryInfoPage'
+	            	   }else{
+	            		   $.Alert("提交失败！");
+	            	   }
+	               },
+				   error:function(msg){
+					   $.Alert("保存失败！");
+				   }
+	            };
+           $("#workSheetForm").ajaxSubmit(options); 
 
-				
-			})
-	</script>
+		
+	})
+});
+</script>
+<!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
 </html>

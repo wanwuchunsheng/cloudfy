@@ -1,161 +1,278 @@
 <!DOCTYPE html>
+
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
 <!-- BEGIN HEAD -->
+
 <head>
+
 	<meta charset="utf-8" />
-	<title>云朵家-登录</title>
+
+	<title>云朵家后台管理系统</title>
+
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
 	<meta content="" name="description" />
+
 	<meta content="" name="author" />
+
 	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+
 	<link href="${resRoot}/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
 	<link href="${resRoot}/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
 	<link href="${resRoot}/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
 	<link href="${resRoot}/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
 	<link href="${resRoot}/media/css/style.css" rel="stylesheet" type="text/css"/>
+
 	<link href="${resRoot}/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
 	<link href="${resRoot}/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
 	<link href="${resRoot}/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
 	<!-- END GLOBAL MANDATORY STYLES -->
+
 	<!-- BEGIN PAGE LEVEL STYLES -->
+
 	<link href="${resRoot}/media/css/login-soft.css" rel="stylesheet" type="text/css"/>
+
 	<!-- END PAGE LEVEL STYLES -->
+
 	<link rel="shortcut icon" href="${resRoot}/media/image/favicon.ico" />
+
 </head>
 
 <!-- END HEAD -->
+
 <!-- BEGIN BODY -->
+
 <body class="login">
+
 	<!-- BEGIN LOGO -->
+
 	<div class="logo">
+
 		
+
 	</div>
+
 	<!-- END LOGO -->
+
 	<!-- BEGIN LOGIN -->
+
 	<div class="content">
+
 		<!-- BEGIN LOGIN FORM -->
-		<form class="form-vertical login-form"  id="loginForm" action="" method="post">
+
+		<form id="loginForm" action="" method="post">
+
 			<h3 class="form-title">登录</h3>
-			<div class="alert alert-error hide">
+
+			<div id="errorShow" class="alert alert-error hide">
+
 				<button class="close" data-dismiss="alert"></button>
-				<span>用户名或密码错误.</span>
+
+				<span id="errorMessage">错误：用户名密码不能为空</span>
+
 			</div>
 
 			<div class="control-group">
+
 				<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
 
 				<label class="control-label visible-ie8 visible-ie9">用户名</label>
+
 				<div class="controls">
+
 					<div class="input-icon left">
+
 						<i class="icon-user"></i>
-						<input class="m-wrap placeholder-no-fix" type="text" placeholder="用户名" id="uName" name="uname"/>
+
+						<input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" id="uname" name="uname"/>
+
 					</div>
+
 				</div>
+
 			</div>
 
 			<div class="control-group">
+
 				<label class="control-label visible-ie8 visible-ie9">密码</label>
+
 				<div class="controls">
+
 					<div class="input-icon left">
+
 						<i class="icon-lock"></i>
-						<input class="m-wrap placeholder-no-fix" type="password" placeholder="密码" id="uPassword" name="upwd"/>
+
+						<input class="m-wrap placeholder-no-fix" type="password" placeholder="Password" id="upwd" name="upwd"/>
+
 					</div>
+
 				</div>
+
 			</div>
 
 			<div class="form-actions">
+
 				<label class="checkbox">
-				<input type="checkbox" name="remember" value="1"/>记住密码
+
+				<input type="checkbox" name="remember" value="1"/> 记住密码
+
 				</label>
-				<button  type="button" id="login_btn" class="btn blue pull-right">
+
+				<button type="button" id="login_btn" class="btn blue pull-right">
+
 				登录 <i class="m-icon-swapright m-icon-white"></i>
+
 				</button>            
+
 			</div>
 
 			
 
 		</form>
 
-		<!-- END LOGIN FORM -->     
+		<!-- END LOGIN FORM -->        
+
+		<!-- BEGIN FORGOT PASSWORD FORM -->
+
+		
+
+		
+
+		<!-- END REGISTRATION FORM -->
+
+	</div>
+
+	<!-- END LOGIN -->
+
+	<!-- BEGIN COPYRIGHT -->
+
+	<div class="copyright">
+
+		2018 &copy; 云朵家技术团队.
+
 	</div>
 
 	<!-- END COPYRIGHT -->
+
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
 	<!-- BEGIN CORE PLUGINS -->
+
 	<script src="${resRoot}/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+
 	<script src="${resRoot}/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-	<script src="${resRoot}/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script> 
+
+	<script src="${resRoot}/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+
 	<script src="${resRoot}/media/js/bootstrap.min.js" type="text/javascript"></script>
+
 	<!--[if lt IE 9]>
-	<script src="media/js/excanvas.min.js"></script>
-	<script src="media/js/respond.min.js"></script>  
+
+	<script src="${resRoot}/media/js/excanvas.min.js"></script>
+
+	<script src="${resRoot}/media/js/respond.min.js"></script>  
+
 	<![endif]-->   
+
 	<script src="${resRoot}/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
 	<script src="${resRoot}/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+
 	<script src="${resRoot}/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+
 	<script src="${resRoot}/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+
 	<!-- END CORE PLUGINS -->
+
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
+
 	<script src="${resRoot}/media/js/jquery.validate.min.js" type="text/javascript"></script>
+
 	<script src="${resRoot}/media/js/jquery.backstretch.min.js" type="text/javascript"></script>
+
 	<!-- END PAGE LEVEL PLUGINS -->
 
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
 	<script src="${resRoot}/media/js/app.js" type="text/javascript"></script>
-	<script src="${resRoot}/media/js/login-soft.js" type="text/javascript"></script>     
+
+	<script src="${resRoot}/media/js/login-soft.js" type="text/javascript"></script>      
 
 	<!-- END PAGE LEVEL SCRIPTS --> 
+
 	<script>
-		jQuery(document).ready(function() {  
+
+		jQuery(document).ready(function() {
 		    App.init();
 		    Login.init();
-		    //默认选中第一行文本
-		    $('input:text:first').focus();
-	    	//监听键盘回车事件
-	    	$(document).keyup(function(event){
-			  if(event.keyCode ==13){
-				  checkUser();
-			  }
-			});
+    	    //默认选中第一行文本
+  	        $('input:text:first').focus();
+    	    //监听键盘回车事件
+  	        $('input').keydown(function(){
+  	        	if(event.keyCode==13){ //13标识键盘回车键
+  	        		checkUser();
+  	        	}
+  	        });
 	    	//确定按钮
 	    	$("#login_btn").click(function(){
 	    		checkUser();
 	    	});
-		});
-		/**
-		  验证合法性
-		*/
-	    function checkUser(){
-	    	//验证登录信息
-	   	     var uname=$("#uName").val();
-	   	     var upassword=$("#uPassword").val();
-	   	     if(uname==""){
-	   	    	 alert("用户名不能为空！！！");
-	   	    	 return false;
-	   	     }
-	   	     if(upassword==""){
-	   	    	 alert("密码不能为空！！！");
-	   	    	 return false;
-	   	     }
-	   	     //提交后台处理
-	   	     $.ajax({
-	   			url : "${futRoot}/login/verifyUser",
-	   			type : "post",
-	   			dataType : "json",
-	   		    async: false,
-	   			data : $("#loginForm").serialize(),
-	   			success : function(data) {
-	   				if(data){
-		   				window.location.href="${futRoot}/web/user/main";
+		 });
+		    
+
+		    function checkUser(){
+		    	//验证登录信息
+		   	     var uname=$("#uname").val();
+		   	     var upassword=$("#upwd").val();
+		   	     //alert(uname+"/"+upassword);
+		   	     if(uname==""){
+			   	     $("#errorShow").attr("class","alert alert-error");
+		   	    	 $("#errorMessage").html("用户名不能为空！！！");
+		   	    	 return false;
+		   	     }
+		   	     if(upassword==""){
+		   	    	 $("#errorShow").attr("class","alert alert-error");
+		   	    	 $("#errorMessage").html("密码不能为空！！！");
+		   	    	 return false;
+		   	     }
+		   	     //提交后台处理
+		   	     $.ajax({
+		   			url : "${futRoot}/login/verifyUser",
+		   			type : "post",
+		   			dataType : "json",
+		   		    async: false,
+		   			data : $("#loginForm").serialize(),
+		   			success : function(data) {
+			   			console.log(data);
+		   				if(data){
+			   				window.location.href="${futRoot}/web/user/main";
+			   			}
 		   			}
-	   			}
-	   		 });   
-		 }
+		   		 });  
+	              
+		   	     
+		   }
+		
+		</script>
+
 	</script>
+
 	<!-- END JAVASCRIPTS -->
+
 </body>
 
 <!-- END BODY -->

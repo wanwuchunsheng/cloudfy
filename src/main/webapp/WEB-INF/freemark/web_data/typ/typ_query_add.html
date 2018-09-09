@@ -13,23 +13,38 @@
 <meta content="" name="description" />
 <meta content="" name="author" />
 <meta name="MobileOptimized" content="320">
-<link href="${resRoot}/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-<link href="${resRoot}/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="${resRoot}/plugins/select2/select2_metro.css" />
-<link rel="stylesheet" href="${resRoot}/plugins/data-tables/DT_bootstrap.css" />
-<link href="${resRoot}/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
-<link href="${resRoot}/plugins/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet">
-<link href="${resRoot}/css/style-metronic.css" rel="stylesheet" />
-<link href="${resRoot}/css/style.css" rel="stylesheet" />
-<link href="${resRoot}/css/style-responsive.css" rel="stylesheet" />
-<link href="${resRoot}/css/plugins.css" rel="stylesheet" />
-<link href="${resRoot}/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
-<link href="${resRoot}//plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
-<link href="${resRoot}/plugins/uniform/css/uniform.default.css" rel="stylesheet" />
-<link href="${resRoot}/css/pages/tasks.css" rel="stylesheet" />
-<link href="${resRoot}/css/themes/grey.css" rel="stylesheet" id="style_color" />
-<link href="${resRoot}/css/custom.css" rel="stylesheet" />
-<link rel="shortcut icon" href="favicon.ico" />
+<link href="${resRoot}/media/odstl/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/uniform.default.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/select2_metro.css" rel="stylesheet"  />
+		<link href="${resRoot}/media/odstl/css/DT_bootstrap.css"  rel="stylesheet"  />
+		<link href="${resRoot}/media/odstl/css/datepicker.css" rel="stylesheet">
+		<link href="${resRoot}/media/odstl/css/datetimepicker.css" rel="stylesheet">
+		<link href="${resRoot}/media/odstl/css/style-metronic.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/style.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/custom.css" rel="stylesheet" />
+
+		<script src="${resRoot}/media/odstl/js/jquery-1.10.2.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.cokie.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.uniform.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/select2.min.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.dataTables.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/DT_bootstrap.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap-datepicker.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap-datepicker.zh-CN.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.ui.widget.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.iframe-transport.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload-process.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload-validate.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/alert_message.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/app.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/index.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/global.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/Date.js" type="text/javascript"></script>
 <style type="text/css">
 .iconimg{
    width:30px;
@@ -47,13 +62,13 @@
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 
-<body class="page-header-fixed">
+<body class="header-fixed-body" >
 
 <!-- BEGIN PAGE HEADER-->
 <div class="row">
   <div class="col-md-12">
     <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-    <h3 class="page-title">商品类型 </h3>
+    <h3 class="page-title">商品类型 -添加</h3>
     <!-- END PAGE TITLE & BREADCRUMB-->
   </div>
 </div>
@@ -120,11 +135,13 @@
                      <div class="col-md-6">
                         <div class="form-group">
                             <div class="col-md-9">
-                               <label for="cBrand" class="col-md-4 control-label">是否启用：</label>
+                               <label for="cBrand" class="col-md-4 control-label"><font style="color:red">*</font>是否启用：</label>
 							   <div class="col-md-8">
-									<span style="line-height:36px;cursor:pointer;vertical-align: middle;">禁用:</span>&nbsp;<input  type="radio" class="input_bottom" value="1"  name="del" />&nbsp;&nbsp;
-									<span style="line-height:36px;cursor:pointer;vertical-align: middle;">启用:</span>&nbsp;<input checked="checked"  type="radio" class="input_bottom" value="0" name="del" />
-							    </div>
+									 <label class="radio-inline">
+                                     <input type="radio" class="input_bottom" name="del" id="checkResult1"  value="1">禁用</label>
+                                     <label class="radio-inline">
+                                     <input type="radio" class="input_bottom" name="del" id="checkResult2"  checked value="0">启用</label>
+							   </div>
                             </div>
                             <div class="clearfix"></div>
                         </div>

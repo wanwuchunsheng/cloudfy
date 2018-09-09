@@ -13,25 +13,19 @@
 <meta content="" name="description" />
 <meta content="" name="author" />
 <meta name="MobileOptimized" content="320">
-<link href="${resRoot}/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-<link href="${resRoot}/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="${resRoot}/plugins/select2/select2_metro.css" />
-<link rel="stylesheet" href="${resRoot}/plugins/data-tables/DT_bootstrap.css" />
-<link href="${resRoot}/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
-<link href="${resRoot}/plugins/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet">
-<link href="${resRoot}/css/style-metronic.css" rel="stylesheet" />
-<link href="${resRoot}/css/style.css" rel="stylesheet" />
-<link href="${resRoot}/css/style-responsive.css" rel="stylesheet" />
-<link href="${resRoot}/css/plugins.css" rel="stylesheet" />
-<link href="${resRoot}/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
-<link href="${resRoot}//plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
-<link href="${resRoot}/plugins/uniform/css/uniform.default.css" rel="stylesheet" />
-<link href="${resRoot}/css/pages/tasks.css" rel="stylesheet" />
-<link href="${resRoot}/css/themes/grey.css" rel="stylesheet" id="style_color" />
-<link href="${resRoot}/css/custom.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/font-awesome.min.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/bootstrap.min.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/select2_metro.css" rel="stylesheet"/>
+<link href="${resRoot}/media/odstl/css/style-metronic.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/style.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/datepicker.css" rel="stylesheet">
+<link href="${resRoot}/media/odstl/css/jquery.fileupload-ui.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/custom.css" rel="stylesheet" />
 <!-- 文本编辑器css引用 -->
-<link href="${resRoot}/plugins/editor/dist/css/wangEditor.min.css" rel="stylesheet" type="text/css">
-<link rel="shortcut icon" href="favicon.ico" />
+<link href="${resRoot}/editor/dist/css/wangEditor.min.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.row-lft{margin-left:0.5%; overflow-x:hidden;}
+</style>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -39,17 +33,17 @@
 <body class="page-header-fixed">
 
 <!-- BEGIN PAGE HEADER-->
-<div class="row">
+<div class="row row-lft">
   <div class="col-md-12">
     <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-    <h3 class="page-title">商品明细 </h3>
+    <h3 class="page-title">商品明细 -修改</h3>
     <!-- END PAGE TITLE & BREADCRUMB-->
   </div>
 </div>
 <!-- END PAGE HEADER-->
 <!-- 客户信息 开始 -->
 
-<div class="row">
+<div class="row row-lft">
 <div class="col-md-12">
 <div class="portlet box blue">    
     <div class="portlet-title">
@@ -166,19 +160,20 @@
                             <div class="col-md-9">
                                <label for="cBrand" class="col-md-4 control-label"><font style="color:red">*</font>是否启用：</label>
 							   <div class="col-md-8">
-									<span style="line-height:36px;cursor:pointer;vertical-align: middle;">禁用:</span>&nbsp;<input  type="radio" class="input_bottom" value="1"  name="del" />&nbsp;&nbsp;
-									<span style="line-height:36px;cursor:pointer;vertical-align: middle;">启用:</span>&nbsp;<input checked="checked"  type="radio" class="input_bottom" value="0" name="del" />
-							    </div>
+									 <label class="radio-inline">
+                                     <input type="radio" class="input_bottom" name="del" id="checkResult1" <#if cnav.del==1>checked="checked"</#if> value="1">禁用</label>
+                                     <label class="radio-inline">
+                                     <input type="radio" class="input_bottom" name="del" id="checkResult2"  <#if cnav.del==0>checked="checked"</#if> value="0">启用</label>
+							   </div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                    
               	</div>
                  <div class="col-md-12" style="margin-left:29px;margin-top:20px;">
                      <label for="cBrand" class="col-md-4">新闻内容：<font style="color:red;">(图片支持自由拖动大小* )</font></label>
 					<div class="col-md-11 container">
-						<textarea id="content" name="content" class="form-control"   style='min-height:300px; width:100%;'>${cnav.content?if_exists}</textarea>					    
+						<textarea id="content" name="content" class="form-control"   style='min-height:600px; width:100%;'>${cnav.content?if_exists}</textarea>					    
 					</div>
                 </div>
                 <div class="clearfix"></div>
@@ -206,44 +201,27 @@
   </div>
 </div>
 <!-- END CONTAINER -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<script src="${resRoot}/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="${resRoot}/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="${resRoot}/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-<script src="${resRoot}/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="${resRoot}/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="${resRoot}/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="${resRoot}/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="${resRoot}/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="${resRoot}/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="${resRoot}/plugins/select2/select2.min.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/data-tables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/data-tables/DT_bootstrap.js"></script> 
-<script type="text/javascript" src="${resRoot}/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/bootstrap-datepicker/js/bootstrap-datepicker.zh-CN.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.iframe-transport.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload-process.js"></script>
-<script type="text/javascript" src="${resRoot}/plugins/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
-<script src="${resRoot}/js/infomation.js" type="text/javascript"></script>
-<script src="${resRoot}/js/app.js" type="text/javascript"></script>
-<script src="${resRoot}/js/alert_message.js" type="text/javascript"></script>
-<script type="text/javascript" src="${resRoot}/plugins/jquery-validation/lib/jquery.form.js"></script>
-
+<!-- END CONTAINER -->
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery-1.10.2.min.js" ></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.blockui.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.cokie.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/select2.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/bootstrap-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/infomation.js" ></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/app.js" ></script>
+<!-- 美化滚动条 -->
+<script src="${futRoot}/statics/resources/view/js/jquery.nicescroll.min.js"></script>
+<script src="${futRoot}/statics/resources/view/js/core.js"></script>  
 <!-- 文本编辑器引用 （必须把此js放到编辑器下面）start -->
-<script src="${resRoot}/plugins/editor/dist/js/wangEditor.js" type="text/javascript"></script>
+<script src="${resRoot}/editor/dist/js/wangEditor.js" type="text/javascript"></script>
 <!-- 文本编辑器引用 end   -->	
 
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function () {
-	App.init();
+	//App.init();
 	// initlayout and core plugins
 	$("select").select2();
 	TableManaged({id:"sample_1"}).init();

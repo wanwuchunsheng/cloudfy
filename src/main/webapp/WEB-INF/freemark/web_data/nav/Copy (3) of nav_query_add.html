@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+<meta charset="utf-8" />
+<title>车享网客服系统</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<meta name="MobileOptimized" content="320">
+<link href="${resRoot}/media/odstl/css/font-awesome.min.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/bootstrap.min.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/select2_metro.css" rel="stylesheet"/>
+<link href="${resRoot}/media/odstl/css/style-metronic.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/style.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/datepicker.css" rel="stylesheet">
+<link href="${resRoot}/media/odstl/css/jquery.fileupload-ui.css" rel="stylesheet" />
+<link href="${resRoot}/media/odstl/css/custom.css" rel="stylesheet" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+  <div class="col-md-12">
+    <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+    <h3 class="page-title">投诉工单 </h3>
+    <!-- END PAGE TITLE & BREADCRUMB-->
+  </div>
+</div>
+<!-- END PAGE HEADER-->
+<!-- 客户信息 开始 -->
+
+<div class="row" >
+<div class="col-md-12">
+<div class="portlet box blue">    
+    <div class="portlet-title">
+        <div class="caption">投诉工单</div>
+    </div>
+    
+    <div class="portlet-body form">
+    	<form id="workSheetForm" class="form-horizontal" enctype="multipart/form-data" novalidate>
+        	<div class="form-body">
+                <div class="alert alert-danger display-hide">
+                    <button class="close" data-dismiss="alert"></button>
+                    	表单填写有误，请检查
+               </div>
+               <div class="alert alert-success display-hide">
+                    <button class="close" data-dismiss="alert"></button>
+                    	表单提交成功
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">工单编号：</label>
+                            <div class="col-md-9">
+                              <p class="form-control-static">1334445</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">里程数：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="accountPhone">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                    <div class="col-md-12">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">单位类型：</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="priority">
+                                    <option value="">请选择</option>
+                                        <option value="60221001">一般</option>
+                                        <option value="60221002">严重</option>
+                     
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                       <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">投诉单位：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="accountPhone">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                    <div class="col-md-12">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">工单状态：</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="priority">
+                                    <option value="">请选择</option>
+                                        <option value="60221001">收到</option>
+                                        <option value="60221002">通知相关部门</option>
+                                        <option value="60221003">商议行动计划</option>
+                                        <option value="60221001">获得顾客同意</option>
+                                        <option value="60221002">实施解决方案</option>
+                                        <option value="60221003">结案</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">要下送的部门：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="accountPhone">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                    <div class="col-md-12">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">要下送的维修站：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="accountPhone">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">省</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="priority">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">市：</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="priority">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">拥有者：</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="priority">
+                                    <option value="">请选择</option>
+                                        <option value="60221001">小李</option>
+                                        <option value="60221002">小修</option>
+                                        <option value="60221003">明明</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                    <div class="col-md-12">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label col-md-3">提醒日期：</label>
+                            <div class="col-md-9">
+                              <div class="input-group date date-picker" data-date-format="yyyy-mm-dd">
+                                <input type="text" class="form-control" readonly="">
+                                <span class="input-group-btn">
+                                <button class="btn default" type="button"><i class="fa fa-calendar  text-success"></i></button>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                        </div>
+                  
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">严重性：</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="priority">
+                                    <option value="">请选择</option>
+                                        <option value="60221001">一般</option>
+                                        <option value="60221002">严重</option>
+                     
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                    <div class="col-md-12">
+                     <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label col-md-3">创建日期：</label>
+                            <div class="col-md-9">
+                              <div class="input-group date date-picker" data-date-format="yyyy-mm-dd">
+                                <input type="text" class="form-control" readonly="">
+                                <span class="input-group-btn">
+                                <button class="btn default" type="button"><i class="fa fa-calendar  text-success"></i></button>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                        </div>
+                  <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">创建人：</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="accountPhone">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                      </div>
+                    <div class="col-md-12">
+      				 <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">附件上传：</label>
+		                    <div class="col-md-9">
+                                <div class="input-group">
+    		                        <input type="text" class="form-control" id="uploadFileNameForDraft" name="uploadFileNameForDraft" readonly>
+    		                        <span class="btn btn-success fileinput-button input-group-btn" ng-class="{disabled: disabled}"> 
+                                        <span><i class="fa fa-plus"></i> 添加文件</span>
+                                        <input type="file" ng-disabled="disabled" name="attachmentFile" id="uploadifyForDraft">
+                                    </span> 
+                                    <input type="hidden" id="attachmentName" name="attachmentName">
+                                    <input type="hidden" id="attachmentId" name="attachmentId">
+                                </div>
+                                <span class="help-block">为安全起见，请采用压缩rar形式</span>
+		                    </div> 
+                        </div>
+                    </div>
+              	</div>
+                 <div class="col-md-12">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">回复说明：</label>
+                            <div class="col-md-9">
+                                <textarea rows="3" name="content" id="content" class="form-control "></textarea>
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                	</div>
+                <div class="clearfix"></div>
+            
+            <div class="form-actions fluid text-center">
+                <button type="submit" class="btn blue" id="savebtn"><i class="fa fa-check"></i> 提 交</button>
+                <button type="button" class="btn default" onclick="javascrit:location.reload()"><i class="fa fa-undo"></i> 返 回</button>
+            </div>
+        </form>
+    </div>
+</div>        <!-- END MODIFYCONT MODAL --> 
+  </div>
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE js -->
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery-1.10.2.min.js" ></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.blockui.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/jquery.cokie.min.js"></script>
+
+<script type="text/javascript" src="${resRoot}/media/odstl/js/select2.min.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/bootstrap-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/infomation.js" ></script>
+<script type="text/javascript" src="${resRoot}/media/odstl/js/app.js" ></script>
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+        jQuery(document).ready(function () {
+            App.init();
+            // initlayout and core js
+            $("select").select2();
+            TableManaged({id:"sample_1"}).init();
+			  $('.date-picker').datepicker({
+                language:'zh-CN',
+                rtl: App.isRTL(),
+                autoclose: true,
+                format: "yyyy-mm-dd"
+            });
+        });
+    </script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

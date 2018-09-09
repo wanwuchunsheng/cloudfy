@@ -1,0 +1,429 @@
+@charset "utf-8";
+/*
+ * @description:呼叫中心
+ * @author: 楚呈祥
+ * @datetime:2014-3-25 14:30
+ */
+
+/*修改会员信息*/
+.table thead tr th {
+	font-weight: bold;
+}
+/*礼遇管理*/
+.cus-badge {
+	color: #428bca;
+	background: #fff;
+}
+.cus-group {
+	margin-right: 20px !important;
+}
+.modal-open {
+	overflow-y: hidden !important;
+}
+.btn-pad-right {
+	padding-right: 0;
+}
+.custom-form {
+	margin-right: 15px;
+}
+/*公告管理*/
+.notice-searhr {
+	margin-top: 0;
+}
+.attr-info {
+	text-align: center;
+}
+.attr-info li {
+	list-style: none;
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.news-content p {
+	text-indent: 2em;
+}
+/*工单管理*/
+.no-space-rl {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+.badge-work-order {
+	color: #428bca;
+	background-color: #FFF;
+}
+/*性别图标颜色*/
+.colorred {
+	color: #FF00FF;
+	font-size: 20px;
+}
+.colorblue {
+	color: #4b8df8;
+	font-size: 20px;
+}
+/*转接电话按钮组*/
+.phone_blue {
+	color: #4b8df8;
+	font-size: 24px;
+}
+/*电话图标颜色*/
+.phone-color {
+	color: #549804;
+	font-size: 20px;
+	font-size: bold;
+}
+/*电话工具栏各个图标颜色*/
+.phone-tool {
+	color: #4b8df8;
+}
+.phone-btn {
+	background: none;
+	border: none;
+}
+.navbar-nav > li > button {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 20px;
+	color: #999;
+}
+.navbar-nav > li > button {
+	padding: 15px 2px;
+}
+.nav > li > a {
+	padding: 14px 10px;
+}
+.nav > li > button:hover, .nav > li > button:focus {
+	text-decoration: none;
+	color: #fff;
+}
+.nav > li.disabled > button {
+	color: #999999;
+}
+.nav > li.disabled > button:hover, .nav > li.disabled > button:focus {
+	color: #999999;
+	text-decoration: none;
+	cursor: not-allowed;
+	background-color: transparent;
+}
+/*待办工作*/
+.impor {
+	color: #F00;
+	font-style: normal;
+}
+.new {
+	color: #F00;
+	padding-left: 5px;
+}
+/* 客户查询*/
+.phone_color {
+	color: #FFF;
+}
+.show-user-info {
+	display: none;
+}
+/*table内容居中*/
+table th {
+	text-align: center;
+}
+table td {
+	text-align: center;
+	font-size : 14px;
+}
+/*优先级 对于链接*/
+.hrefA {
+	color: red;
+}
+/*zTree加框*/
+.zTreeBg {
+	border: 1px solid #617775;
+	background: #f0f6e4;
+	height: 410px;
+	overflow-x: auto;
+}
+/*bortoder-bottom */
+.input_bottom {
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+	border-bottom: 1px solid gray;
+}
+/*菜单标注*/
+ul.page-sidebar-menu > li.active1 > a {
+	background: #e02222 !important;
+	border-top-color: transparent !important;
+	color: #ffffff;
+}
+ul.page-sidebar-menu > li.active1 > a i {
+	color: #ffffff;
+}
+ul.page-sidebar-menu > li > ul.sub-menu > li.active1 > a {
+	color: #ffffff !important;
+	background: #808080 !important;
+}
+ul.page-sidebar-menu > li > ul.sub-menu li > ul.sub-menu > li.active1 > a {
+	color: #ffffff !important;
+	background: #808080 !important;
+}
+ul.page-sidebar-menu > li > ul.sub-menu li > ul.sub-menu > li.active1 > a {
+	color: #ffffff !important;
+	background: #808080 !important;
+}
+/*重置弹出框宽度*/
+.resetModalW {
+	width: 800px;
+	margin-left: -400px;
+}
+.table-scroll {
+	width: 100%;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+.table-scroll table {
+	width: 100%;
+}
+.table-scroll table td, .table-scroll table th {
+	white-space: nowrap;
+}
+.red {
+	color: #F00;
+}
+/* chu_20140707 */
+.topTabUL {
+	margin-left: 0;
+	padding-left: 0;
+}
+.topTabUL li {
+	display: inline-block;
+	height: 20px;
+	padding: 0 10px;
+	background: #4B8DF8;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	list-style-type: none;
+}
+.topTabUL li.currentClass {
+	background: #F00;
+}
+/* 重置内页样式 */
+body {
+	padding-top: 15px;
+	padding-right: 20px;
+}
+.page-content {
+	margin-left: 0;
+	padding: 0;
+}
+.tree {
+	width: 100%;
+	overflow: auto;
+}
+.page-header-fixed .page-container {
+	margin-top: 0;
+}
+.has-error .control-label {
+	color: #000;
+}
+.tips-wrap {
+	padding-left: 0;
+}
+.tabbable-custom .nav-tabs > li > a > .fa-refresh {
+	color: #5cb85c;
+	cursor: pointer;
+}
+.tabbable-custom .nav-tabs > li > a > .fa-refresh:hover {
+	color: #47a447;
+}
+/* 新建工单页面对checkbox排列进行样式重置 */
+.form-add .checkbox-inline {
+	padding-left: 0;
+	margin-right: 10px;
+}
+.form-add .checkbox-inline+.checkbox-inline {
+	margin-left: 0;
+}
+/* 单选按钮级单行排列样式调整 */
+.radio-group-new .radio-inline {
+	padding-left: 0;
+	margin-right: 10px;
+}
+.radio-group-new .radio-inline+.radio-inline {
+	margin-left: 0;
+}
+/* 订单支付一小时 */
+.order-custom-details .colorred {
+	font-size: 12px;
+}
+.order-custom-details .dropdown-menu {
+	min-width: 70px;
+}
+/* inbound */
+.form-inbound .control-label {
+	color: #666;
+}
+/* 公告列表 */
+.unread-wrap lable {
+	display: inline-block;
+}
+/*时间区间控件兼容IE9*/
+.input-daterange input {
+	width: 50%\0 !important;
+}
+/*问卷已完成*/
+.icon-complete {
+	display: block;
+	position: absolute;
+	top: 210px;
+	right: 50px;
+	z-index: 9;
+	width: 148px;
+	height: 88px;
+	background: url(../img/original.gif) center center no-repeat;
+}
+/* 销售线索页面意向经销商error样式修正 */
+.has-error .input-group-addon, .has-error .input-group-btn {
+	vertical-align: top;
+}
+.validate-group .has-error .input-group {
+	padding-bottom: 30px;
+}
+.validate-group .input-group .help-block {
+	white-space: nowrap;
+	position: absolute;
+	left: 0;
+	top: 35px;
+	height: 18px;
+	line-height: 18px;
+}
+/*margin*/
+.margin-left-40{
+	margin-left:40px;
+}
+.margin-left-20{
+ margin-left: 20px;
+}
+.padding-left-10{
+	padding-left: 10px;
+}
+.padding-left-20{
+	padding-left: 10px;
+}
+.padding-left-30{
+	padding-left: 30px;
+}
+.padding-left-45{
+	padding-left: 45px;
+}
+.padding-left-55{
+	padding-left: 55px;
+}
+.padding-left-65{
+	padding-left: 65px;
+}
+.padding-left-100{
+	padding-left: 100;
+}
+.padding-left-52{
+	padding-left: 52px;
+}
+.padding-left-40{
+	padding-left: 40px;
+}
+.padding-right-10{
+	padding-right: 10px;
+}
+.padding-right-15{
+	padding-right: 15px;
+}
+.padding-right-20{
+	padding-right: 20px;
+}
+.padding-right-25{
+	padding-right: 25px;
+}
+.padding-right-30{
+	padding-right: 30px;
+}
+.padding-right-40{
+	padding-right: 40px;
+}
+.padding-right-45{
+	padding-right: 45px;
+}
+.padding-right-50{
+	padding-right: 50px;
+}
+.padding-right-65{
+	padding-right: 65px;
+}
+.padding-right-70{
+	padding-right: 70px;
+}
+.padding-left-0{
+	padding-left: 0;
+}
+.padding-right-0{
+	padding-right: 0;
+}
+.padding-top-30{
+	padding-top: 30px;
+}
+.padding-top-10{
+	padding-top: 10px;
+}
+.padding-bottom-20{
+	padding-bottom: 20px;
+}
+/*显示提示内容*/
+.none{
+	display:none;
+}
+.show{
+	display:block;
+}
+table.table{
+	margin-bottom: 0 !important;
+}
+.dataTable {
+ margin-top: 0;
+}
+/*可管理区域选择*/
+.boxlist{
+	border: 1px solid #ddd;
+	width: 80%;
+	margin: 0 auto;
+}
+.boxlist li{
+	line-height: 30px;
+	list-style-type: none;
+}
+.boxlist li span{
+	padding-left: 10px;
+}
+.pf{
+	padding-left: 110px;
+}
+.content-box{
+	width: 94%;
+	margin: 0  2%;
+	border: 1px solid #ddd;
+}
+.border-r{
+	border-right: 1px solid #ddd;
+}
+/*弹屏*/
+.col-md-6{
+	width: 50%;
+	float: left;
+}
+.col-md-4{
+	width: 33.3333%;
+}
+.col-md-8{
+	width: 66.6666%;
+}
+.col-md-4,.col-md-6,.col-md-8{
+	float: left;
+}
