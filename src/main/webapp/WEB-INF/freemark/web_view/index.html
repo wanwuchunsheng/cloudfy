@@ -15,7 +15,8 @@
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/nivo-lightbox.css">
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/nivo_themes/default/default.css">
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+	<!-- <link rel="stylesheet" href="${futRoot}/statics/resources/view/css/videojs.css"> -->
+	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'> -->
 <style type="text/css">
 
 </style>
@@ -56,8 +57,9 @@
 				<li><a href="#home" class="smoothScroll">首页</a></li>
 				<li><a href="#work" class="smoothScroll">服务内容</a></li>
 				<li><a href="#about" class="smoothScroll">关于我们</a></li>
-				<li><a href="#team" class="smoothScroll">购买流程</a></li>
-				<li><a href="#contact" class="smoothScroll">联系我们</a></li>
+				<li><a href="#team" class="smoothScroll">案列</a></li>
+				<li><a href="#contact" class="smoothScroll">联系咨询</a></li>
+				<li><a href="#" class="BBS">BBS社区</a></li>
 			</ul>
 		</div>
 	</div>
@@ -98,7 +100,7 @@
 					<hr>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.2s">
 				<i class="icon-mobile medium-icon"></i>
 					<h3>UI和网站设计</h3>
 					<hr>
@@ -106,7 +108,7 @@
 					      可根据客户不同需求定制化设计,主要包括：UI设计，<a href="#">网站设计</a>，海报设计，广告设计。
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.4s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.3s">
 				<i class="icon-browser medium-icon"></i>
 					<h3>网站开发</h3>
 					<hr>
@@ -115,7 +117,7 @@
 					   <a href="#">网站</a>兼容市场主浏览器:IE9+、Safari、火狐、谷歌等。
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.5s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.4s">
 				<i class="icon-laptop medium-icon"></i>
 					<h3>后台管理系统</h3>
 					<hr>
@@ -124,7 +126,7 @@
 					   息内容,系统主要功能：权限管理，用户管理，新闻管理，商品商城管理，图表统计，短信邮件系统等。
                     </p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.5s">
 				<i class="icon-chat medium-icon"></i>
 					<h3>小程序应用</h3>
 					<hr>
@@ -133,7 +135,7 @@
 					     根据小程序缓存机制，我们特定设计一套最佳响应方案，提高小程序响应速度，尽可能降低4G信号差带来的体验困扰。
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.7s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.6s">
 				<i class="icon-compass medium-icon"></i>
 					<h3>性能响应</h3>
 					<hr>
@@ -141,7 +143,7 @@
 					        优秀的业务解决方案，能提高软件运行性能，稳定性。云朵家出品软件能保证页面打开响应时间2秒内；<a href="#">微信小程序</a>页面响应时间平均速度300毫秒。  
                     </p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.8s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.7s">
 				<i class="icon-cloud medium-icon"></i>
 					<h3>售后服务</h3>
 					<hr>
@@ -174,7 +176,7 @@
 				<ul class="nav nav-tabs" role="tablist">
 				</ul>
 				<!-- tab panes -->
-				<div class="tab-content plan plan-three wow fadeInUp" data-wow-delay="0.3s">
+				<div class="tab-content plan plan-three wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.2s">
 					<div role="tabpanel" class="tab-pane active" id="design">
 						<p>
 						            我们的设计师在<a hreft="#">UI设计</a>、<a href="#">网站设计</a> 领域从事多年，拥有丰富的设计经验及独到的审美意识。
@@ -192,26 +194,73 @@
 </section>
 
 
-<!-- pricing section -->
-<section id="team" >
+<!-- team section    img255*263-->
+<section id="team">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 text-center">
 				<div class="section-title">
 					<strong>03</strong>
-					<h1 class="heading bold">合作流程</h1>
+					<h1 class="heading bold">项目案列</h1>
 					<hr>
 				</div>
 			</div>
-			
-			<div class="col-md-12 col-sm-12 text-center plan plan-three wow bounceIn" style="margin-bottom: 60px;" data-wow-delay="0.3s">
-			   <img src="${futRoot}/statics/resources/view/images/gmlc.png" style="border:1px solid gray;text-shadow:0px 0px 8px rgba(0,180,255,1);"/>
+			<div class="col-md-3 team-grids wow fadeInUp animated" data-wow-delay=".2s">
+				<a href="#">
+					<img class="img-responsive  team-img" src="${futRoot}/statics/resources/view/images/team1.jpg" alt="" />
+					<div class="captn">
+						<h4>云朵家官网</h4>
+						<hr/>
+						<p>www.cloudfy.cn</p>
+					</div>
+				</a>
+			</div>					
+			<div class="col-md-3 team-grids animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay=".4s">
+				<a href="#">
+					<img class="img-responsive team-img" src="${futRoot}/statics/resources/view/images/team2.jpg" alt="" />
+					<div class="captn">
+						<h4>管理系统</h4>
+						<hr/>
+						<p>云朵家后台管理系统V2.0</p>
+					</div>
+				</a>
 			</div>
-			<p/>
-			
-			<!-- <button class="btn btn-warning" style="width: 140px;height: 50px;font-size:14px;">了解详细</button> -->
-	   </div>
-	</div>		
+			<div class="col-md-3 team-grids animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay=".6s">
+				<a href="#">
+					<img class="img-responsive team-img" src="${futRoot}/statics/resources/view/images/team3.jpg" alt="" />
+					<div class="captn">
+						<h4>模板选型</h4>
+						<hr/>
+						<p>已有模板内订制开发</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-3 team-grids wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay=".8s">
+				<a href="#">
+					<img class="img-responsive team-img" src="${futRoot}/statics/resources/view/images/team4.jpg" alt="" />
+					<div class="captn">
+						<h4>UI设计</h4>
+						<hr/>
+						<p>丰富多彩的UI设计</p>
+					</div>
+				</a>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- 视频引用 start -->
+		<!-- <div class="row video_row" style="margin-left:15px;margin-top:15px;">
+		    <div class="video-player">
+				<video id="video_synth" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto"  width="1110" height="500" poster="${futRoot}/statics/resources/view/images/video-cover.jpg" data-setup='{}'>
+					<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
+					<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm" />
+					<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg" />
+					<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+				</video>
+			</div>
+			<div class="clearfix"> </div>
+		</div> -->
+		<!-- 视频引用 end -->
+	</div>
 </section>
 
 
@@ -228,20 +277,20 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12 contact-info">
-				<h3 class="wow fadeInUp" data-wow-delay="0.3s">联系信息</h3>
-				<p class="wow fadeInUp" data-wow-delay="0.3s">您可以通过右边方式给我们发送留言☺</p>
+				<h3 class="wow fadeInUp" data-wow-delay="0.2s">联系信息</h3>
+				<p class="wow fadeInUp" data-wow-delay="0.2s">您可以通过右边方式给我们发送留言☺</p>
 		
 				<div class="col-md-6 col-sm-4">
-					<h3><i class="icon-envelope medium-icon wow bounceIn" data-wow-delay="0.6s"></i> 邮箱</h3>
-					<p class="wow fadeInUp" data-wow-delay="0.3s">v_wanchanghuang@163.com</p>
+					<h3><i class="icon-envelope medium-icon wow fadeInUp" data-wow-delay="0.2s"></i> 邮箱</h3>
+					<p class="wow fadeInUp" data-wow-delay="0.2s">v_wanchanghuang@163.com</p>
 				</div>
 				<div class="col-md-6 col-sm-4">
-					<h3><i class="icon-phone medium-icon wow bounceIn" data-wow-delay="0.6s"></i> 电话</h3>
-					<p class="wow fadeInUp" data-wow-delay="0.3s">0714-1234567  |  15102742951</p>
+					<h3><i class="icon-phone medium-icon wow fadeInUp" data-wow-delay="0.2s"></i> 电话</h3>
+					<p class="wow fadeInUp" data-wow-delay="0.2s">0714-1234567  |  15102742951</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
-				<form action="#" method="get" class="wow fadeInUp" data-wow-delay="0.6s">
+				<form action="#" method="get" class="wow fadeInUp" data-wow-delay="0.4s">
 					<div class="col-md-6 col-sm-6">
 						<input type="text" class="form-control" placeholder="姓名" name="name">
 					</div>
@@ -259,7 +308,7 @@
 		</div>
 	</div>
 </section>
-<!-- http://www.bootcss.com/p/font-awesome/design.html -->
+
 <!-- footer section -->
 <footer>
 	<div class="container">
@@ -336,12 +385,10 @@
 <script src="${futRoot}/statics/resources/view/js/jquery.backstretch.min.js"></script>
 <script src="${futRoot}/statics/resources/view/js/wow.min.js"></script>
 <script src="${futRoot}/statics/resources/view/js/custom.js"></script>
+<!-- 本地视频引入js -->
+<!-- <script src="${futRoot}/statics/resources/view/js/video.min.js"></script> -->
 <!-- 美化滚动条 -->
 <script src="${futRoot}/statics/resources/view/js/jquery.nicescroll.min.js"></script>
 <script src="${futRoot}/statics/resources/view/js/core.js"></script> 
-<!--  所有浏览器支持videojs引用  
-<script src="${futRoot}/statics/resources/view/js/html5media.min.js"></script>
--->
-
 </body>
 </html>

@@ -383,7 +383,7 @@ team section
 ========================================================================== */
 #team {
   text-align: center;
-  background-color: #fff;
+  background-color: #f6f6f6;
 }
 #team h3 {
   color: #00c6d7;
@@ -763,6 +763,71 @@ media quires for mobile
   background-size: cover;
   transition: 1s opacity;
 }
+
+
+/*--team 图片展示 --*/
+.team{
+	padding:5em 0;
+	text-align:center;
+}
+.team-grids {
+  position: relative;
+}
+.team-info {
+  margin-top: 3em;
+}
+.team-grids a {
+	overflow: hidden;
+	position: relative;
+	display: block;
+}
+.captn h4 {
+  color: #fff;
+  margin: .1em 0 0;
+  font-size: 1.5em;
+}
+.captn p {
+    color: #fff;
+    font-size: 0.95em;
+    font-weight: 100;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.team-grids a .captn {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  font-weight: 800;
+  color: #ffffff;
+  position: absolute;
+  bottom: -84%;
+  right: 0%;
+  /* background-color:rgba(213, 125, 57, 0.78);  */
+  background-color:rgba(0, 198, 215, 0.4);
+  padding: 2% 10%;
+  text-align: center;
+  -o-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.team-grids a:hover .captn {
+  width: 100%;
+  bottom: 0%;
+  padding: 20% 10%;
+  right: 0%;
+}
+.social-icons1 li{
+	list-style-type: none;
+	font-size:12px;
+}
+.team-img{
+	width:255px;
+	height: 188px;
+}
+/*--team--*/
+
 
 
 
