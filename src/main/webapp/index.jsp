@@ -13,8 +13,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <script>
    //跳转到首页
-   window.location.href="${path}/login/index";
-   //window.location.href="${path}/view/index";
+   //window.location.href="${path}/login/index";
+   window.location.href="${path}/view/index";
 </script>
 <body>
 </body>

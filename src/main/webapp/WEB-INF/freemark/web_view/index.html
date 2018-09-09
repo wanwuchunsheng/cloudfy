@@ -16,7 +16,9 @@
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/nivo_themes/default/default.css">
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+<style type="text/css">
 
+</style>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -60,12 +62,8 @@
 		</div>
 	</div>
 	
-	<!-- Video-->
-    <video autoplay="autoplay" muted="muted" volume="0" style="background-color: #515151" loop="loop" >
-         <source src="${resultImgPath}videos/video.mp4" type="video/mp4" />
-    </video>
+	
 </section>
-
 <!-- home section -->
 <section id="home">
 	<div class="container">
@@ -83,9 +81,11 @@
                 </div>
 			</div>
 		</div>
-		
 	</div>	
-	
+	<!-- Video-->
+    <video id="video" autoplay="autoplay" muted="muted" volume="0" style="background-color: #515151" loop="loop" >
+         <source src="${resultImgPath}videos/video.mp4" type="video/mp4" />
+    </video>
 </section>
 <!-- work section -->
 <section id="work">
@@ -98,7 +98,7 @@
 					<hr>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.9s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
 				<i class="icon-mobile medium-icon"></i>
 					<h3>UI和网站设计</h3>
 					<hr>
@@ -106,7 +106,7 @@
 					      可根据客户不同需求定制化设计,主要包括：UI设计，<a href="#">网站设计</a>，海报设计，广告设计。
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.4s">
 				<i class="icon-browser medium-icon"></i>
 					<h3>网站开发</h3>
 					<hr>
@@ -115,7 +115,7 @@
 					   <a href="#">网站</a>兼容市场主浏览器:IE9+、Safari、火狐、谷歌等。
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.5s">
 				<i class="icon-laptop medium-icon"></i>
 					<h3>后台管理系统</h3>
 					<hr>
@@ -124,7 +124,7 @@
 					   息内容,系统主要功能：权限管理，用户管理，新闻管理，商品商城管理，图表统计，短信邮件系统等。
                     </p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
 				<i class="icon-chat medium-icon"></i>
 					<h3>小程序应用</h3>
 					<hr>
@@ -133,7 +133,7 @@
 					     根据小程序缓存机制，我们特定设计一套最佳响应方案，提高小程序响应速度，尽可能降低4G信号差带来的体验困扰。
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.7s">
 				<i class="icon-compass medium-icon"></i>
 					<h3>性能响应</h3>
 					<hr>
@@ -141,7 +141,7 @@
 					        优秀的业务解决方案，能提高软件运行性能，稳定性。云朵家出品软件能保证页面打开响应时间2秒内；<a href="#">微信小程序</a>页面响应时间平均速度300毫秒。  
                     </p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.8s">
 				<i class="icon-cloud medium-icon"></i>
 					<h3>售后服务</h3>
 					<hr>
@@ -228,18 +228,16 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12 contact-info">
-				<!-- <h2 class="heading bold">联系信息</h2>
-				<div class="addressDiv">
-	                <h3><i class="icon-map-pin medium-icon wow bounceIn" data-wow-delay="0.6s"></i>地址</h3>
-					<p>上海市奉贤区金碧路辉煌路228号。</p>
-                </div> -->
+				<h3 class="wow fadeInUp" data-wow-delay="0.3s">联系信息</h3>
+				<p class="wow fadeInUp" data-wow-delay="0.3s">您可以通过右边方式给我们发送留言☺</p>
+		
 				<div class="col-md-6 col-sm-4">
 					<h3><i class="icon-envelope medium-icon wow bounceIn" data-wow-delay="0.6s"></i> 邮箱</h3>
 					<p>v_wanchanghuang@163.com</p>
 				</div>
 				<div class="col-md-6 col-sm-4">
 					<h3><i class="icon-phone medium-icon wow bounceIn" data-wow-delay="0.6s"></i> 电话</h3>
-					<p>17321288950 | 15102742951</p>
+					<p>0714-1234567  |  15102742951</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
