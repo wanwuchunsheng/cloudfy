@@ -60,6 +60,7 @@
 	 	<servlet-class>com.cloudfy.controller.common.InitResourceServlet</servlet-class>
 	 	<load-on-startup>2</load-on-startup>
 	</servlet> 
+	
     <!-- 编辑器图片上次servlet -->
     <servlet>  
         <servlet-name>UploadImgServiet</servlet-name>  
@@ -73,8 +74,6 @@
         <url-pattern>/upload</url-pattern>  
     </servlet-mapping> 
     
-
-	
 	<!-- 配置session超时时间，单位分钟 -->
 	<session-config>
 	    <session-timeout>30</session-timeout>

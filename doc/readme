@@ -69,6 +69,116 @@ public String deleteNewsInfoById(final String ids) {
     ]]>
 </sql>
  
-   
+
+//---------------------------------------------------------------------------------------
+-- ----------------------------
+-- Table structure for t_questionnaire_answer
+-- ----------------------------
+DROP TABLE IF EXISTS `t_questionnaire_answer`;
+CREATE TABLE `t_questionnaire_answer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID(自增长主键)',
+  `questionnaire_id` int(11) DEFAULT NULL COMMENT '问卷ID',
+  `questionnaire_problem_id` int(11) DEFAULT NULL COMMENT '问题ID',
+  `value` varchar(200) DEFAULT NULL COMMENT '回答值',
+  `cust_id` int(11) DEFAULT NULL COMMENT '客户ID',
+  `subinst_id` int(11) DEFAULT NULL COMMENT '用户ID',
+  `member_id` int(11) DEFAULT NULL COMMENT '会员ID',
+  `anwser_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '回答时间',
+  `task_id` int(11) DEFAULT NULL COMMENT '任务id',
+  `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
+  `create_user_name` varchar(10) DEFAULT NULL COMMENT '创建人',
+  `create_user_id` int(11) DEFAULT NULL COMMENT '创建人ID',
+  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '最后修改时间',
+  `update_user_name` varchar(10) DEFAULT NULL COMMENT '最后修改人',
+  `update_user_id` int(11) DEFAULT NULL COMMENT '最后修改人ID',
+  `item_type` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6651 DEFAULT CHARSET=utf8 COMMENT='问卷回答';
+
+-- ----------------------------
+-- Table structure for t_questionnaire_dict
+-- ----------------------------
+DROP TABLE IF EXISTS `t_questionnaire_dict`;
+CREATE TABLE `t_questionnaire_dict` (
+  `id` int(11) NOT NULL COMMENT 'id',
+  `code` varchar(50) NOT NULL COMMENT '问卷ID',
+  `value` varchar(200) DEFAULT NULL COMMENT '选择值',
+  `name` varchar(200) DEFAULT NULL COMMENT '选项名称',
+  `order_no` int(11) DEFAULT NULL COMMENT '序号',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user_name` varchar(10) DEFAULT NULL COMMENT '创建人',
+  `create_user_id` int(11) DEFAULT NULL COMMENT '创建人ID',
+  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '最后修改时间',
+  `update_user_name` varchar(10) DEFAULT NULL COMMENT '最后修改人',
+  `update_user_id` int(11) DEFAULT NULL COMMENT '最后修改人ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='问卷基础数据';
+
+-- ----------------------------
+-- Table structure for t_questionnaire_item
+-- ----------------------------
+DROP TABLE IF EXISTS `t_questionnaire_item`;
+CREATE TABLE `t_questionnaire_item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `task_code` int(11) DEFAULT NULL,
+  `value` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `is_custinfo` int(50) NOT NULL DEFAULT '0' COMMENT '是否显示为客户基本信息',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=433 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_questionnaire_problem
+-- ----------------------------
+DROP TABLE IF EXISTS `t_questionnaire_problem`;
+CREATE TABLE `t_questionnaire_problem` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID(自增长主键)',
+  `q_attr` varchar(200) DEFAULT NULL,
+  `code` varchar(50) DEFAULT NULL COMMENT '编号',
+  `questionnaire_id` int(11) DEFAULT NULL COMMENT '问卷ID',
+  `short_name` varchar(200) DEFAULT NULL COMMENT '问题简称',
+  `full_name` varchar(2000) DEFAULT NULL COMMENT '问题全称',
+  `type` int(11) DEFAULT NULL COMMENT '问题类型,1:单选；2：多选；3：日期选择；4：下拉选择；5：文本输入;6:文本类型',
+  `is_required` int(11) DEFAULT NULL COMMENT '是否必填，1：是；2：否',
+  `is_dict` int(10) DEFAULT NULL,
+  `problem_dict_code` int(10) DEFAULT NULL,
+  `order_no` int(11) DEFAULT NULL COMMENT '问题序号',
+  `tip` varchar(255) DEFAULT NULL COMMENT '显示问题提示',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user_name` varchar(10) DEFAULT NULL COMMENT '创建人',
+  `create_user_id` int(11) DEFAULT NULL COMMENT '创建人ID',
+  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '最后修改时间',
+  `update_user_name` varchar(10) DEFAULT NULL COMMENT '最后修改人',
+  `update_user_id` int(11) DEFAULT NULL COMMENT '最后修改人ID',
+  `is_not_validation` varchar(1) DEFAULT NULL COMMENT '是否验证（1.是 2.否）',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1305 DEFAULT CHARSET=utf8 COMMENT='问卷问题';
+
+-- ----------------------------
+-- Table structure for t_questionnaire_problem_item
+-- ----------------------------
+DROP TABLE IF EXISTS `t_questionnaire_problem_item`;
+CREATE TABLE `t_questionnaire_problem_item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID(自增长主键)',
+  `questionnaire_id` int(11) DEFAULT NULL COMMENT '问卷ID',
+  `questionnaire_problem_id` int(11) DEFAULT NULL COMMENT '问题ID',
+  `value` varchar(200) DEFAULT NULL COMMENT '选择值',
+  `name` varchar(200) DEFAULT NULL COMMENT '选项名称',
+  `order_no` int(11) DEFAULT NULL COMMENT '序号',
+  `next_problem` varchar(50) DEFAULT NULL COMMENT '下个问题编号',
+  `show_textfield` int(11) DEFAULT NULL COMMENT '1.显示 2.不显示',
+  `validate_result` varchar(200) DEFAULT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user_name` varchar(10) DEFAULT NULL COMMENT '创建人',
+  `create_user_id` int(11) DEFAULT NULL COMMENT '创建人ID',
+  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '最后修改时间',
+  `update_user_name` varchar(10) DEFAULT NULL COMMENT '最后修改人',
+  `update_user_id` int(11) DEFAULT NULL COMMENT '最后修改人ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5590 DEFAULT CHARSET=utf8 COMMENT='问卷问题选项';
+
+
+
+
    
    

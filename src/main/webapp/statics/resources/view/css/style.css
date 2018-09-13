@@ -783,7 +783,8 @@ media quires for mobile
 }
 .captn h4 {
   color: #fff;
-  margin: .1em 0 0;
+  /* margin: .1em 0 0; */
+  margin: 0;
   font-size: 1.5em;
 }
 .captn p {
@@ -800,10 +801,11 @@ media quires for mobile
   font-weight: 800;
   color: #ffffff;
   position: absolute;
-  bottom: -84%;
+ /*  bottom: -84%; */
+  bottom: -100%;
   right: 0%;
   /* background-color:rgba(213, 125, 57, 0.78);  */
-  background-color:rgba(0, 198, 215, 0.4);
+  background-color:rgba(0, 198, 215, 0.6);
   padding: 2% 10%;
   text-align: center;
   -o-transition: all 0.3s ease;
@@ -823,8 +825,14 @@ media quires for mobile
 	font-size:12px;
 }
 .team-img{
-	width:255px;
-	height: 188px;
+	width:400px;
+	height: 220px;
+}
+.team-row-img{
+	margin-top: 4em;
+}
+.captn{
+	display: none;
 }
 /*--team--*/
 

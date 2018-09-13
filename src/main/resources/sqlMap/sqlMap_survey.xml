@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="survey">
+	<!-- 问卷类型 列表-->
+    <sql id="queryQuestionnaire">
+	    <![CDATA[
+	    	 SELECT 
+	    	   id,task_code,code,brand,title,status,create_time,create_user_name,create_user_id,
+	    	   update_time,update_user_name,update_user_id
+	    	 FROM t_questionnaire 
+	    	  where 1=1 
+	    	 <#if dpnum?exists && dpnum!="">AND dpnum=:dpnum </#if>
+	    	 <#if title?exists && title!="">AND title like concat('%',:title,'%')</#if>
+	    	 <#if code?exists && code!="">AND code like concat('%',:code,'%')</#if>
+	    	 ORDER BY update_time desc
+	    ]]>
+	</sql>
+	
+	<!--  问卷类型  -->
+	<sql id="queryQuestionnaireById">
+	    <![CDATA[
+	       SELECT
+               id,
+               code,
+               task_code,
+               brand,
+               title,
+               status,
+               create_time,
+               create_user_name,
+               create_user_id,
+               update_time,
+               update_user_name,
+               update_user_id
+            FROM t_questionnaire
+            WHERE
+               id= :id
+	    ]]>
+	</sql>
+	
+	<!--  问卷问题 选项   -->
+    <sql id="queQuestionnaireItem">
+        <![CDATA[
+	    	 SELECT 
+	    	    id,
+	    	    questionnaire_id,
+	    	    questionnaire_problem_id,
+	    	    value,
+	    	    name,
+	    	    order_no,
+	    	    next_problem,
+	    	    show_textfield,
+	    	    validate_result,
+	    	    create_time,
+	    	    create_user_name
+	    	 FROM t_questionnaire_problem_item
+	    	 WHERE 1=1
+	    	 <#if id?exists && id!=""> and  questionnaire_id=:id</#if>
+	    ]]>
+    </sql>
+    <!-- 问卷问题-->
+    <sql id="questionnaireProblem">
+	    <![CDATA[
+	    	SELECT 
+	    	    c.id,c.q_attr,c.code,c.questionnaire_id,c.short_name,c.full_name,c.type,c.is_required,c.is_dict,c.problem_dict_code,c.order_no 
+            FROM t_questionnaire a left join t_questionnaire_problem c 
+	            on a.id=c.questionnaire_id 
+            WHERE 1=1
+	            <#if id?exists && id!=""> and  a.id=:id</#if>
+	            order by code 
+	   ]]>
+	</sql>
+	 <!-- 问卷答案-->
+	<sql id="queryQuestionnaireAnswer">
+	    <![CDATA[
+	    	SELECt
+		    	id,
+		    	questionnaire_id,
+		    	questionnaire_problem_id,
+		    	value,
+		    	cust_id,
+		    	subinst_id,
+		    	member_id,
+		    	anwser_time,
+		    	task_id,
+		    	create_time,
+		    	create_user_name,
+		    	create_user_id,
+		    	update_time,
+		    	update_user_name,
+		    	update_user_id,
+		    	item_type
+	       FROM t_questionnaire_answer
+           WHERE 1=1 
+            and  questionnaire_id=:id
+	   ]]>
+	</sql>
+	
+	
+	
+	
+
+	
+	
+	
+</sqlMap>
+
+

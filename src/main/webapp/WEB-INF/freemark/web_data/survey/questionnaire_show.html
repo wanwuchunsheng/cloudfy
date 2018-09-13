@@ -1,0 +1,355 @@
+<style type="text/css" media="screen">
+	.colorblue{
+		font-size:12px;
+		color:blue;
+	}
+	.font-code-t{
+	 font-size:16px;
+	 margin-right:5px;
+	}
+	.mast-select{
+		color:red;
+		font-weight:bold;
+		font-size:14px;
+	}
+</style>
+
+<!-- 问卷内容 -->
+<#if (listQuePro?size > 0)>
+	<#list listQuePro as qe>
+		<div style="margin-bottom:10px;" <#if qe.type==400011005 > name="name${qe.type}"</#if>  class="questionnaire-radio-listhre" id="name${qe_index+1}">
+			<br/>
+			<a id='${qe_index+1}' name='${qe.code}' class="font-code-t">${qe.code}</a>
+			<span style="font-size:12px;font-weight:bold">座席:${qe.fullName}</span> 
+			<#if qe.isRequired==1>
+			   <span class="mast-select">&nbsp;*</span>
+			</#if>
+			<br/>
+			<br/>
+			
+			<!-- 单选 -->
+		<#if qe.type==400011001>
+		<#list listQueProItem as qet>
+		<#if qe.id==qet.id >
+		<label class="radio-inline">
+			<#if qet.showTextfield=='400021005'><!-- 评价评分 类型  -->
+			       <div id="key_appraise">
+			           <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}')" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}" <#if "${qet.validateResult==1}">id="key_yes"<#elseif "${qet.validateResult==2}">id="key_no"</#if>   value="${qet.id}@${qet.name}"
+	                   <#if (listAs?size > 0)>
+				        <#list listAs as qast>
+				        <#if qe.id==qast.questionnaireProblemId>
+				            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked </#if>
+				        </#if>
+				       </#list>
+				       </#if>
+				      />
+					  ${qet.name}
+				   </div>
+			   <#else><!-- 单选 /单选 文本 类型  -->
+			        
+					<#if "${qet.showTextfield!=0}">
+					   <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}' )" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}"  <#if "${qet.validateResult==400031001}">id="key_yes"<#elseif "${qet.validateResult==400031002}">id="key_no"</#if> 
+					       <#if (listAs?size > 0)>
+					        <#list listAs as qast>
+					        <#if qe.id==qast.questionnaireProblemId>
+					            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked value="${qet.id}@${qet.name}#${qast.value?replace(qet.name+'#','')}"</#if>
+					        </#if>
+					       </#list>
+					       </#if>
+				       />${qet.name}
+					   <input type="text" onblur="chengVal(${qet.id},'${qet.name}','${qet.showTextfield}')"  class="input_bottom" name="tname${qet.questionnaireProblemId}"  <#if "${qet.validateResult==1}">id="key_yes"<#elseif "${qet.validateResult==2}">id="key_no"</#if> 
+					   <#if (listAs?size > 0)>
+				        <#list listAs as qast>
+				        <#if qe.id==qast.questionnaireProblemId>
+				            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> value="${qast.value?replace(qet.name+'#','')}"</#if>
+				        </#if>
+				       </#list>
+				       </#if>
+				       />
+				   <#else>
+				       <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}')" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}"  <#if "${qet.validateResult==400031001}">id="key_yes"<#elseif "${qet.validateResult==400031002}">id="key_no"</#if> value="${qet.id}@${qet.name}"
+					       <#if (listAs?size > 0)>
+					        <#list listAs as qast>
+					        <#if qe.id==qast.questionnaireProblemId>
+					            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked </#if>
+					        </#if>
+					       </#list>
+					       </#if>
+				       />${qet.name}
+				   </#if> 
+			</#if>
+			
+		</label>
+		</#if>
+		</#list>
+		</#if>
+	
+		<!-- 下拉 -->
+		<#if qe.type==400011004>
+		<select  onclick="changeBackColorButton($(this));showVerify(${qe_index+1},$(this).find('option:selected').attr('name'))"  name="choSel" id="queSelect" class="col-md-3" tabindex="-1">
+			<option value='请选择'>请选择</option>
+			<#if (listQueProItem?size > 0) >
+			<#list listQueProItem as qet>   
+			<#if qe.id==qet.id >
+			<label class="radio-inline" > 
+				<option value="${qet.id}@${qet.name}"  name="${qet.nextProblem}"
+				<#if (listAs?size > 0)>
+				        <#list listAs as qast>
+				        <#if qe.id==qast.questionnaireProblemId>
+				            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> selected=selected</#if>
+				        </#if>
+				       </#list>
+				</#if>
+				>${qet.name}</option> 
+			</label>
+			</#if>
+			</#list>
+			</#if>
+		</select>
+		<br/>
+		<br/>
+		</#if>
+	
+		<!-- 多选 -->
+		<#if qe.type==400011002>
+		<#list listQueProItem as qet>
+		<#if qe.id==qet.id >
+		<label class="radio-inline">
+			<input type="checkbox" onclick="changeBackColorButton($(this))"  class="input_bottom" name="name${qet.questionnaireProblemId}"  value="${qet.id}@${qet.name}"
+			   <#if (listAs?size > 0)>
+		        <#list listAs as qast>
+		        <#if qe.id==qast.questionnaireProblemId>
+		            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked </#if>
+		        </#if>
+		       </#list>
+		       </#if>
+			/>
+			${qet.name} 
+	    </label>
+		</#if>
+		</#list>
+		</#if>
+	
+		<!-- 文本 -->
+		<#if qe.type==400011003>
+		<#if (listQueProItem?size > 0) >
+		<#list listQueProItem as qet>
+		<#if qe.id==qet.id >
+		<label class="radio-inline"> &nbsp;&nbsp;${qet.name}&nbsp;
+			<input  onclick="changeBackColorButton($(this))" type="text" onblur="chengText(${qet.id},'${qet.name}')"  class="input_bottom" name="name${qet.questionnaireProblemId}"   
+		      <#if (listAs?size > 0)>
+		        <#list listAs as qast>
+		        <#if qe.id==qast.questionnaireProblemId>
+		            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> value="${qast.value?replace(qet.name+'#','')}"</#if>
+		        </#if>
+		       </#list>
+		       </#if>
+		    />
+			<input type="hidden" name="text_val${qet.questionnaireProblemId}" 
+	        <#if (listAs?size > 0)>
+		        <#list listAs as qast>
+		        <#if qe.id==qast.questionnaireProblemId>
+		            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> value="${qet.id}@${qet.name}#${qast.value?replace(qet.name+'#','')}"</#if>
+		        </#if>
+		       </#list>
+		       </#if>
+		    />
+		</label>
+		</#if>
+		</#list>
+		<#else>
+		<!--
+		<label class="radio-inline">
+		<input type="text" class="input_bottom" name="name${qet.questionnaireProblemId}"   value="">
+		</label>
+		-->
+		</#if>
+		</#if>
+	
+	</div>
+	</#list>
+					
+<#else><!-- 没有绑定问卷 -->
+  <span>请确定绑定问卷或该套问卷是已发布状态！ </span>
+</#if>
+<!-- 单选 -->
+			
+
+<!--  javaScript Start  -->
+<script src="${resRoot}/media/odstl/js/alert_message.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+	var str = "";
+	//问卷答案
+	var strId = "";
+	//任务id ，问卷 id
+    
+	/**  获取提交  */
+	function showQue() {
+		//判断是否绑定问卷
+		var no=$("#queNo").val();
+		if(no=='no'){
+			alert("提交失败，请绑定问卷！");
+			return ;
+		}
+		
+		//获得任务id，问卷id
+		var wj = $("#wjId").val();
+		strId = wj;
+		//获得单选问卷答案
+		var len = $(".questionnaire-radio-listhre input[type='radio']");
+		for (var t = 0; t < len.length; t++) {
+			if (len.eq(t).attr("checked") == "checked") {
+				str += len.eq(t).val() + "|";
+			}
+		}
+		//获取文本答案
+		var lentext = $(".questionnaire-radio-listhre input[name^='text_val']");
+		for (var t = 0; t < lentext.length; t++) {
+			if (lentext[t].value != "") {
+				str += lentext[t].value + "|";
+			}
+		}
+		//获取下拉
+		var lenSel = $(".questionnaire-radio-listhre select");
+		for (var t = 0; t < lenSel.length; t++) {
+			if (lenSel[t].value != "请选择") {
+				str += lenSel[t].value + "|";
+			}
+		}
+		//获取多选框
+		var lenBox = $(".questionnaire-radio-listhre input[type='checkbox']");
+		for (var t = 0; t < lenBox.length; t++) {
+			if (lenBox[t].checked == true) {
+				str += lenBox[t].value + "|";
+			}
+		}
+		/**
+        $.Alert(str+"/"+strId);
+        $.post("${request.contextPath}/admin/survey/common/insertAnswer.json",{str:str,strId:strId},null);
+        */
+        getResultApp();
+        
+		$("#fromAnswer").attr("value", "" + str + "");
+		$("#fromId").attr("value", "" + strId + "");
+		//alert(str+"/"+strId);
+		str = "";
+		strId = "";
+
+	}
+
+	/**  单选文本失去焦点 ,id-问题id，name-问题答案 ，inShow-是否有文本框 */
+	function chengVal(id, name, inShow) {
+		if (inShow != '0') {
+			var valth = $("input[name='tname" + id + "']").val();
+			$(".input_bottom" + id + inShow).attr("value", id + "@" + name + "#" + valth);
+		}
+	}
+
+	/**  文本失去焦点 */
+	function chengText(id, name) {
+		var valth = $("input[name='name" + id + "']").val();
+		$("input[name='text_val" + id + "']").attr("value", id + "@" + name + "#" + valth);
+	}
+
+	/** 提交验证  */
+	var num = "";
+	//页面加载，保存所有问题个数
+	$(function() {
+		num = $(".questionnaire-radio-listhre").length;
+		setQuestionnaireViewAndValue();
+	});
+	function showVerify(start, endId) {
+		//过滤没有endId值
+		if(endId==-1){
+			return;
+		}
+		//获取下一个问题的位置序号
+		//var end = $(".questionnaire-radio-listhre>a:contains('" + endId + "')").last().attr("id");
+		var end = $(".questionnaire-radio-listhre>a[name='" + endId + "']").attr("id");
+		//判断当前选中序号与下一问题 序号大小
+		if (start < end) {
+			//隐藏当前序号与下一问题的序号之间的所有问题
+			for (var t = start + 1; t < end; t++) {
+				$("#name" + t).hide();
+				//$("#name" + t).css("background-color","#fff").hide();
+				styleCommon(t);
+			}
+			//显示下一问题序号及其以下的所有序号
+			for (var k = end; k <= num; k++) {
+				$("#name" + k).css("background-color","#fff").show();
+				styleCommon(k);
+			}
+			
+			//隐藏相应的结束语
+			var endJsy=$("#name"+end).attr("name");
+			if(endJsy!=undefined){
+			    $("#name"+end).nextAll().hide();
+			}
+		} else {
+			//显示单击当前问题的前面问卷
+			for (var h = start; h >= end; h--) {
+				$("#name" + (h+1)).css("background-color","#fff");
+				$("#name" + h).css("background-color","#fff").show();
+				styleCommon(h);
+			}
+			
+		}
+	}
+     
+    /** 公用隐藏显示验证 */
+	function styleCommon(t) {
+		//清除单选框数据
+		var rid = $("#name" + t + " input[type='radio']");
+		for (var v = 0; v < rid.length; v++) {
+			if (rid[v].checked == true) {
+				rid[v].checked = false;
+				jQuery.uniform.update(rid[v]);
+			}
+		}
+		//清除浮选框数据
+		var rid = $("#name" + t + " input[type='checkbox']");
+		for (var v = 0; v < rid.length; v++) {
+			if (rid[v].checked == true) {
+				rid[v].checked = false;
+				jQuery.uniform.update(rid[v]);
+			}
+		}
+		//清除选中的下拉答案
+		$("#name" + t + " option:first").attr('selected', 'selected');
+		$("select").select2();
+
+		//清除文本
+		$("#name" + t + " input[type='text']").first().attr("value", "");
+		$("#name" + t + " input[type='hidden']").first().attr("value", "");
+	}
+
+    /**  获得服务评价的评分  */
+    function getResultApp(){
+    	var len=$("#key_appraise input[type='radio']");
+    	var res="";
+    	for(var i=0;i<len.length;i++){
+    		if(len.eq(i).attr("checked")=="checked"){
+    			 res=len.eq(i).val();
+    		}
+    	}
+    	//截取 如： 12,A.4分
+    	var sxb = res.indexOf('.');
+    	var exb = res.indexOf('分');
+    	res=res.substring(sxb+1,exb);
+    	if(res!=""){
+    		$("#serviceRemark").val(res);
+    	}
+    }
+   
+   /** 更改背景颜色*/
+   function changeBackColorButton(obj){
+      obj.parents(".questionnaire-radio-listhre").css("background-color","#dff8ff");
+   }
+    
+    /** 动态赋值 */
+   function setQuestionnaireViewAndValue(){
+       
+        
+   }
+</script>
+<!--  javaScript End  -->

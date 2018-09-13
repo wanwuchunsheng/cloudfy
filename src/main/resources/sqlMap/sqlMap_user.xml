@@ -37,7 +37,7 @@
      <!-- 用户管理-删除 -->
     <sql id="deleteUSerById">
         <![CDATA[
-            delete from sys_user where id=:id
+            delete from sys_user where id=:id and id not in (1)
         ]]>
     </sql>
     

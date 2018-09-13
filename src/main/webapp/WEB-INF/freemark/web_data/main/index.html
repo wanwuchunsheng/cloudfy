@@ -453,7 +453,7 @@
 				                        <#list sysResourceList as srl2>
 				                            <#if srl2.pid?if_exists==srl.id?if_exists><!-- 判断 菜单下的功能 -->
 					                            <li >
-													<a target="mainFrame" href="${futRoot}/${srl.url?if_exists}">
+													<a target="mainFrame" href="${futRoot}/${srl2.url?if_exists}">
 													<i class="${srl2.iconCls?if_exists}"></i>
 													${srl2.text?if_exists}</a>
 												</li>
