@@ -10,7 +10,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cloudfy.model.sys.SysUserInfo;
-import com.sun.corba.se.impl.orbutil.closure.Constant;
 /**
  * 拦截器
  * 

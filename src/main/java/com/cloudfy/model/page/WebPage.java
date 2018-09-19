@@ -2,8 +2,6 @@ package com.cloudfy.model.page;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-
 import com.cloudfy.service.common.Constants;
 
 public class WebPage implements Serializable{

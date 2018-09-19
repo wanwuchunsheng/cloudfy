@@ -35,118 +35,29 @@ public interface Constants {
      * 
      * */
     public static final String RESULT_REALPATH = "javascript:;";
-    
     public static final String RESULT_SAVE_IMG = "E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/";
-    public static final String RESULT_REQ_IMG="https://www.cloudfy.cn/images/";
-    
+    public static final String RESULT_REQ_IMG="https://www.cloudfy.cn/images/"; 
     public static final Integer RESULT_SAVE_IMG_WIDTH =500;
     public static final Integer RESULT_SAVE_IMG_HEIGHT =360;
     
-  
-    
+    /**
+     * 微信小程序支付参数
+     * 
+     * */
+    public static final String APP_ID = "wxfe8ffc02189d8abd"; //微信注册ID
+    public static final String APP_SECRET = "3504697a0f82636287c9d2ea196e6516";
+    public static final String APP_KEY = "WanChangHuang1989n7y4r2222222222";
+    public static final String MCH_ID = "1513651271";  //商户号
+    public static final String URL_UNIFIED_ORDER = "https://api.mch.weixin.qq.com/pay/unifiedorder";
+    public static final String URL_NOTIFY = "http://192.168.43.209:8080/cloudfy/pay/buyOrder";
     
     
     /**
-     * 产品
-     * 
-     *  //1	店长推荐
-		2	10元3本特惠区
-		3	幻灯片
-		4	店长推荐
-		5	热卖商品
-		15	时政新闻
-		16	商业财经
-		17	旅游
-		6	美食
-		7	时尚
-		8	明星片
-		9	明星写真
-		10	文学文摘
-		11	推理
-		12	军事
-		13	科技
-		14	汽车
-		
-     * 
-     */
-    public static final Integer RESULT_SF = 111;
-    public static final Integer RESULT_SZX = 1112;
-    
-    //public static final Integer RESULT_DZTJ = 1;
-    public static final Integer RESULT_THQ = 2;
-    public static final Integer RESULT_HDP = 3;
-    public static final Integer RESULT_DNTJ = 4;
-    public static final Integer RESULT_RMSP = 5;
-    public static final Integer RESULT_SZXW = 15;
-    public static final Integer RESULT_SYCJ = 16;
-    public static final Integer RESULT_LY = 17;
-    public static final Integer RESULT_MS = 6;
-    public static final Integer RESULT_SJ = 7;
-    public static final Integer RESULT_MXP = 8;
-    public static final Integer RESULT_MXXZ = 9;
-    public static final Integer RESULT_WXWZ = 10;
-    public static final Integer RESULT_TL = 11;
-    public static final Integer RESULT_JS = 12;
-    public static final Integer RESULT_KJ = 13;
-    public static final Integer RESULT_QC = 14;
-    
-    
-    
-    
-    /**
-     * 用户
-     * 
-     * 0-联系信息   1-管理员  2-普通会员   3-vip会员 
-     * 
-     */
-    public static final String RESULT_LX = "0";
-    public static final String RESULT_GL = "1";
-    public static final String RESULT_PT = "2";
-    public static final String RESULT_VIP = "3";
-    
-    
-    /**
-     * 新闻审核
-     * 
-     * 1-已发布   3-待审核  3-审核不通过  4-简介 5-咨询服务
-     * 
-     */
-    public static final Integer ISPASS_YFB = 1;
-    public static final Integer ISPASS_DSH = 2;
-    public static final Integer ISPASS_SHBTG = 3;
-    public static final Integer ISPASS_ABOUT = 4; // 4-简介
-    public static final Integer ISPASS_CALLSV=5;
-    
-    /**
-     * 简介 -右边新闻列表
-     * 
-     * 0-起始页
-     * 7-每页7条 
-     * 16-每页显示
+     * 分页
      * 
      * */
     public static final Integer ABOUT_INDEX = 0;
-    public static final Integer ABOUT_SIZE = 7;
-    public static final Integer PAGE_SIZE = 16;
     
     
-    /**
-     * fix_code
-     * 
-     * 1001 商品分类
-     * 1002 新闻分类
-     * 
-     * **/
-    public static final Integer FIXCODE_1001 = 1001;
-    public static final Integer FIXCODE_1002 = 1002;
-    
-    /**
-     * cpStatus
-     * 1-可用 
-     * 2-不可用
-     * 
-     * **/
-    public static final Integer RESULT_STATUS_Y = 1;
-    public static final Integer RESULT_STATUS_N = 2;
     
 }
