@@ -7,7 +7,7 @@ var define;
 var resRoot="/cloudfy/statics/resources";
 var futRoot= "/cloudfy";
 var realImgPath="E:/www2/zhangt-0b44449e649aee1e0164b519f6cd054b/webapp/images/";
-var resultImgPath="https://www.cloudfy.cn/images";
+var resultImgPath="https://cloudfy.cn/images";
 
 (function (factory) {
     if (typeof define === 'function') {

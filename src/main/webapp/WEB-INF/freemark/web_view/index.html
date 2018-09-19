@@ -8,7 +8,6 @@
 	<meta name="description" content="云朵家技术团队主要专注于互联网网站开发，网站设计，UI设计，微信小程序开发等服务." />
     <meta name="keywords" content="云朵家 网站开发 小程序开发  微信小程序   微信  小程序 网站   开发  设计  UI设计 云朵家 官方网站" />
 	
-
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/bootstrap.min.css">
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/font-awesome.min.css">
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/animate.min.css">
@@ -16,11 +15,8 @@
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/nivo-lightbox.css">
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/nivo_themes/default/default.css">
 	<link rel="stylesheet" href="${futRoot}/statics/resources/view/css/style.css">
-	<!-- <link rel="stylesheet" href="${futRoot}/statics/resources/view/css/videojs.css"> -->
-	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'> -->
-<style type="text/css">
+	<!-- <link rel="shortcut icon" href="${resRoot}/media/image/favicon.ico" /> -->
 
-</style>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -60,15 +56,22 @@
 				<li><a href="#about" class="smoothScroll">关于我们</a></li>
 				<li><a href="#team" class="smoothScroll">案列</a></li>
 				<li><a href="#contact" class="smoothScroll">联系咨询</a></li>
-				<li><a href="#" class="BBS">BBS社区</a></li>
+				<li class="dropdown hassubmenu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BBS社区 <span class="fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="blog.html">问卷调查</a></li>
+                        <li><a href="blog-1.html">视频教程</a></li>
+                        <li><a href="blog-2.html">其他</a></li>
+                    </ul>
+                </li>
 			</ul>
 		</div>
 	</div>
 	
-	
 </section>
 <!-- home section -->
 <section id="home">
+    <div class="overlay"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
@@ -86,12 +89,13 @@
 		</div>
 	</div>	
 	<!-- Video-->
-    <video id="video" autoplay="autoplay" muted="muted" volume="0" style="background-color: #515151" loop="loop" >
-         <source src="${resultImgPath}videos/video.mp4" type="video/mp4" />
+    <video id="video" autoplay="autoplay" muted="muted" volume="0"  loop="loop" >
          <source src="${resultImgPath}videos/video.webm" type="video/webm" />
          <source src="${resultImgPath}videos/video.ogg" type="video/ogg" />
-    </video>
+         <source src="${resultImgPath}videos/video.mp4" type="video/mp4" />
+    </video> 
 </section>
+
 <!-- work section -->
 <section id="work">
 	<div class="container">
@@ -103,7 +107,7 @@
 					<hr>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.2s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2500ms" data-wow-delay="0.1s">
 				<i class="icon-mobile medium-icon"></i>
 					<h3>UI和网站设计</h3>
 					<hr>
@@ -111,7 +115,7 @@
 					      可根据客户不同需求定制化设计,主要包括：UI设计，<a href="#">网站设计</a>，海报设计，广告设计。
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.3s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2500ms" data-wow-delay="0.1s">
 				<i class="icon-browser medium-icon"></i>
 					<h3>网站开发</h3>
 					<hr>
@@ -119,7 +123,7 @@
                         前期设计确定样稿，到后期切片生成静态HTML页面，使用主流DIV+CSS定位，网站兼容市场主浏览器:IE9+、Safari、火狐、谷歌等。                                  
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.4s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2500ms" data-wow-delay="0.1s">
 				<i class="icon-laptop medium-icon"></i>
 					<h3>后台管理系统</h3>
 					<hr>
@@ -128,7 +132,7 @@
 					   息内容。
                     </p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.5s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2500ms" data-wow-delay="0.3s">
 				<i class="icon-chat medium-icon"></i>
 					<h3>小程序应用</h3>
 					<hr>  
@@ -137,7 +141,7 @@
 					     根据缓存机制，我们特定设计一套最佳响应方案，提高小程序响应速度，尽可能提高响应速度，增强体验。
 					</p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.6s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2500ms" data-wow-delay="0.3s">
 				<i class="icon-compass medium-icon"></i>
 					<h3>性能响应</h3>
 					<hr>
@@ -145,7 +149,7 @@
 					        优秀的业务解决方案，能提高软件运行性能，稳定性。云朵家软件能保证请求响应时间2秒内；<a href="#">微信小程序</a>页面响应时间平均速度0.3秒。  
                     </p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0.7s">
+			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="2500ms" data-wow-delay="0.3s">
 				<i class="icon-cloud medium-icon"></i>
 					<h3>售后服务</h3>
 					<hr>
@@ -194,7 +198,6 @@
 		</div>
 	</div>
 </section>
-
 
 <!-- team section    img255*263-->
 <section id="team">
@@ -269,21 +272,7 @@
 					</div>
 				</a>
 			</div>
-			
 		</div>
-		<!-- 视频引用 start -->
-		<!-- <div class="row video_row" style="margin-left:15px;margin-top:15px;">
-		    <div class="video-player">
-				<video id="video_synth" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto"  width="1110" height="500" poster="${futRoot}/statics/resources/view/images/video-cover.jpg" data-setup='{}'>
-					<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
-					<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm" />
-					<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg" />
-					<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-				</video>
-			</div>
-			<div class="clearfix"> </div>
-		</div> -->
-		<!-- 视频引用 end -->
 	</div>
 </section>
 	
@@ -300,16 +289,16 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12 contact-info">
-				<h3 class="wow fadeInUp" data-wow-delay="0.2s">联系信息</h3>
-				<p class="wow fadeInUp" data-wow-delay="0.2s">您可以通过右边方式给我们发送留言☺</p>
+				<h3>联系信息</h3>
+				<p>您可以通过右边方式给我们发送留言☺</p>
 		
 				<div class="col-md-6 col-sm-4">
 					<h3><i class="icon-envelope medium-icon wow fadeInUp" data-wow-delay="0.2s"></i> 邮箱</h3>
-					<p class="wow fadeInUp" data-wow-delay="0.2s">v_wanchanghuang@163.com</p>
+					<p>v_wanchanghuang@163.com</p>
 				</div>
 				<div class="col-md-6 col-sm-4">
 					<h3><i class="icon-phone medium-icon wow fadeInUp" data-wow-delay="0.2s"></i> 电话</h3>
-					<p class="wow fadeInUp" data-wow-delay="0.2s">0714-1234567  |  15102742951</p>
+					<p>+86 | 173-2128-8950</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
@@ -339,19 +328,16 @@
                     <div class="row">
                         <div class="col-md-2 col-lg-2 col-sm-4 col-xs-12 xs-m-b-20">
                             <img src="${futRoot}/statics/resources/view/images/logo.png"  />
-                            <br />
-                            <br />
+                           <br/><br/>
                           <a href="http://www.cloudfy.cn/login/index" >云朵家</a>
-                            <br />
+                            <br/>
                         </div>
                        
                        <div class="col-md-4 col-lg-3 col-sm-4  col-xs-12 xs-m-b-20">
                                 <div class="bold">站内信息</div>
                                 <br/>
-                                <span>本站介绍</span>/
-                                <span>新闻信息</span>/
-                                <!-- <span>合作商</span>/ -->
-                                <span>法律声明 </span>
+                                <span>BBS社区</span>/
+                                <span>问卷调查</span>
                                
                             <div class="clearfix"> </div>
                         </div>
@@ -361,43 +347,22 @@
                                 <br/>
                                 <span>购买咨询 </span>/
                                 <span>技术咨询</span>/
-                                <span>视频教程</span>/
-                                <span>博客</span>
+                                <span>视频教程</span>
                            
                             <div class="clearfix"> </div>
                         </div>
                         
-                        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 xs-m-b-20">
-                            <div class="bold"> 链接分享</div>
-                            <br />
-                            <a href="javascript:"><i class="fa fa-weibo fa-2x"></i></a>&nbsp; 
-                            <a href="javascript:"><i class="fa fa-qq fa-2x"></i></a>&nbsp; 
-                            <a href="javascript:"><i class="fa fa-weixin  fa-2x"> </i></a>&nbsp; 
-                            <a href="javascript:"> <i class="fa fa-pinterest fa-2x"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="row" style="margin-top:50px; border-top: 1px solid gray;line-height: 80px;">
-                        Copyright @ 2018 云朵家技术团队 版权所有
+                        <div class="col-md-4 col-lg-4 col-sm-4  col-xs-12 xs-m-b-20">
+                            <div class="bold"> 法律声明</div>
+                            <br/>
+                             Copyright @ 2018 云朵家技术团队 版权所有<br/>
                          <a href="http://www.beianbeian.com/gaoji?field=siteDomain&value=cloudfy.cn">鄂ICP备18018426号-1</a>
-                         
+                        </div>
                     </div>
                 </div>
             </div>
 </footer>
 
-<!-- 右侧客服  -->
-<!-- 代码 开始 -->
-<!-- <div class="side">
-	<ul>
-		<li><a href="#"><div class="sidebox"><i class="fa fa-weixin fa-2x icon-div"></i>微信</div></a></li>
-		<li><a href="#"><div class="sidebox"><i class="fa fa-phone fa-2x icon-div"></i>TEL：17321288950</div></a></li>
-		<li><a href="#"><div class="sidebox"><i class="fa fa-qq fa-2x icon-div"></i>QQ群：1033074035</div></a></li>
-		<li><a href="#home" class="sidetop smoothScroll"><img src="${futRoot}/statics/resources/view/images/side_icon05.png"/></a></li>
-	</ul>
-</div> -->
-<!-- 代码 结束 -->
 
 <script src="${futRoot}/statics/resources/view/js/jquery.js"></script>
 <script src="${futRoot}/statics/resources/view/js/bootstrap.min.js"></script>
@@ -408,8 +373,6 @@
 <script src="${futRoot}/statics/resources/view/js/jquery.backstretch.min.js"></script>
 <script src="${futRoot}/statics/resources/view/js/wow.min.js"></script>
 <script src="${futRoot}/statics/resources/view/js/custom.js"></script>
-<!-- 本地视频引入js -->
-<!-- <script src="${futRoot}/statics/resources/view/js/video.min.js"></script> -->
 <!-- 美化滚动条 -->
 <script src="${futRoot}/statics/resources/view/js/jquery.nicescroll.min.js"></script>
 <script src="${futRoot}/statics/resources/view/js/core.js"></script> 

@@ -259,19 +259,20 @@ navigation section
 /* ==========================================================================
 home section
 ========================================================================== */
-#home {
+/* #home {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
+  height: 100vh;
+  text-align: center; 
+   -webkit-align-items: center;
   -ms-flex-align: center;
       align-items: center;
-  height: 100vh;
-  text-align: center;
-}
+} */
+
 #home h1 {
   font-size: 40px;
 }
@@ -651,8 +652,8 @@ footer section
 ========================================================================== */
 footer {
   text-align: center;
-  padding-top: 60px;
-  padding-bottom: 10px;
+  padding-top: 50px;
+  padding-bottom: 20px;
    background-color: #fff;
 }
 footer p {
@@ -706,7 +707,10 @@ media quires for mobile
     font-size: 12px;
   }
 }
-/**  右侧工具条 */
+/* ==========================================================================
+ 右侧工具条
+========================================================================== */
+
 /* side */
 .icon-div{
 	margin-left:11px;
@@ -746,26 +750,60 @@ media quires for mobile
 	font:14px/54px "微软雅黑";
 	overflow:hidden;
 	}
-.side ul li .sidetop{width:50px;height:50px;line-height:50px;display:inline-block;background:#000;opacity:0.7;filter:Alpha(opacity=70);transition:all 0.3s;}
-.side ul li .sidetop:hover{background:#00c6d7;opacity:1;filter:Alpha(opacity=100);}
-
-/********视频video*****************/
-#home video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -9999999;
-  transform: translateX(-50%) translateY(-50%);
-  background-size: cover;
-  transition: 1s opacity;
+.side ul li .sidetop{
+	width:50px;
+	height:50px;
+	line-height:50px;
+	display:inline-block;
+	background:#000;
+	opacity:0.7;
+	filter:Alpha(opacity=70);
+	transition:all 0.3s;
+}
+.side ul li .sidetop:hover{
+	background:#00c6d7;
+	opacity:1;
+	filter:Alpha(opacity=100);
 }
 
 
-/*--team 图片展示 --*/
+/* ==========================================================================
+视频video
+========================================================================== */
+#home {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  height: 100vh;
+  text-align: center; 
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; 
+}
+#home video {
+  position: absolute;
+  top:0px;
+  left: 0px;
+  z-index: -2;
+  width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background: url(../images/pattern.png) repeat center center rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+team 图片展示
+========================================================================== */
 .team{
 	padding:5em 0;
 	text-align:center;
@@ -801,10 +839,8 @@ media quires for mobile
   font-weight: 800;
   color: #ffffff;
   position: absolute;
- /*  bottom: -84%; */
   bottom: -100%;
   right: 0%;
-  /* background-color:rgba(213, 125, 57, 0.78);  */
   background-color:rgba(0, 198, 215, 0.6);
   padding: 2% 10%;
   text-align: center;
@@ -834,8 +870,57 @@ media quires for mobile
 .captn{
 	display: none;
 }
-/*--team--*/
 
 
+/******************************************
+MEGA MENU
+******************************************/
+/* .hassubmenu .dropdown-menu{
+    text-align: center;
+}
+.dropdown-menu ul {
+    padding: 0 !important;
+    list-style: none;
+}
+.dropdown-menu li {
+    padding: 0px;
+    margin: 10px 0;
+}
+.dropdown-menu li a {
+    padding: 0 !important;
+    color: #848484;
+}
+.dropdown-menu li:hover a {
+    padding-left: 10px !important;
+    background-color: transparent;
+}
+.dropdown-menu {
+    border-radius: 0;
+    margin-top: 30px;
+    min-width: 200px;
+}
+.dropdown-menu {
+    border-radius: 0;
+    border-top: 3px solid #ddd;
+    background-color: #fff !important;
+    margin-top: 24px;
+    padding: 20px 30px;
+}
+.dropdown-menu {
+    margin-top: 15px !important;
+}
+.dropdown-menu li .menu-button {
+    border-radius: 0 !important;
+    font-size: 13px !important;
+    border: 1px solid #fff;
+    font-weight: bold;
+    color: #ffffff !important;
+    display: block;
+    background-color: #111;
+    padding: 5px 20px !important;
+    max-width: 140px;
+    margin: 10px auto 0;
+    text-transform: capitalize;
+} */
 
 
