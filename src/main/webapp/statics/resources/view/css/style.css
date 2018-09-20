@@ -707,64 +707,7 @@ media quires for mobile
     font-size: 12px;
   }
 }
-/* ==========================================================================
- 右侧工具条
-========================================================================== */
 
-/* side */
-.icon-div{
-	margin-left:11px;
-	line-height:54px;
-	vertical-align: middle;
-	margin-right:10px;
-	color:#fff;
-}
-.side{
-	position:fixed;
-	width:50px;
-	height:275px;
-	right:40px;
-	top:250px;
-	z-index:100;
-	margin:0px;
-	padding:0px;
-}
-.side ul li{
-	width:50px;
-	height:50px;
-	float:left;
-	position:relative;
-	border-bottom:1px solid #444;
-    list-style-type:none;
-	}
-.side ul li .sidebox, .wxImg{
-	position:absolute;
-	width:50px;
-	height:50px;
-	top:0;right:0;
-	transition:all 0.3s;
-	background:#000;
-	opacity:0.7;
-	filter:Alpha(opacity=70);
-	color:#fff;
-	font:14px/54px "微软雅黑";
-	overflow:hidden;
-	}
-.side ul li .sidetop{
-	width:50px;
-	height:50px;
-	line-height:50px;
-	display:inline-block;
-	background:#000;
-	opacity:0.7;
-	filter:Alpha(opacity=70);
-	transition:all 0.3s;
-}
-.side ul li .sidetop:hover{
-	background:#00c6d7;
-	opacity:1;
-	filter:Alpha(opacity=100);
-}
 
 
 /* ==========================================================================
@@ -873,54 +816,24 @@ team 图片展示
 
 
 /******************************************
-MEGA MENU
+菜单下拉样式
 ******************************************/
-/* .hassubmenu .dropdown-menu{
-    text-align: center;
+.navbar-collapse .navbar-nav > li .dropdown-menu {
+	margin: 0;
 }
-.dropdown-menu ul {
-    padding: 0 !important;
-    list-style: none;
+.navbar-collapse .navbar-nav > li:hover .dropdown-menu {
+	display: block;
 }
-.dropdown-menu li {
-    padding: 0px;
-    margin: 10px 0;
+.dropdown .dropdown-menu li a{
+	color:#000;
+	padding-top:7px;
 }
-.dropdown-menu li a {
-    padding: 0 !important;
-    color: #848484;
+.dropdown .dropdown-menu li a:hover{
+	color: #01bacf;
 }
-.dropdown-menu li:hover a {
-    padding-left: 10px !important;
-    background-color: transparent;
+.dropdown .dropdown-menu {
+    border-top-color: #01bacf;
+    left: auto;
+    right: auto;
+    padding-bottom:10px;
 }
-.dropdown-menu {
-    border-radius: 0;
-    margin-top: 30px;
-    min-width: 200px;
-}
-.dropdown-menu {
-    border-radius: 0;
-    border-top: 3px solid #ddd;
-    background-color: #fff !important;
-    margin-top: 24px;
-    padding: 20px 30px;
-}
-.dropdown-menu {
-    margin-top: 15px !important;
-}
-.dropdown-menu li .menu-button {
-    border-radius: 0 !important;
-    font-size: 13px !important;
-    border: 1px solid #fff;
-    font-weight: bold;
-    color: #ffffff !important;
-    display: block;
-    background-color: #111;
-    padding: 5px 20px !important;
-    max-width: 140px;
-    margin: 10px auto 0;
-    text-transform: capitalize;
-} */
-
-
