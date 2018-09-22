@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+	<head>
+		<title>问卷类型-修改</title>
+	    <link href="${resRoot}/media/odstl/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/uniform.default.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/select2_metro.css" rel="stylesheet"  />
+		<link href="${resRoot}/media/odstl/css/DT_bootstrap.css"  rel="stylesheet"  />
+		<link href="${resRoot}/media/odstl/css/datepicker.css" rel="stylesheet">
+		<link href="${resRoot}/media/odstl/css/datetimepicker.css" rel="stylesheet">
+		<link href="${resRoot}/media/odstl/css/style-metronic.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/style.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/custom.css" rel="stylesheet" />
+
+		<script src="${resRoot}/media/odstl/js/jquery-1.10.2.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.cokie.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.uniform.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/select2.min.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.dataTables.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/DT_bootstrap.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap-datepicker.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap-datepicker.zh-CN.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.ui.widget.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.iframe-transport.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload-process.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload-validate.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/alert_message.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/app.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/index.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/global.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/Date.js" type="text/javascript"></script>
+		
+	</head>
+	<!-- END HEAD -->
+	<!-- BEGIN BODY -->
+	<body class="header-fixed-body" >
+		<!-- BEGIN CONTENT -->
+		<div class="page-content-wrapper">
+			<div class="page-content">
+				<!-- BEGIN PAGE HEADER-->
+				
+                 <!-- 面包线start  -->
+                <div class="row">
+					  <div class="col-md-12">
+					    <h3 class="page-title">问卷类型</h3>
+					    <ul class="page-breadcrumb breadcrumb">
+					            <li>
+					                <i class="fa fa-home"></i>
+					                <a href="#">首页</a>
+					                <i class="fa fa-angle-right"></i>
+					            </li>
+					            <li>
+					                <i class="fa fa-book"></i>
+					                <a href="#">问卷管理</a>
+					            </li>
+					        </ul>
+					  </div>
+				</div>
+				<!-- 面包线start  -->
+			    
+				<!-- END PAGE HEADER-->
+				<form id="requestInfoForm" action="" >
+					<!-- BEGIN PAGE MAIN -->
+					<div class="portlet box blue">
+						<div class="portlet-title">
+							<div class="caption">
+								添加
+							</div>
+						</div>
+						<div class="portlet-body">
+							<ul class="nav nav-tabs">
+								<li id="titOne" class="active" >
+									<a href="#tab_1_1" data-toggle="tab">问卷信息</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade active in" id="tab_1_1">
+									<div class="form-horizontal clearfix custom-form">
+										<div class="row">
+											<div class="form-group">
+												<label class="col-md-3 control-label text-right"><font style="color:red">*</font>问卷编号:</label>
+												<div class="col-md-7">
+													<input id="code" name="code" type="text" class="form-control" value = "${que.code?if_exists}">
+													<input id="id" name="id" type="hidden" class="form-control" value = "${que.id?if_exists}">
+													<input id="dpnum" name="dpnum" type="hidden" class="form-control" value = "${que.dpnum?if_exists}">
+													<input id="taskCode" name="taskCode" type="hidden" class="form-control" value = "${que.taskCode?if_exists}">
+													<input id="createUserName" name="createUserName" type="hidden" class="form-control" value = "${que.createUserName?if_exists}">
+													<input id="createUserId" name="createUserId" type="hidden" class="form-control" value = "${que.createUserId?if_exists}">
+												    <input id="brand" name="brand" type="hidden" class="form-control" value = "${que.brand?if_exists}">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group">
+												<label class="col-md-3 control-label text-right"><font style="color:red">*</font>问卷名称:</label>
+												<div class="col-md-7">
+													<input id="title" name="title" type="text" class="form-control" value = "${que.title?if_exists}">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group">
+												<label class="col-md-3 control-label text-right"><font style="color:red">*</font>是否发布:</label>
+												<div class="col-md-7">
+													<select  id="status"  name="status" class="form-control " tabindex="-1">
+														<option value="400001002" <#if que.status?if_exists==400001002 > selected="selected"</#if> >未发布</option>
+														<option value="400001001" <#if que.status?if_exists==400001001 > selected="selected"</#if> >已发布 </option>
+													    <option value="400001003" <#if que.status?if_exists==400001003 > selected="selected"</#if> >已删除</option>
+													</select>
+													
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12 text-center">
+				                             <input onclick="backButton()" type="button" class="btn gray" value="返回" />
+				                             <a type="button" onclick="addButton()" class="btn green"> 确定 </a>
+				                             <a type="button" onclick="nextButton()" class="btn blue">下一步 </a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		<!-- END CONTENT -->
+
+		<!-- END CONTAINER -->
+		<!-- JAVASCRIPTS -->
+		
+		<script type="text/javascript">
+			admin = {
+
+			};
+			/**  初始化  */
+			jQuery(document).ready(function() {
+				App.init();
+				$("select").select2();
+			});
+
+			/**  确定  */
+			function addButton() {
+				//获取数据
+				var code = $("#code").val();
+				var title = $("#title").val();
+				var status = $("#status").val();
+				if (code=="" || title == "" || status=="0") {
+					$.Alert("所有选项为必填项");
+					return;
+				} else {
+			         $.ajax({
+						url : "${request.contextPath}/survey/que/updateQueManage",
+						type : "post",
+						dataType : "json",
+						data : $("#requestInfoForm").serialize(),
+						success : function(data) {
+							if(data){
+								window.location.href = "${request.contextPath}/survey/que/gotoQueManage";
+							}else{
+								$.Alert("ERROR:保存异常!!!");
+							}
+						}
+					});
+				}
+			}
+			
+			/**  返回  */
+			function backButton() {
+				window.location.href = "${request.contextPath}/survey/que/gotoQueManage";
+			}
+			
+			/** 下一步  */
+			function nextButton() {
+				window.location.href = "${request.contextPath}/survey/que/gotoQueManageProblem?id="+${que.id?if_exists};
+			}
+
+		</script>
+		<!-- END JAVASCRIPTS -->
+	</body>
+	<!-- END BODY -->
+</html>

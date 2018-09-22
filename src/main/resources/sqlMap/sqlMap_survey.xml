@@ -97,10 +97,90 @@
 	
 	
 	
+	<!-- 删除问卷类型-->
+	<sql id="delQuestionnaire">
+	    <![CDATA[
+	    	delete from t_questionnaire where id=:id  
+	   ]]>
+	</sql>
+    <!-- 删除问卷问题-->
+	<sql id="delQuestionnaireProblem">
+	    <![CDATA[
+	    	delete from t_questionnaire_problem where questionnaire_id=:id
+	   ]]>
+	</sql>
+	<!-- 删除问卷答案选项-->
+	<sql id="delQuestionnaireProblemItem">
+	    <![CDATA[
+	    	delete from t_questionnaire_problem_item where questionnaire_id=:id
+	   ]]>
+	</sql>
+	<!-- 删除问卷答案结果-->
+	<sql id="delQuestionnaireAnswer">
+	    <![CDATA[
+	    	delete from t_questionnaire_answer where questionnaire_id=:id
+	   ]]>
+	</sql>
 	
-
+	<!-- 问卷问题集合查询-->
+	<sql id="queryQuestionnaireProblem">
+	    <![CDATA[
+	    	select * from t_questionnaire_problem where questionnaire_id=:questionnaireId
+	   ]]>
+	</sql>
 	
+	 <!-- 查询问题表-->
+    <sql id="queryQuestionnaireProblemOrCode">
+        <![CDATA[
+	    		SELECT 
+	    		  *		   
+	    		FROM t_questionnaire_problem
+	    		WHERE 1=1
+	    		and  code=:code
+	    		and  questionnaire_id=:questionnaireId
+	   ]]>
+    </sql>
+    
+    
+    <!-- 删除问卷问题2-->
+	<sql id="delQuestionnaireProblem2">
+	    <![CDATA[
+	    	delete from t_questionnaire_problem where id=:id
+	   ]]>
+	</sql>
+	<!-- 删除问卷答案选项2-->
+	<sql id="delQuestionnaireProblemItem2">
+	    <![CDATA[
+	    	delete from t_questionnaire_problem_item where questionnaire_problem_id=:id
+	   ]]>
+	</sql>
+	<!-- 删除问卷答案结果2-->
+	<sql id="delQuestionnaireAnswer2">
+	    <![CDATA[
+	    	delete from t_questionnaire_answer where questionnaire_problem_id=:id
+	   ]]>
+	</sql>
 	
+	<!-- 删除问卷答案结果2-->
+	<sql id="updateQuestionnaireByShortName">
+	    <![CDATA[
+	    	update t_questionnaire_problem set short_name=:title where questionnaire_id=:id
+	   ]]>
+	</sql>
+	
+	<!-- 查询问题表,修改保存验证-->
+    <sql id="queryQuestionnaireProblemItme">
+        <![CDATA[
+          select * from t_questionnaire_problem_item where questionnaire_problem_id=:id
+	   ]]>
+    </sql>
+	
+	<!-- 删除问卷答案选项3-->
+	<sql id="delQuestionnaireProblemItem3">
+	    <![CDATA[
+	    	delete from t_questionnaire_problem_item where id=:id
+	   ]]>
+	</sql>
 	
 </sqlMap>
 

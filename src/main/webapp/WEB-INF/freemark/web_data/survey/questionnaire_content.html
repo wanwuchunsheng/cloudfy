@@ -28,61 +28,61 @@
 			<br/>
 			
 			<!-- 单选 -->
-		<#if qe.type==400011001>
-		<#list listQueProItem as qet>
-		<#if qe.id==qet.id >
-		<label class="radio-inline">
-			<#if qet.showTextfield=='400021005'><!-- 评价评分 类型  -->
-			       <div id="key_appraise">
-			           <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}')" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}" <#if "${qet.validateResult==1}">id="key_yes"<#elseif "${qet.validateResult==2}">id="key_no"</#if>   value="${qet.id}@${qet.name}"
-	                   <#if (listAs?size > 0)>
-				        <#list listAs as qast>
-				        <#if qe.id==qast.questionnaireProblemId>
-				            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked </#if>
-				        </#if>
-				       </#list>
-				       </#if>
-				      />
-					  ${qet.name}
-				   </div>
-			   <#else><!-- 单选 /单选 文本 类型  -->
-			        
-					<#if "${qet.showTextfield!=0}">
-					   <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}' )" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}"  <#if "${qet.validateResult==400031001}">id="key_yes"<#elseif "${qet.validateResult==400031002}">id="key_no"</#if> 
-					       <#if (listAs?size > 0)>
-					        <#list listAs as qast>
-					        <#if qe.id==qast.questionnaireProblemId>
-					            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked value="${qet.id}@${qet.name}#${qast.value?replace(qet.name+'#','')}"</#if>
-					        </#if>
-					       </#list>
-					       </#if>
-				       />${qet.name}
-					   <input type="text" onblur="chengVal(${qet.id},'${qet.name}','${qet.showTextfield}')"  class="input_bottom" name="tname${qet.questionnaireProblemId}"  <#if "${qet.validateResult==1}">id="key_yes"<#elseif "${qet.validateResult==2}">id="key_no"</#if> 
-					   <#if (listAs?size > 0)>
-				        <#list listAs as qast>
-				        <#if qe.id==qast.questionnaireProblemId>
-				            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> value="${qast.value?replace(qet.name+'#','')}"</#if>
-				        </#if>
-				       </#list>
-				       </#if>
-				       />
-				   <#else>
-				       <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}')" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}"  <#if "${qet.validateResult==400031001}">id="key_yes"<#elseif "${qet.validateResult==400031002}">id="key_no"</#if> value="${qet.id}@${qet.name}"
-					       <#if (listAs?size > 0)>
+			<#if qe.type==400011001>
+			<#list listQueProItem as qet>
+			<#if qe.id==qet.id >
+			<label class="radio-inline">
+				<#if qet.showTextfield=='400021005'><!-- 评价评分 类型  -->
+				       <div id="key_appraise">
+				           <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}')" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}" <#if "${qet.validateResult==1}">id="key_yes"<#elseif "${qet.validateResult==2}">id="key_no"</#if>   value="${qet.id}@${qet.name}"
+		                   <#if (listAs?size > 0)>
 					        <#list listAs as qast>
 					        <#if qe.id==qast.questionnaireProblemId>
 					            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked </#if>
 					        </#if>
 					       </#list>
 					       </#if>
-				       />${qet.name}
-				   </#if> 
+					      />
+						  ${qet.name}
+					   </div>
+				   <#else><!-- 单选 /单选 文本 类型  -->
+				        
+						<#if "${qet.showTextfield!=0}">
+						   <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}' )" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}"  <#if "${qet.validateResult==400031001}">id="key_yes"<#elseif "${qet.validateResult==400031002}">id="key_no"</#if> 
+						       <#if (listAs?size > 0)>
+						        <#list listAs as qast>
+						        <#if qe.id==qast.questionnaireProblemId>
+						            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked value="${qet.id}@${qet.name}#${qast.value?replace(qet.name+'#','')}"</#if>
+						        </#if>
+						       </#list>
+						       </#if>
+					       />${qet.name}
+						   <input type="text" onblur="chengVal(${qet.id},'${qet.name}','${qet.showTextfield}')"  class="input_bottom" name="tname${qet.questionnaireProblemId}"  <#if "${qet.validateResult==1}">id="key_yes"<#elseif "${qet.validateResult==2}">id="key_no"</#if> 
+						   <#if (listAs?size > 0)>
+					        <#list listAs as qast>
+					        <#if qe.id==qast.questionnaireProblemId>
+					            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> value="${qast.value?replace(qet.name+'#','')}"</#if>
+					        </#if>
+					       </#list>
+					       </#if>
+					       />
+					   <#else>
+					       <input onclick="changeBackColorButton($(this));showVerify(${qe_index+1},'${qet.nextProblem}')" type="radio"  class="input_bottom${qet.id}${qet.showTextfield}" name="name${qet.questionnaireProblemId}"  <#if "${qet.validateResult==400031001}">id="key_yes"<#elseif "${qet.validateResult==400031002}">id="key_no"</#if> value="${qet.id}@${qet.name}"
+						       <#if (listAs?size > 0)>
+						        <#list listAs as qast>
+						        <#if qe.id==qast.questionnaireProblemId>
+						            <#if qast.value?replace('#'+qast.value?replace(qet.name+'#',''),'')==qet.name> checked </#if>
+						        </#if>
+						       </#list>
+						       </#if>
+					       />${qet.name}
+					   </#if> 
+				</#if>
+				
+			</label>
 			</#if>
-			
-		</label>
-		</#if>
-		</#list>
-		</#if>
+			</#list>
+			</#if>
 	
 		<!-- 下拉 -->
 		<#if qe.type==400011004>

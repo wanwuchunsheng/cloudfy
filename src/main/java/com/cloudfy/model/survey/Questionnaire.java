@@ -1,5 +1,5 @@
 /*
- * Copyright (C), 2013-2014, 上海汽车集团股份有限公司
+ * Copyright (C), 2018-2018, 云朵家
  * FileName: TQuestionnaire.java
  * Author:   saic-generator
  * Date:     2014-4-19 14:05:27
@@ -20,18 +20,17 @@ import java.util.Date;
 @Entity(name = "t_questionnaire")
 public class Questionnaire implements Serializable {
     /**
-     * Serial UID
-     */
-    private static final long serialVersionUID = 1L;
-
-    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
      * id ID(自增长主键)
      */
-    private Long id;
+    private Integer id;
     /**
      * type_id 任务类型
      */
-    private Long taskCode;
+    private Integer taskCode;
 
     /**
      * code 编号
@@ -66,7 +65,7 @@ public class Questionnaire implements Serializable {
     /**
      * createUserId 创建人ID
      */
-    private Long createUserId;
+    private Integer createUserId;
 
     /**
      * updateTime 最后修改时间
@@ -81,12 +80,14 @@ public class Questionnaire implements Serializable {
     /**
      * updateUserId 最后修改人ID
      */
-    private Long updateUserId;
+    private Integer updateUserId;
 
     /**
      * 租户ID *
      */
     private String dpnum;//
+    
+    private String ids;//
 
     /**
      * @return the id
@@ -94,23 +95,23 @@ public class Questionnaire implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     @Column(name = "task_code")
-    public Long getTaskCode() {
+    public Integer getTaskCode() {
         return taskCode;
     }
 
-    public void setTaskCode(Long taskCode) {
+    public void setTaskCode(Integer taskCode) {
         this.taskCode = taskCode;
     }
 
@@ -208,14 +209,14 @@ public class Questionnaire implements Serializable {
      * @return the createUserId
      */
     @Column(name = "create_user_id")
-    public Long getCreateUserId() {
+    public Integer getCreateUserId() {
         return this.createUserId;
     }
 
     /**
      * @param createUserId the createUserId to set
      */
-    public void setCreateUserId(Long createUserId) {
+    public void setCreateUserId(Integer createUserId) {
         this.createUserId = createUserId;
     }
 
@@ -253,14 +254,14 @@ public class Questionnaire implements Serializable {
      * @return the updateUserId
      */
     @Column(name = "update_user_id")
-    public Long getUpdateUserId() {
+    public Integer getUpdateUserId() {
         return this.updateUserId;
     }
 
     /**
      * @param updateUserId the updateUserId to set
      */
-    public void setUpdateUserId(Long updateUserId) {
+    public void setUpdateUserId(Integer updateUserId) {
         this.updateUserId = updateUserId;
     }
 
@@ -316,4 +317,17 @@ public class Questionnaire implements Serializable {
     public String toString() {
         return super.toString();
     }
+
+	public String getIds() {
+		return ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
+    
+    
+    
+    
+    
 }

@@ -1,8 +1,13 @@
 package com.cloudfy.model.survey;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * 实体类TQuestionnaireProblemItem
@@ -11,25 +16,27 @@ import java.util.Date;
  */
 @Entity(name = "t_questionnaire_problem_item")
 public class QuestionnaireProblemItem implements Serializable {
+    
     /**
-     * Serial UID
-     */
-    private static final long serialVersionUID = 1L;
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    /**
+	/**
      * id ID(自增长主键)
      */
-    private Long id;
+    private Integer id;
+    private String ids;
 
     /**
      * questionnaireId 问卷ID
      */
-    private Long questionnaireId;
+    private Integer questionnaireId;
 
     /**
      * questionnaireProblemId 问题ID
      */
-    private Long questionnaireProblemId;
+    private Integer questionnaireProblemId;
 
     /**
      * value 选择值
@@ -73,7 +80,7 @@ public class QuestionnaireProblemItem implements Serializable {
     /**
      * createUserId 创建人ID
      */
-    private Long createUserId;
+    private Integer createUserId;
 
     /**
      * updateTime 最后修改时间
@@ -88,7 +95,7 @@ public class QuestionnaireProblemItem implements Serializable {
     /**
      * updateUserId 最后修改人ID
      */
-    private Long updateUserId;
+    private Integer updateUserId;
     
     
     @Column(name = "show_textfield")
@@ -143,14 +150,14 @@ public class QuestionnaireProblemItem implements Serializable {
      * @return the createUserId
      */
     @Column(name = "create_user_id")
-    public Long getCreateUserId() {
+    public Integer getCreateUserId() {
         return this.createUserId;
     }
 
     /**
      * @param createUserId the createUserId to set
      */
-    public void setCreateUserId(Long createUserId) {
+    public void setCreateUserId(Integer createUserId) {
         this.createUserId = createUserId;
     }
 
@@ -188,14 +195,14 @@ public class QuestionnaireProblemItem implements Serializable {
      * @return the updateUserId
      */
     @Column(name = "update_user_id")
-    public Long getUpdateUserId() {
+    public Integer getUpdateUserId() {
         return this.updateUserId;
     }
 
     /**
      * @param updateUserId the updateUserId to set
      */
-    public void setUpdateUserId(Long updateUserId) {
+    public void setUpdateUserId(Integer updateUserId) {
         this.updateUserId = updateUserId;
     }
 
@@ -206,14 +213,14 @@ public class QuestionnaireProblemItem implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -221,14 +228,14 @@ public class QuestionnaireProblemItem implements Serializable {
      * @return the questionnaireId
      */
     @Column(name = "questionnaire_id")
-    public Long getQuestionnaireId() {
+    public Integer getQuestionnaireId() {
         return this.questionnaireId;
     }
 
     /**
      * @param questionnaireId the questionnaireId to set
      */
-    public void setQuestionnaireId(Long questionnaireId) {
+    public void setQuestionnaireId(Integer questionnaireId) {
         this.questionnaireId = questionnaireId;
     }
 
@@ -236,14 +243,14 @@ public class QuestionnaireProblemItem implements Serializable {
      * @return the questionnaireProblemId
      */
     @Column(name = "questionnaire_problem_id")
-    public Long getQuestionnaireProblemId() {
+    public Integer getQuestionnaireProblemId() {
         return this.questionnaireProblemId;
     }
 
     /**
      * @param questionnaireProblemId the questionnaireProblemId to set
      */
-    public void setQuestionnaireProblemId(Long questionnaireProblemId) {
+    public void setQuestionnaireProblemId(Integer questionnaireProblemId) {
         this.questionnaireProblemId = questionnaireProblemId;
     }
 
@@ -350,4 +357,14 @@ public class QuestionnaireProblemItem implements Serializable {
     public String toString() {
         return super.toString();
     }
+
+	public String getIds() {
+		return ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
+    
+    
 }

@@ -1,0 +1,329 @@
+<html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<title>问卷问题-答案选项</title>
+		<link href="${resRoot}/media/odstl/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/uniform.default.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/select2_metro.css" rel="stylesheet"  />
+		<link href="${resRoot}/media/odstl/css/DT_bootstrap.css"  rel="stylesheet"  />
+		<link href="${resRoot}/media/odstl/css/datepicker.css" rel="stylesheet">
+		<link href="${resRoot}/media/odstl/css/datetimepicker.css" rel="stylesheet">
+		<link href="${resRoot}/media/odstl/css/style-metronic.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/style.css" rel="stylesheet" />
+		<link href="${resRoot}/media/odstl/css/custom.css" rel="stylesheet" />
+
+		<script src="${resRoot}/media/odstl/js/jquery-1.10.2.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.cokie.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.uniform.min.js" type="text/javascript"></script> 
+		<script src="${resRoot}/media/odstl/js/select2.min.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.dataTables.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/DT_bootstrap.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap-datepicker.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/bootstrap-datepicker.zh-CN.js" type="text/javascript" ></script> 
+		<script src="${resRoot}/media/odstl/js/jquery.ui.widget.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.iframe-transport.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload-process.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/jquery.fileupload-validate.js" type="text/javascript" ></script>
+		<script src="${resRoot}/media/odstl/js/alert_message.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/app.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/index.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/global.js" type="text/javascript"></script>
+		<script src="${resRoot}/media/odstl/js/Date.js" type="text/javascript"></script>
+		
+	</head>
+	<!-- END HEAD -->
+	<!-- BEGIN BODY -->
+	<body class="header-fixed-body" >
+	<!-- BEGIN CONTENT -->
+	<!-- BEGIN CONTENT -->
+		<div class="page-content-wrapper">
+			<div class="page-content">
+               
+				<!-- BEGIN PAGE MAIN -->
+				<div class="portlet box blue">
+					<div class="portlet-title">
+						<div class="caption">
+							答案列表
+						</div>
+					</div>
+					<div class="portlet-body" >
+						<form id="requestInfoForm" action="" >
+							<div class="list-group-item" style="background-color: #FFFFF0;">
+							<br/>
+								<div class="row">
+									<div>
+										<label class="col-md-2 control-label text-right">问题:</label>
+										<div class="col-md-10">
+											<label>${quePro.fullName}</label>
+										</div>
+									</div>
+								</div>
+								<br/>
+								<div class="row">
+									<div >
+										<label class="col-md-2 control-label text-right">问题答案:</label>
+										<div class="col-md-10">
+											<input name="name" id="name"  type="text" class="form-control" />
+										</div>
+										<input type="hidden" id="questionnaireId" name="questionnaireId" type="text" value="${quePro.questionnaireId}" />
+										<input type="hidden" name="questionnaireProblemId" type="text" value="${quePro.id}" id="wtId" />
+										<input type="hidden" name="value" type="text" value="${quePro.type}" />
+										<input type="hidden" name="orderNo" type="text" value="1" />
+										<input type="hidden" name="nextProblem" type="text" value="-1" />
+										<input type="hidden" name="validateResult" type="text" value="0" />
+									</div>
+								</div>
+								<br/>
+								<div class="row">
+									<div >
+										<label class="col-md-2 control-label text-right">题型:</label>
+										<div class="col-md-10">
+											<label class="radio-inline"><input type="radio" checked="checked"  name="showTextField" value="400021001" />默认</label>
+											<label class="radio-inline"><input type="radio"  name="showTextField" value="400021002" />文本</label>
+											<label class="radio-inline"><input type="radio"  name="showTextField" value="400021003" />手机号码</label>
+										</div>
+									</div>
+								</div>
+								<br/>
+							</div>
+						</form>
+						<br />
+						<div class="row" >
+							<div class="col-md-6">
+								<div class="btn-group">
+									<a  onclick="addItemButton()" class="btn green"> 添加 <i class="fa fa-plus"></i> </a>
+								</div>
+								<div class="btn-group">
+									<button onclick="deleteAnswerButton()" class="btn red">
+										删除
+										<i class="fa fa-times"></i>
+									</button>
+								</div>
+								<div class="btn-group">
+									<span onclick="backButton()" class="btn blue"> 返回 <i class="fa fa-undo"></i> </span>
+								</div>
+								
+								<div class="btn-group">
+									<span onclick="saveButton()" class="btn green"> 保存修改 </span>
+								</div>
+								
+								<div class="btn-group">
+									<span id="error" style="color:red"> </span>
+								</div>
+							</div>
+						</div>
+
+						<table class="table table-striped table-bordered table-hover" id="table_s1">
+							<thead>
+								<tr>
+									<th class="table-checkbox">
+									<input type="checkbox" class="group-checkable" data-set="#table_s1 .checkboxes"/>
+									</th>
+									<th>答案</th>
+									<th>下一题序号</th>
+									<th>题型</th>
+									<th>创建人</th>
+									<th>创建时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<#list listQa as qa>
+								<tr>
+									<td>
+									   <input id='${qa_index?if_exists}' name='checkBoxt' type='checkbox' class='checkboxes' value="${qa.id?if_exists}" />
+									</td>
+									<td>
+									   <input id="queNamet${qa_index}" type="text" value="${qa.name?if_exists}" class="form-control" />
+									</td>
+									
+									<td>
+										<input id="queNextProblemt${qa_index}" type="text" value="${qa.nextProblem?if_exists}" class="form-control" />
+									</td>
+									<td>
+									<#if qa.showTextField?if_exists==400021001> 默认
+									<#elseif qa.showTextField?if_exists==400021002>文本框
+									<#elseif qa.showTextField?if_exists==400021003>手机框
+									<#else>未知
+									</#if>
+										
+									</td>
+									<td>${qa.createUserName?if_exists}</td>
+									<td>${qa.createTime?if_exists}</td>
+									<td><a href="javascript:;" onclick="nextProblem('${qa.id?if_exists}')">下一个问题</A></td>
+								</tr>
+								</#list>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+				<!-- END PAGE MAIN -->
+
+			</div>
+		</div>
+		<!-- END CONTENT -->
+		<br/><br/>
+	<!-- END CONTENT -->
+	<!-- 弹出配置客户基本信息窗口 -->
+	<div class="modal fade" id="myModalrw1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<!-- JAVASCRIPTS -->
+	
+	<script type="text/javascript">
+		admin = {
+
+		};
+		/**  初始化  */
+		$(function(){
+			$("select").select2();
+			App.init();
+		});
+
+		/**  返回  */
+		function backButton() {
+			 window.location.href = "${request.contextPath}/survey/que/gotoQueManageProblem?id="+${quePro.questionnaireId?if_exists};
+		}
+		
+		/** 删除 */
+		function deleteAnswerButton(){
+			//获取ID
+	        var item = document.getElementsByName("checkBoxt");
+	        var str = "";
+	        for (var i = 0; i < item.length; i++) {
+	            if (item[i].checked == true) {
+	                var k = item[i].value;
+	                str+=k+","; 
+	            }
+	        }
+	        //验证是否选中
+	        if(str==""){
+	        	$.Alert("操作失败：请选择后再操作!");
+	        	return false;
+	        }
+	        //验证只能选中1条
+	        str=str.substring(0, str.lastIndexOf(','));
+		    $.ajax({
+				url : "${request.contextPath}/survey/que/deleteQueManageProblemItem",
+				type : "post",
+				data : {
+                     "ids":str
+				},
+				success : function(data) {
+					if(data){
+						//刷新列表
+						window.location.reload();
+					}else{
+						$.Alert("ERROR:删除失败!!!");
+					}
+					
+				}
+			});
+		}
+
+		/** 修改 */
+		function saveButton(){
+            //1、获取ID，2、获取下一题内容 3、修改
+			//获取ID
+	        var item = document.getElementsByName("checkBoxt");
+	        var str = "";
+	        for (var i = 0; i < item.length; i++) {
+	            if (item[i].checked == true) {
+	                var k = item[i].value;
+	                str+=k+","; 
+	            }
+	        }
+	        //验证是否选中
+	        if(str==""){
+	        	$.Alert("操作失败：请选择后再操作!");
+	        	return false;
+	        }
+	        //验证只能选中1条
+	        str=str.substring(0, str.lastIndexOf(','));
+	        var ids=str.split(",");
+		    if(ids.length>1){
+	        	$.Alert("操作失败：只能选中一个操作!");
+	        	return false;
+		    }
+		    var index=$("input[type='checkbox']:checked").attr('id');
+		    var name=$("#queNamet"+index).val();//获取答案
+		    var nextProblem=$("#queNextProblemt"+index).val();
+		    $.ajax({
+				url : "${request.contextPath}/survey/que/updateQueManageProblemItemById",
+				type : "post",
+				data : {
+                     "id":str,
+                     "name":name,
+                     "nextProblem":nextProblem
+				},
+				success : function(data) {
+					if(data){
+						//刷新列表
+						window.location.reload();
+					}else{
+						$.Alert("ERROR:删除失败!!!");
+					}
+					
+				}
+			});  
+		}
+
+		/** 添加*/
+		function addItemButton(){
+			var name=$("#name").val();
+		    if(name==""){
+		       $.Alert("答案不能为空!");
+		       return ;
+		    }
+		    var da=$("#name").val();
+		    var len=da.indexOf("|");
+		    var len2=da.indexOf("@");
+		    //出去左右空格
+		    var kg=da.replace(/(^\s*)|(\s*$)/g, "");
+		    if(kg==""){
+		    	alert("答案不能为空！");
+		    	return ;
+		    }
+		    //验证答案长度，<15个字符
+		    if(da.length>15) {
+		    	alert("答案长度不能超过15个字节");
+		    	return ;
+		    }
+		    if(len!=-1 || len2!=-1){
+		    	alert("答案不能有特殊字符‘@’，‘|’等 ");
+		    	return ;
+		    }
+		    $.ajax({
+				url : "${request.contextPath}/survey/que/addQuestionnaireProblemItem",
+				type : "post",
+				dataType : "json",
+				data : $("#requestInfoForm").serialize(),
+				success : function(data) {
+				    if(data){
+				    	window.location.reload();
+					}else{
+						$.Alert("提交失败！！!");
+					}
+					
+				}
+			});
+		}
+
+		/** 下一题 */
+		function nextProblem(id){
+			window.location.href = "${request.contextPath}/survey/que/gotoQueManageProblemNext?id="+id;
+		}
+	</script>
+	<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

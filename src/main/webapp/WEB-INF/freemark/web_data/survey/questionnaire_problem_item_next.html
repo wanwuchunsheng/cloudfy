@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en" class="no-js">
-	<!--<![endif]-->
-	<!-- BEGIN HEAD -->
-	<head>
-		<title>商品明细</title>
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<title>问卷问题-答案选项</title>
 		<link href="${resRoot}/media/odstl/css/font-awesome.min.css" rel="stylesheet" />
 		<link href="${resRoot}/media/odstl/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="${resRoot}/media/odstl/css/uniform.default.css" rel="stylesheet" />
@@ -44,107 +44,58 @@
 	<!-- END HEAD -->
 	<!-- BEGIN BODY -->
 	<body class="header-fixed-body" >
-		<!-- BEGIN CONTAINER -->
-		<!-- BEGIN CONTENT -->
+	<!-- BEGIN CONTENT -->
+	<!-- BEGIN CONTENT -->
 		<div class="page-content-wrapper">
-			<div class="page-content-bak" >
-			     <!-- 面包线start  -->
-                <div class="row">
-					  <div class="col-md-12">
-					    <h3 class="page-title">问卷类型</h3>
-					    <ul class="page-breadcrumb breadcrumb">
-					            <li>
-					                <i class="fa fa-home"></i>
-					                <a href="#">首页</a>
-					                <i class="fa fa-angle-right"></i>
-					            </li>
-					            <li>
-					                <i class="fa fa-book"></i>
-					                <a href="#">问卷管理</a>
-					                <i class="fa fa-angle-right"></i>
-					            </li>
-					            <li>
-					              <i class="fa fa-stack-exchange"></i>
-					                <a href="#">问卷类型</a>
-					            </li>
-					        </ul>
-					  </div>
-				</div>
-				<!-- 面包线start  -->
-				
-				
-				<div class="portlet box blue" >
+			<div class="page-content">
+               
+				<!-- BEGIN PAGE MAIN -->
+				<div class="portlet box blue">
 					<div class="portlet-title">
 						<div class="caption">
-							信息列表
+							答案映射
 						</div>
 					</div>
 					<div class="portlet-body">
-					    <br/>
-					    <div class="row">
-						   <div class="col-md-12">
-								<div class="btn-group">
-									<label class="control-label col-md-2">问卷名称:</label>
-									<div class="col-md-4">
-										<input id="title" type="text" class="form-control">
-									</div>
-									<label class="control-label col-md-2">问卷编号:</label>
-									<div class="col-md-4">
-										<input id="code" type="text" class="form-control">
-									</div>
-								</div>
-								<div class="btn-group">
-									<div class="col-md-1">
-										<button onclick="queryPage()" class="btn blue">查询</button>
-									</div>
-								</div>
-								<div class="btn-group">
-									<div class="col-md-0">
-										<button onclick="resteButton()" class="btn green">重置</button>
-									</div>
-								</div>
-						    </div>
-						</div>
-						<br/><br/>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="btn-group">
-									<button onclick="addButton()" class="btn green" data-target="#addQuestionnaire" data-toggle="modal">
-										添加
-										<i class="fa fa-plus"></i>
-									</button>
-								</div>
-								<div class="btn-group">
-									<button onclick="deleteButton()" class="btn red">
-										删除
-										<i class="fa fa-times"></i>
-									</button>
-								</div>
-								<div class="btn-group">
-									<button onclick="updateButton()" class="btn green" data-target="#addQuestionnaire" data-toggle="modal">
-										修改
-										<i class="fa fa-edit"></i>
-									</button>
-								</div>
-								<div class="btn-group">
-									<button onclick="viewButton()" class="btn blue" data-target="#addQuestionnaire" data-toggle="modal">
-										预览
-										<i class="fa fa-search"></i>
-									</button>
-								</div>
 
-								
+						<div class="form-horizontal clearfix custom-form">
+							<div class="row">
+								<div class="form-section">
+									<label class="col-md-1 control-label text-right">答案选项:</label>
+									<label class="control-label text-left">${queProItem.name?if_exists} </label>
+								</div>
 							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="btn-group">
+										<button onclick="saveButton()" class="btn green">
+											保存
+											<i class="fa fa-save"></i>
+										</button>
+									</div>
+									<div class="btn-group">
+										<span onclick="backButton()" class="btn blue"> 返回 <i class="fa fa-undo"></i> </span>
+									</div>
+
+								</div>
+							</div>
+							<br/>
+
 						</div>
-						<br/>
-						<table class="table table-striped table-bordered table-advance table-hover"  id="table1">
+						<table class="table table-striped table-bordered table-hover" id="table_s1">
 							<thead>
 								<tr>
-									<th width="10%" class="table-checkbox">选择 </th>
-									<th width="40%">问卷名称</th>
-									<th width="15%">问卷编号</th>
-									<th width="15%">是否已发布</th>
-									<th width="20%">更新时间</th>
+									<th class="table-checkbox">
+									<input type="checkbox" class="group-checkable" data-set="#table_s1 .checkboxes"/>
+									</th>
+									<th>问题序号</th>
+									<!-- <th>问题类别</th> -->
+									<th>问题</th>
+									<th>题型</th>
+									<th>创建人</th>
+									<th>创建时间</th>
+									<th>是否必须</th>
+									
 								</tr>
 							</thead>
 							<tbody role="alert" aria-live="polite" aria-relevant="all">
@@ -152,94 +103,170 @@
 							</tbody>
 						</table>
 					</div>
-
 				</div>
 				<!-- END PAGE MAIN -->
+
 			</div>
 		</div>
-
 		<!-- END CONTENT -->
-		
+	<!-- END CONTENT -->
+	<!-- 弹出配置客户基本信息窗口 -->
+	<div class="modal fade" id="myModalrw1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<!-- JAVASCRIPTS -->
 	
-		
 	<script type="text/javascript">
 		admin = {
-	
+
 		};
-		
-		//页面进来加载
-		jQuery(document).ready(function() {
-			App.init();
+		/**  初始化  */
+		$(function(){
 			$("select").select2();
+			App.init();
 			queryPage();
-		})
+		});
+
+		/**  返回  */
+		function backButton() {
+			window.location.href = "${request.contextPath}/survey/que/questionnaireProblemItem?id="+ ${queProItem.questionnaireProblemId?if_exists};
+		}
+
+		/**  修改*/
+		function saveButton() {
+			//获取ID
+	        var item = document.getElementsByName("checkBoxt");
+	        var str = "";
+	        for (var i = 0; i < item.length; i++) {
+	            if (item[i].checked == true) {
+	                var k = item[i].value;
+	                str+=k+","; 
+	            }
+	        }
+	        //验证是否选中
+	        if(str==""){
+	        	$.Alert("操作失败：请选择后再操作!");
+	        	return false;
+	        }
+	        //验证只能选中1条
+	        str=str.substring(0, str.lastIndexOf(','));
+	        var ids=str.split(",");
+		    if(ids.length>1){
+	        	$.Alert("操作失败：只能选中一个操作!");
+	        	return false;
+		    }
+		    var queProItemId=${queProItem.id};
+		    var code=str;
+		    console.info(code+"/"+queProItemId);
+		    $.ajax({
+				url : "${request.contextPath}/survey/que/questionnaireProblemItemUpdate",
+				type : "post",
+				data : {
+                     "id":queProItemId,
+                     "nextProblem":code
+					},
+				success : function(data) {
+					if(data){
+						//绑定成功，返回
+						backButton();
+					}else{
+						$.Alert("ERROR:删除失败!!!");
+					}
+					
+				}
+			});
+		}
 		
-        /** 分页列表  */
+		/** 分页列表  */
 		function queryPage() {
-			//$('#table1').dataTable().fnDestroy();
 			if( admin.dataTable ){
 				admin.dataTable.fnDestroy();
 			}
 			//显示查询条件
-			admin.dataTable = $('#table1').dataTable({
+			admin.dataTable = $('#table_s1').dataTable({
 				"bFilter" : false,
 				"bSort" : false, // 排序功能
 				"processing" : true, // 设置异步请求时，是否有等待框。
-				"sAjaxSource" : '${futRoot}/survey/que/queryQueManagePage.json',
+				"sAjaxSource" : '${futRoot}/survey/que/queryQueManageProblem',
 				 "fnServerParams" : function(aoData) {
-						aoData.push({
-							"name" : "acCode", 
-							"value":$('#acCode').find("option:selected").val()
-						},{
-							"name" : "title", 
-							"value" : $('#title').val()
-						}); 
+					   aoData.push({
+							"name" : "questionnaireId",
+							"value" : ${queProItem.questionnaireId?if_exists}
+						});
 					},
 				"sServerMethod" : "post",
 				"bServerSide" : true, // 异步请求
 				"aoColumns" : [{
-					"mData" : "id",
-					"sWidth": "10%",
+					"mData" : "code",
 					"mRender" : function(data, type, row) {
 						if (data) {
 							return "<input id='checkBoxt' name='checkBoxt' type='checkbox' class='checkboxes' value="+data+" />";
 						}
 					}
 				}, {
-					"mData" : "title",
-					"sWidth": "40%",
-					"mRender" : function(data, type, row) {
-						if (data) {
-							return data;
-						}
-					}
-				}, {
 					"mData" : "code",
-					"sWidth": "15%",
+					"mRender" : function(data, type, row) {
+						if (data) {
+							return data;
+						}
+					}
+				}/* , {
+					"mData" : "shortName",
+					"mRender" : function(data, type, row) {
+						if (data) {
+							return data;
+						}
+					}
+				} */, {
+					"mData" : "fullName",
 					"mRender" : function(data, type, row) {
 						if (data) {
 							return data;
 						}
 					}
 				}, {
-					"mData" : "status",
-					"sWidth": "15%",
+					"mData" : "type",
 					"mRender" : function(data, type, row) {
-						if (data==400001001) {
-							return "已发布";
-						}else if(data==400001002){
-							return "未发布";
-						}else{
-							return "已删除";
+						if (data) {
+							if(data == '400011009') {
+								return "单选题";
+							}else if (data == '400011001') {
+								return "单选文本题";
+							}else if (data == '400011002') {
+								return "多选题";
+							}else if (data == '400011003') {
+								return "文本题";
+							} else if (data == '400011004') {
+								return "下拉选项";
+							}  else if (data == '400011000') {
+								return "结束语";
+							}else{
+                                return data;
+							}
 						}
 					}
 				}, {
-					"mData" : "updateTime",
-					"sWidth": "20%",
+					"mData" : "createUserName",
 					"mRender" : function(data, type, row) {
-						if (data) {
-							return new Date(data).format('yyyy-MM-dd hh:mm:ss');
+                        if(data){
+						  return data;
 						}
+
+					}
+				}, {
+					"mData" : "createTime",
+					"mRender" : function(data, type, row) {
+                        if(data){
+                        	return new Date(data).format('yyyy-MM-dd hh:mm:ss');
+						}
+					}
+				}, {
+					"mData" : "isRequired",
+					"mRender" : function(data, type, row) {
+						if (data == 1) {
+							return "是";
+						} else {
+							return "否";
+						}
+						return data;
 					}
 				}],
 				"aLengthMenu" : [[5,10, 15, 20], [5,10, 15, 20]],
@@ -285,43 +312,11 @@
 						"sLast" : "尾页"
 					}
 				}
+				
 			});
 		}
-
-		
-        /**  重置*/
-       function resteButton(){
-       	   $("#title").val("");
-       	   $("#code").val("");
-       }
-
-       /**  预览  */
-       function viewButton(){
-    	    //获取ID
-	        var item = document.getElementsByName("checkBoxt");
-	        var str = "";
-	        var f=0;
-	        for (var i = 0; i < item.length; i++) {
-	            if (item[i].checked == true) {
-	                str = item[i].value;
-	                f++;
-	            }
-	        }
-	        //验证是否选中
-	        if(str==""){
-	        	$.Alert("操作失败：请选择后再操作!");
-	        	return false;
-	        }
-	        if(str.length=='1'){
-                window.location.href="${request.contextPath}/survey/que/queManageViewPage.htm?id="+ str;
-			}else{
-				$.Alert("预览失败，请选中其中一个预览");
-			}
-
-       }
-		
-	</script>	
-	
-	</body>
-	<!-- END BODY -->
+	</script>
+	<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
 </html>

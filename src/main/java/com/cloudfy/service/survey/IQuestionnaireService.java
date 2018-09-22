@@ -32,6 +32,42 @@ public interface IQuestionnaireService {
 
 	List<QuestionnaireAnswer> queryQuestionnaireAnswer(Questionnaire que);
 
+	void addQueManage(Questionnaire bean);
+
+	Questionnaire queryQueManageById(Questionnaire bean);
+
+	String updateQueManage(Questionnaire bean);
+
+	String deleteQueManage(Questionnaire bean);
+
+	PaginationResult<List<QuestionnaireProblem>> queryQueManageProblem(
+			QuestionnaireProblem vo, Pagination pagination);
+
+	void addQuestionnaireProblem(QuestionnaireProblem bean);
+
+	QuestionnaireProblem queryQuestionnaireProblemOrCode(
+			QuestionnaireProblem bean);
+
+	String deleteQueManageProblem(QuestionnaireProblem bean);
+
+	QuestionnaireProblem queryQueManageProblemById(QuestionnaireProblem bean);
+
+	void mergeQuestionnaireProblem(QuestionnaireProblem bean);
+
+	List<QuestionnaireProblemItem> queryQuestionnaireProblemItem(QuestionnaireProblem bean);
+
+	void addQuestionnaireProblemItem(QuestionnaireProblemItem bean);
+
+	String deleteQueManageProblemItem(QuestionnaireProblemItem bean);
+
+	void updateQueManageProblemItemById(QuestionnaireProblemItem bean);
+
+	QuestionnaireProblemItem queryQueManageProblemItemById(QuestionnaireProblemItem bean);
+
+	void questionnaireProblemItemUpdate(QuestionnaireProblemItem bean);
+
+	
+
    
 
 
